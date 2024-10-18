@@ -19,9 +19,9 @@ browserAPI.browserAction.onClicked.addListener(async() => {
   if (!eventTitle) return;
 
   const urlSearchParms = new URLSearchParams({
-    event_title: eventTitle, 
+    'event[title]': eventTitle, 
     venue_name: venueName,
-    date_start: dateStart
+    'event[start_time]': dateStart
   }).toString();
 
   const generatedUrl = `${instanceUrl}?${urlSearchParms}`;

@@ -2,6 +2,9 @@
 ### 0.0.4
 
 * Document loads to 'run-at', improved performance.
+* Second event site supported, currently Hunitix & Eventbrite (basic details)
+* Fields pre-filling into koalagator event form.
+* Date/Time fields prefilling nicely into koalagator event form.
 
 ### 0.0.3
 
