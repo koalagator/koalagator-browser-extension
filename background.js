@@ -6,12 +6,16 @@ const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 let eventTitle = null;
 let venueName = null;
 let dateStart = null;
+let website = null;
+let description = null;
 
 chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
     eventTitle = request.eventTitle;
     venueName = request.venueName;
     dateStart = request.dateStart;
+    description = request.description;
+    website = request.website;
   }
 )
 
@@ -20,8 +24,10 @@ browserAPI.browserAction.onClicked.addListener(async() => {
 
   const urlSearchParms = new URLSearchParams({
     'event[title]': eventTitle, 
+    'event[start_time]': dateStart,
+    'event[url]': website,
+    'event[description]': description,
     venue_name: venueName,
-    'event[start_time]': dateStart
   }).toString();
 
   const generatedUrl = `${instanceUrl}?${urlSearchParms}`;

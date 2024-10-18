@@ -1,4 +1,3 @@
 event_title: .event-title
 venue_name: location-info__address-text
 date_start: event-details__main-inner
-event_date_provided_format: dddd,mmmm dd
