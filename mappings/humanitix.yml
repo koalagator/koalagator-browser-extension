@@ -1,0 +1,5 @@
+domain: events.humanitix.com
+event_title: [data-testid="title"]
+venue_name: .detail.location .f-label-3
+date_start: .detail.datetime time
+event_date_provided_format: dddd,mmmm dd
