@@ -1,6 +1,5 @@
-const allowedDomains = ["example.com", "anotherdomain.com"];
-const instanceUrl = "https://seedbomb.au/events/new";
-
+const instanceDomain = "seedbomb.au"
+const instanceUrl = `https://${instanceDomain}/events/new`;
 
 // Use the browser namespace if available, otherwise fall back to chrome
 const browserAPI = typeof browser !== "undefined" ? browser : chrome;
@@ -17,6 +16,7 @@ chrome.runtime.onMessage.addListener(
 )
 
 browserAPI.browserAction.onClicked.addListener(async() => {
+  if (!eventTitle) return;
 
   const urlSearchParms = new URLSearchParams({
     event_title: eventTitle, 
@@ -25,15 +25,8 @@ browserAPI.browserAction.onClicked.addListener(async() => {
   }).toString();
 
   const generatedUrl = `${instanceUrl}?${urlSearchParms}`;
-  alert(generatedUrl);
+  chrome.tabs.create({url: generatedUrl})
 
-  // chrome.tabs.query({active: true},([tab])=> {
-  //   const url = new URL(tab.url);
-  //   const domain = url.hostname;
-  //   alert(domain);
-  //   chrome.tabs.create({url: targetUrl})
-  // });
-  
   // console.log("onClicked");
   // const url = new URL(tab.url);
   // if (allowedDomains.includes(url.hostname)) {

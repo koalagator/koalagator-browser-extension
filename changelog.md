@@ -1,4 +1,8 @@
 
+### 0.0.4
+
+* Document loads to 'run-at', improved performance.
+
 ### 0.0.3
 
 * Content script scrapes key fields
