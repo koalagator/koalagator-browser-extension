@@ -1,7 +1,11 @@
 
+### 0.1.0
+
+
 ### 0.0.5
 
 * Fill the website (with params stripped off)
+* Added autofill of event website and description
 
 ### 0.0.4
 

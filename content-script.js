@@ -17,23 +17,29 @@ const eventbrite = {
 
 //   <meta property="event:start_time" content="2024-11-19T18:00:00+13:00">
 
-  const sites = [humanitix, eventbrite];
-  const site = sites.find((s) => s.domain_name === location.hostname.toLowerCase());
+const sites = [humanitix, eventbrite];
 
-  if(site){
-    const eventTitle = document.querySelector(site.event_title)?.innerText;
-    const venueName = document.querySelector(site.venue_name)?.innerText;
-    const description = document.querySelector(site.description)?.innerText;
-    const website = `${location.origin}${location.href}`
-
-    let dateStart = document.querySelector(site.date_start)
-    console.log({dateStart})
-    if(site.date_start_attr) {
-        dateStart = dateStart?.getAttribute(site.date_start_attr);
-    }else{
-        dateStart = dateStart?.innerText
+const check = () => {
+    const site = sites.find((s) => s.domain_name === location.hostname.toLowerCase());
+    if(site){
+        const eventTitle = document.querySelector(site.event_title)?.innerText;
+        const venueName = document.querySelector(site.venue_name)?.innerText;
+        const description = document.querySelector(site.description)?.innerText;
+        const website = `${location.origin}${location.href}`
+        let dateStart = document.querySelector(site.date_start)
+        console.log({dateStart})
+        if(site.date_start_attr) {
+            dateStart = dateStart?.getAttribute(site.date_start_attr);
+        }else{
+            dateStart = dateStart?.innerText
+        }
+        const message = {eventTitle,venueName,dateStart,website,description,supported: true};
+        chrome.runtime.sendMessage(message);
+    } else {
+        chrome.runtime.sendMessage({supported: false});
     }
-    const message = {eventTitle,venueName,dateStart,website,description};
-//   alert(eventTitle);
-    chrome.runtime.sendMessage(message);
+
 }
+
+check();
+document.addEventListener("DOMContentLoaded",check);

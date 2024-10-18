@@ -16,8 +16,23 @@ chrome.runtime.onMessage.addListener(
     dateStart = request.dateStart;
     description = request.description;
     website = request.website;
+    supported = request.supported;
+    let imagePath;
+
+    if(supported){
+      if(eventTitle){
+        imagePath = "icons/ready48.png"  
+      } else {
+        imagePath = "icons/loading48.png"
+      }
+    } else {
+      imagePath = "icons/inactive48.png"
+    }
+    chrome.browserAction.setIcon({path: imagePath});
   }
 )
+
+
 
 browserAPI.browserAction.onClicked.addListener(async() => {
   if (!eventTitle) return;
