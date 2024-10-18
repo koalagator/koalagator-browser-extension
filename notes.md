@@ -27,3 +27,5 @@
     "tabs"
   ]
 }
+
+, lastFocusedWindow: true
