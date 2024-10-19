@@ -8,17 +8,20 @@ let venueName = null;
 let dateStart = null;
 let website = null;
 let description = null;
+let activeTabId = null;
 
 chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
+    if(sender.tab.id !== activeTabId) return
+
     eventTitle = request.eventTitle;
     venueName = request.venueName;
     dateStart = request.dateStart;
     description = request.description;
     website = request.website;
     supported = request.supported;
-    let imagePath;
 
+    let imagePath;
     if(supported){
       if(eventTitle){
         imagePath = "icons/ready48.png"  
@@ -32,7 +35,15 @@ chrome.runtime.onMessage.addListener(
   }
 )
 
-
+chrome.tabs.onActivated.addListener((activeInfo)=> { 
+  // set icon to inactive on first arrive in a tab (pre-checking)
+  const inactiveImagePath = "icons/inactive48.png"
+  chrome.browserAction.setIcon({path: inactiveImagePath});
+  //detect the current Tab Id
+  const tabId = activeInfo.tabId;
+  activeTabId = tabId;
+  chrome.tabs.sendMessage(tabId,{message: "runCheck"});
+});
 
 browserAPI.browserAction.onClicked.addListener(async() => {
   if (!eventTitle) return;

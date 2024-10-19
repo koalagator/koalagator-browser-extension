@@ -1,6 +1,15 @@
 
+### 0.1.1
+
+* Switching tabs, we collect and use the Tab ID to check state of current tab.
+* Switching tabs, icon defaults back to inactive until allow list checker runs.
+* Switching tabs, tab icon now shows correct state of that tab.
+
 ### 0.1.0
 
+* Toolbar icon, shows gray for unsupported sites
+* Toolebar icon shows as yellow while loading and green when ready.
+* Todo: Toolbar not yet updating when you swap tabs, retains old loaded status.
 
 ### 0.0.5
 

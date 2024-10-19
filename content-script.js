@@ -43,3 +43,8 @@ const check = () => {
 
 check();
 document.addEventListener("DOMContentLoaded",check);
+chrome.runtime.onMessage.addListener ((request)=> {
+    if(request.message==="runCheck") {
+        check();
+    }
+})
