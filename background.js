@@ -6,6 +6,7 @@ const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 let eventTitle = null;
 let venueName = null;
 let dateStart = null;
+let dateEnd = null;
 let website = null;
 let description = null;
 let activeTabId = null;
@@ -17,6 +18,7 @@ chrome.runtime.onMessage.addListener(
     eventTitle = request.eventTitle;
     venueName = request.venueName;
     dateStart = request.dateStart;
+    dateEnd = request.dateEnd;
     description = request.description;
     website = request.website;
     supported = request.supported;
@@ -51,6 +53,7 @@ browserAPI.browserAction.onClicked.addListener(async() => {
   const urlSearchParms = new URLSearchParams({
     'event[title]': eventTitle, 
     'event[start_time]': dateStart,
+    'event[end_time]': dateEnd,
     'event[url]': website,
     'event[description]': description,
     venue_name: venueName,
