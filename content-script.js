@@ -24,6 +24,7 @@ const eventbrite = {
   // End time available in schema.org application/ld+json in head
 const meetup = {
     domain_name: "www.meetup.com",
+    schema_org: true,
     event_title: "main h1",
     venue_name: "[data-event-label='event-location']",
     description: "#event-details",
@@ -34,6 +35,7 @@ const meetup = {
   // End time available in schema.org application/ld+json in head
 const trybooking = {
     domain_name: "www.trybooking.com",
+    schema_org: true,
     event_title: ".event-name",
     venue_name: "[data-event-label='event-location']",
     description: "#default-eventname",
@@ -41,6 +43,16 @@ const trybooking = {
     date_start_attr: 'data-tb-session'
 }
 
+  // End time available in schema.org application/ld+json in head
+const luma = {
+    domain_name: "lu.ma",
+    schema_org: true,
+    event_title: ".title",
+    venue_name: ".tito-venues span",
+    description: ".tito-description",
+    date_start: "#tito-basic-info a",
+    date_start_attr: ''
+}
 
 // Example: "8pm, October 18th–9pm, October 21st, 2024"
 // passing start time of 8pm.
@@ -50,16 +62,6 @@ const tito = {
     domain_name: "ti.to",
     event_title: ".event-title",
     venue_name: ".content-card .fw-medium",
-    description: ".tito-description",
-    date_start: "#tito-basic-info a",
-    date_start_attr: ''
-}
-
-  // End time available in schema.org application/ld+json in head
-const luma = {
-    domain_name: "lu.ma",
-    event_title: ".title",
-    venue_name: ".tito-venues span",
     description: ".tito-description",
     date_start: "#tito-basic-info a",
     date_start_attr: ''
@@ -86,12 +88,16 @@ const check = () => {
         }else{
             dateEnd = dateEnd?.innerText;
         }
+        for(const node of document.querySelectorAll("script[type='application/ld+json']")){
+            const data = JSON.parse(node.innerHTML);
+            if(data.startDate) dateStart = data.startDate;
+            if(data.endDate) dateEnd = data.endDate;
+        }
         const message = {eventTitle,venueName,dateStart,dateEnd,website,description,supported: true};
         chrome.runtime.sendMessage(message);
     } else {
         chrome.runtime.sendMessage({supported: false});
     }
-
 }
 
 check();
