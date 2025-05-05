@@ -5,6 +5,14 @@ Suppported events sites have mapping files in /mappings.
 
 (Version 1 currently only submits to one instance of koalagator)
 
+![SCR-20250505-unqz](https://github.com/user-attachments/assets/23706983-0989-43cd-9115-00f0e71bc57a)
+
+One click and a create event page is opened in a new tab, filled out with all the event details. 
+
+![SCR-20250505-uqle](https://github.com/user-attachments/assets/318ecf45-0728-4f1c-918b-505dd831cdf0)
+
+You're then able to review and edit before saving the event.
+
 ## Supported event sites
 
 We aim to support all major event website used by community organisers.
@@ -22,7 +30,8 @@ Here's an example of how humanitix is processed. Note: We also process the date 
         domain_name: "events.humanitix.com",
         event_title: "[data-testid='title']",
         venue_name: ".detail.location .f-label-3",
-        description: ".EventDescription .RichContent",
+        description: ".EventDescription .RichContent",![Uploading SCR-20250505-unqz.png…]()
+
         date_start: ".detail.datetime time",
         date_start_attr: 'datetime'
     }
