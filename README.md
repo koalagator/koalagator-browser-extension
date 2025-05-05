@@ -1,4 +1,4 @@
-# Koalagator Browser Extensions
+# Koalagator Browser Extension
 
 This browser extension makes it easy to add events from supported event sites.
 Suppported events sites have mapping files in /mappings.
