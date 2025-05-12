@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "web-ext": "^8.6.0"
   }
 }
