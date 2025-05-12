@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "prettier": "^3.5.3"
+    "ical": "^0.8.0"
   },
   "devDependencies": {
-    "web-ext": "^8.6.0"
+    "web-ext": "^8.6.0",
+    "prettier": "^3.5.3"
   }
 }
