@@ -58,8 +58,6 @@ browserAPI.browserAction.onClicked.addListener(async () => {
   }).toString();
 
   const generatedUrl = `${instanceUrl}?${urlSearchParms}`;
-  // __AUTO_GENERATED_PRINT_VAR_START__
-  console.log("(anon) generatedUrl: %s", generatedUrl); // __AUTO_GENERATED_PRINT_VAR_END__
   chrome.tabs.create({ url: generatedUrl });
 
   // console.log("onClicked");

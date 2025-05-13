@@ -71,7 +71,10 @@ const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma];
 
 const check = () => {
     const site = sites.find((s) => s.domain_name === location.hostname.toLowerCase());
-    if(site){
+    if(!site){
+        return
+    } 
+        chrome.runtime.sendMessage({supported: false}); }
         const eventTitle = document.querySelector(site.event_title)?.innerText;
         const venueName = document.querySelector(site.venue_name)?.innerText;
         const description = document.querySelector(site.description)?.innerText;
@@ -95,9 +98,6 @@ const check = () => {
         }
         const message = {eventTitle,venueName,dateStart,dateEnd,website,description,supported: true};
         chrome.runtime.sendMessage(message);
-    } else {
-        chrome.runtime.sendMessage({supported: false});
-    }
 }
 
 check();
