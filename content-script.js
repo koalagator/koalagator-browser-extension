@@ -121,7 +121,27 @@ const check = () => {
     return;
   }
 
-  if (site.domain === "www.facebook.com") {
+  if (site.domain_name === facebook.domain_name) {
+    const icalUrl =
+      "https://www.facebook.com/events/ical/export/?eid=538033572366330";
+
+    // Send a GET request using fetch
+    fetch(icalUrl)
+      .then((response) => {
+        // Check if the request was successful
+        if (response.ok) {
+          return response.text(); // Convert the response body to text
+        } else {
+          throw new Error("Failed to fetch iCalendar data");
+        }
+      })
+      .then((icalText) => {
+        // Process the iCalendar data (plain text)
+        console.log(icalText); // Output the iCalendar text content to the console
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
     return;
   }
   chrome.runtime.sendMessage(generateMessageFromSite(site));
