@@ -128,8 +128,9 @@ function handleFacebook() {
       }
     })
     .then((icalText) => {
+      const data = ICAL.parse(icalText);
       // __AUTO_GENERATED_PRINT_VAR_START__
-      console.log("handleFacebook icalText: %s", icalText); // __AUTO_GENERATED_PRINT_VAR_END__
+      console.log("handleFacebook#(anon) data: %s", data); // __AUTO_GENERATED_PRINT_VAR_END__
     })
     .catch((error) => {
       console.error("Error:", error);

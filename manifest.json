@@ -3,7 +3,9 @@
   "name": "Koalagator",
   "version": "1.0",
   "description": "Magically enters event data from popular event sites",
-  "browser_specific_settings": {"gecko": {"id": "{6e0f13ab-dfbb-4e3d-a651-a1d8abdba923}"}},
+  "browser_specific_settings": {
+    "gecko": { "id": "{6e0f13ab-dfbb-4e3d-a651-a1d8abdba923}" }
+  },
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
@@ -16,13 +18,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["content-script.js"],
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/ical.es5.min.cjs", "content-script.js"],
       "run_at": "document_start"
     }
   ],
-  "permissions": [
-    "activeTab",
-    "tabs"
-  ]
+  "permissions": ["activeTab", "tabs"]
 }

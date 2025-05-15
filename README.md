@@ -113,3 +113,7 @@ Menu 'Window' > Extensions
 'Load Unpacked' and select project folder.
 
 (This needs to be repeated every time the code changes, to reload)
+
+## Dependencies
+
+Uses the [kewisch/ical.js/](https://github.com/kewisch/ical.js/) library to parse ical files. Specifically, [this build](https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs).
