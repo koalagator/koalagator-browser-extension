@@ -113,6 +113,30 @@ function generateMessageFromSite(site) {
   return message;
 }
 
+function handleFacebook() {
+  const icalUrl =
+    "https://www.facebook.com/events/ical/export/?eid=538033572366330";
+
+  // Send a GET request using fetch
+  fetch(icalUrl)
+    .then((response) => {
+      // Check if the request was successful
+      if (response.ok) {
+        return response.text(); // Convert the response body to text
+      } else {
+        throw new Error("Failed to fetch iCalendar data");
+      }
+    })
+    .then((icalText) => {
+      // __AUTO_GENERATED_PRINT_VAR_START__
+      console.log("handleFacebook icalText: %s", icalText); // __AUTO_GENERATED_PRINT_VAR_END__
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  return;
+}
+
 const check = () => {
   const actualHostname = location.hostname.toLowerCase();
   const site = sites.find((s) => s.domain_name === actualHostname);
@@ -122,27 +146,7 @@ const check = () => {
   }
 
   if (site.domain_name === facebook.domain_name) {
-    const icalUrl =
-      "https://www.facebook.com/events/ical/export/?eid=538033572366330";
-
-    // Send a GET request using fetch
-    fetch(icalUrl)
-      .then((response) => {
-        // Check if the request was successful
-        if (response.ok) {
-          return response.text(); // Convert the response body to text
-        } else {
-          throw new Error("Failed to fetch iCalendar data");
-        }
-      })
-      .then((icalText) => {
-        // Process the iCalendar data (plain text)
-        console.log(icalText); // Output the iCalendar text content to the console
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-    return;
+    handleFacebook();
   }
   chrome.runtime.sendMessage(generateMessageFromSite(site));
 };
