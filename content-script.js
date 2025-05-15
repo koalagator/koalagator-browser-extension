@@ -128,13 +128,11 @@ function handleFacebook() {
       }
     })
     .then((icalText) => {
-      const data = ICAL.parse(icalText);
-      const comp = new ICAL.Component(data);
-      const vevent = comp.getFirstSubcomponent("vevent");
-      const event = new ICAL.Event(vevent);
+      const parsedIcalData = ICAL.parse(icalText);
+      const event = new ICAL.Event(
+        new ICAL.Component(parsedIcalData).getFirstSubcomponent("vevent"),
+      );
       const summary = event.summary;
-      // __AUTO_GENERATED_PRINT_VAR_START__
-      console.log("handleFacebook#(anon) summary: %s", summary); // __AUTO_GENERATED_PRINT_VAR_END__
     })
     .catch((error) => {
       console.error("Error:", error);
