@@ -66,7 +66,16 @@ const tito = {
   date_start_attr: "",
 };
 
-const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma];
+const facebook = {
+  domain_name: "www.facebook.com",
+  event_title: ".event-title",
+  venue_name: ".content-card .fw-medium",
+  description: ".tito-description",
+  date_start: "#tito-basic-info a",
+  date_start_attr: "",
+};
+
+const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma, facebook];
 
 function generateMessageFromSite(site) {
   const eventTitle = document.querySelector(site.event_title)?.innerText;
@@ -105,16 +114,17 @@ function generateMessageFromSite(site) {
 }
 
 const check = () => {
-  const site = sites.find(
-    (s) => s.domain_name === location.hostname.toLowerCase(),
-  );
+  const actualHostname = location.hostname.toLowerCase();
+  const site = sites.find((s) => s.domain_name === actualHostname);
   if (!site) {
     chrome.runtime.sendMessage({ supported: false });
     return;
   }
 
-  const message = generateMessageFromSite(site);
-  chrome.runtime.sendMessage(message);
+  if (site.domain === "www.facebook.com") {
+    return;
+  }
+  chrome.runtime.sendMessage(generateMessageFromSite(site));
 };
 
 check();
