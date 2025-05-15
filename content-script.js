@@ -115,7 +115,7 @@ function generateMessageFromSite(site) {
 
 function handleFacebook() {
   const icalUrl =
-    "https://www.facebook.com/events/ical/export/?eid=538033572366330";
+    "https://www.facebook.com/events/ical/export/?eid=1187811629343703";
 
   // Send a GET request using fetch
   fetch(icalUrl)
@@ -129,8 +129,12 @@ function handleFacebook() {
     })
     .then((icalText) => {
       const data = ICAL.parse(icalText);
+      const comp = new ICAL.Component(data);
+      const vevent = comp.getFirstSubcomponent("vevent");
+      const event = new ICAL.Event(vevent);
+      const summary = event.summary;
       // __AUTO_GENERATED_PRINT_VAR_START__
-      console.log("handleFacebook#(anon) data: %s", data); // __AUTO_GENERATED_PRINT_VAR_END__
+      console.log("handleFacebook#(anon) summary: %s", summary); // __AUTO_GENERATED_PRINT_VAR_END__
     })
     .catch((error) => {
       console.error("Error:", error);
