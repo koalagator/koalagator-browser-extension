@@ -10,63 +10,63 @@
           : ((t =
                 "undefined" != typeof globalThis
                     ? globalThis
-                    : t || self).ICAL = e());
+                    : t || self).ICAL = e())
 })(this, function () {
-    "use strict";
+    "use strict"
     function t(t, e, n) {
         if ("function" == typeof t ? t === e : t.has(e))
-            return arguments.length < 3 ? e : n;
-        throw new TypeError("Private element is not present on this object");
+            return arguments.length < 3 ? e : n
+        throw new TypeError("Private element is not present on this object")
     }
     function e(t, e, r) {
         return (
             (e = h(e)),
             (function (t, e) {
                 if (e && ("object" == typeof e || "function" == typeof e))
-                    return e;
+                    return e
                 if (void 0 !== e)
                     throw new TypeError(
-                        "Derived constructors may only return object or undefined"
-                    );
+                        "Derived constructors may only return object or undefined",
+                    )
                 return (function (t) {
                     if (void 0 === t)
                         throw new ReferenceError(
-                            "this hasn't been initialised - super() hasn't been called"
-                        );
-                    return t;
-                })(t);
+                            "this hasn't been initialised - super() hasn't been called",
+                        )
+                    return t
+                })(t)
             })(
                 t,
                 n()
                     ? Reflect.construct(e, r || [], h(t).constructor)
-                    : e.apply(t, r)
+                    : e.apply(t, r),
             )
-        );
+        )
     }
     function n() {
         try {
             var t = !Boolean.prototype.valueOf.call(
-                Reflect.construct(Boolean, [], function () {})
-            );
+                Reflect.construct(Boolean, [], function () {}),
+            )
         } catch (t) {}
         return (n = function () {
-            return !!t;
-        })();
+            return !!t
+        })()
     }
     function r(t) {
         var e = (function (t, e) {
-            if ("object" != typeof t || !t) return t;
-            var n = t[Symbol.toPrimitive];
+            if ("object" != typeof t || !t) return t
+            var n = t[Symbol.toPrimitive]
             if (void 0 !== n) {
-                var r = n.call(t, e || "default");
-                if ("object" != typeof r) return r;
+                var r = n.call(t, e || "default")
+                if ("object" != typeof r) return r
                 throw new TypeError(
-                    "@@toPrimitive must return a primitive value."
-                );
+                    "@@toPrimitive must return a primitive value.",
+                )
             }
-            return ("string" === e ? String : Number)(t);
-        })(t, "string");
-        return "symbol" == typeof e ? e : e + "";
+            return ("string" === e ? String : Number)(t)
+        })(t, "string")
+        return "symbol" == typeof e ? e : e + ""
     }
     function i(t) {
         return (
@@ -74,7 +74,7 @@
                 "function" == typeof Symbol &&
                 "symbol" == typeof Symbol.iterator
                     ? function (t) {
-                          return typeof t;
+                          return typeof t
                       }
                     : function (t) {
                           return t &&
@@ -82,22 +82,22 @@
                               t.constructor === Symbol &&
                               t !== Symbol.prototype
                               ? "symbol"
-                              : typeof t;
+                              : typeof t
                       }),
             i(t)
-        );
+        )
     }
     function a(t, e) {
         if (!(t instanceof e))
-            throw new TypeError("Cannot call a class as a function");
+            throw new TypeError("Cannot call a class as a function")
     }
     function s(t, e) {
         for (var n = 0; n < e.length; n++) {
-            var i = e[n];
-            (i.enumerable = i.enumerable || !1),
+            var i = e[n]
+            ;(i.enumerable = i.enumerable || !1),
                 (i.configurable = !0),
                 "value" in i && (i.writable = !0),
-                Object.defineProperty(t, r(i.key), i);
+                Object.defineProperty(t, r(i.key), i)
         }
     }
     function o(t, e, n) {
@@ -106,7 +106,7 @@
             n && s(t, n),
             Object.defineProperty(t, "prototype", { writable: !1 }),
             t
-        );
+        )
     }
     function u(t, e, n) {
         return (
@@ -115,45 +115,45 @@
                       value: n,
                       enumerable: !0,
                       configurable: !0,
-                      writable: !0
+                      writable: !0,
                   })
                 : (t[e] = n),
             t
-        );
+        )
     }
     function l(t, e) {
         if ("function" != typeof e && null !== e)
             throw new TypeError(
-                "Super expression must either be null or a function"
-            );
-        (t.prototype = Object.create(e && e.prototype, {
-            constructor: { value: t, writable: !0, configurable: !0 }
+                "Super expression must either be null or a function",
+            )
+        ;(t.prototype = Object.create(e && e.prototype, {
+            constructor: { value: t, writable: !0, configurable: !0 },
         })),
             Object.defineProperty(t, "prototype", { writable: !1 }),
-            e && c(t, e);
+            e && c(t, e)
     }
     function h(t) {
         return (
             (h = Object.setPrototypeOf
                 ? Object.getPrototypeOf.bind()
                 : function (t) {
-                      return t.__proto__ || Object.getPrototypeOf(t);
+                      return t.__proto__ || Object.getPrototypeOf(t)
                   }),
             h(t)
-        );
+        )
     }
     function c(t, e) {
         return (
             (c = Object.setPrototypeOf
                 ? Object.setPrototypeOf.bind()
                 : function (t, e) {
-                      return (t.__proto__ = e), t;
+                      return (t.__proto__ = e), t
                   }),
             c(t, e)
-        );
+        )
     }
     function f(t) {
-        var e = "function" == typeof Map ? new Map() : void 0;
+        var e = "function" == typeof Map ? new Map() : void 0
         return (
             (f = function (t) {
                 if (
@@ -165,30 +165,29 @@
                                 Function.toString
                                     .call(t)
                                     .indexOf("[native code]")
-                            );
+                            )
                         } catch (e) {
-                            return "function" == typeof t;
+                            return "function" == typeof t
                         }
                     })(t)
                 )
-                    return t;
+                    return t
                 if ("function" != typeof t)
                     throw new TypeError(
-                        "Super expression must either be null or a function"
-                    );
+                        "Super expression must either be null or a function",
+                    )
                 if (void 0 !== e) {
-                    if (e.has(t)) return e.get(t);
-                    e.set(t, r);
+                    if (e.has(t)) return e.get(t)
+                    e.set(t, r)
                 }
                 function r() {
                     return (function (t, e, r) {
-                        if (n())
-                            return Reflect.construct.apply(null, arguments);
-                        var i = [null];
-                        i.push.apply(i, e);
-                        var a = new (t.bind.apply(t, i))();
-                        return r && c(a, r.prototype), a;
-                    })(t, arguments, h(this).constructor);
+                        if (n()) return Reflect.construct.apply(null, arguments)
+                        var i = [null]
+                        i.push.apply(i, e)
+                        var a = new (t.bind.apply(t, i))()
+                        return r && c(a, r.prototype), a
+                    })(t, arguments, h(this).constructor)
                 }
                 return (
                     (r.prototype = Object.create(t.prototype, {
@@ -196,19 +195,19 @@
                             value: r,
                             enumerable: !1,
                             writable: !0,
-                            configurable: !0
-                        }
+                            configurable: !0,
+                        },
                     })),
                     c(r, t)
-                );
+                )
             }),
             f(t)
-        );
+        )
     }
     function d(t, e) {
         return (
             (function (t) {
-                if (Array.isArray(t)) return t;
+                if (Array.isArray(t)) return t
             })(t) ||
             (function (t, e) {
                 var n =
@@ -216,7 +215,7 @@
                         ? null
                         : ("undefined" != typeof Symbol &&
                               t[Symbol.iterator]) ||
-                          t["@@iterator"];
+                          t["@@iterator"]
                 if (null != n) {
                     var r,
                         i,
@@ -224,11 +223,11 @@
                         s,
                         o = [],
                         u = !0,
-                        l = !1;
+                        l = !1
                     try {
                         if (((a = (n = n.call(t)).next), 0 === e)) {
-                            if (Object(n) !== n) return;
-                            u = !1;
+                            if (Object(n) !== n) return
+                            u = !1
                         } else
                             for (
                                 ;
@@ -237,7 +236,7 @@
                                 u = !0
                             );
                     } catch (t) {
-                        (l = !0), (i = t);
+                        ;(l = !0), (i = t)
                     } finally {
                         try {
                             if (
@@ -245,26 +244,26 @@
                                 null != n.return &&
                                 ((s = n.return()), Object(s) !== s)
                             )
-                                return;
+                                return
                         } finally {
-                            if (l) throw i;
+                            if (l) throw i
                         }
                     }
-                    return o;
+                    return o
                 }
             })(t, e) ||
             m(t, e) ||
             (function () {
                 throw new TypeError(
-                    "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-                );
+                    "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
+                )
             })()
-        );
+        )
     }
     function y(t) {
         return (
             (function (t) {
-                if (Array.isArray(t)) return p(t);
+                if (Array.isArray(t)) return p(t)
             })(t) ||
             (function (t) {
                 if (
@@ -272,20 +271,20 @@
                         null != t[Symbol.iterator]) ||
                     null != t["@@iterator"]
                 )
-                    return Array.from(t);
+                    return Array.from(t)
             })(t) ||
             m(t) ||
             (function () {
                 throw new TypeError(
-                    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-                );
+                    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
+                )
             })()
-        );
+        )
     }
     function m(t, e) {
         if (t) {
-            if ("string" == typeof t) return p(t, e);
-            var n = Object.prototype.toString.call(t).slice(8, -1);
+            if ("string" == typeof t) return p(t, e)
+            var n = Object.prototype.toString.call(t).slice(8, -1)
             return (
                 "Object" === n && t.constructor && (n = t.constructor.name),
                 "Map" === n || "Set" === n
@@ -294,71 +293,71 @@
                         /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
                       ? p(t, e)
                       : void 0
-            );
+            )
         }
     }
     function p(t, e) {
-        (null == e || e > t.length) && (e = t.length);
-        for (var n = 0, r = new Array(e); n < e; n++) r[n] = t[n];
-        return r;
+        ;(null == e || e > t.length) && (e = t.length)
+        for (var n = 0, r = new Array(e); n < e; n++) r[n] = t[n]
+        return r
     }
     function v(t, e) {
         var n =
             ("undefined" != typeof Symbol && t[Symbol.iterator]) ||
-            t["@@iterator"];
+            t["@@iterator"]
         if (!n) {
             if (
                 Array.isArray(t) ||
                 (n = m(t)) ||
                 (e && t && "number" == typeof t.length)
             ) {
-                n && (t = n);
+                n && (t = n)
                 var r = 0,
-                    i = function () {};
+                    i = function () {}
                 return {
                     s: i,
                     n: function () {
                         return r >= t.length
                             ? { done: !0 }
-                            : { done: !1, value: t[r++] };
+                            : { done: !1, value: t[r++] }
                     },
                     e: function (t) {
-                        throw t;
+                        throw t
                     },
-                    f: i
-                };
+                    f: i,
+                }
             }
             throw new TypeError(
-                "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-            );
+                "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
+            )
         }
         var a,
             s = !0,
-            o = !1;
+            o = !1
         return {
             s: function () {
-                n = n.call(t);
+                n = n.call(t)
             },
             n: function () {
-                var t = n.next();
-                return (s = t.done), t;
+                var t = n.next()
+                return (s = t.done), t
             },
             e: function (t) {
-                (o = !0), (a = t);
+                ;(o = !0), (a = t)
             },
             f: function () {
                 try {
-                    s || null == n.return || n.return();
+                    s || null == n.return || n.return()
                 } finally {
-                    if (o) throw a;
+                    if (o) throw a
                 }
-            }
-        };
+            },
+        }
     }
     var _,
         g = (function () {
             function t(e) {
-                a(this, t), u(this, "icaltype", "binary"), (this.value = e);
+                a(this, t), u(this, "icaltype", "binary"), (this.value = e)
             }
             return o(
                 t,
@@ -366,14 +365,14 @@
                     {
                         key: "decodeValue",
                         value: function () {
-                            return this._b64_decode(this.value);
-                        }
+                            return this._b64_decode(this.value)
+                        },
                     },
                     {
                         key: "setEncodedValue",
                         value: function (t) {
-                            this.value = this._b64_encode(t);
-                        }
+                            this.value = this._b64_encode(t)
+                        },
                     },
                     {
                         key: "_b64_encode",
@@ -388,10 +387,10 @@
                                 o = 0,
                                 u = 0,
                                 l = "",
-                                h = [];
-                            if (!t) return t;
+                                h = []
+                            if (!t) return t
                             do {
-                                (e =
+                                ;(e =
                                     ((a =
                                         (t.charCodeAt(o++) << 16) |
                                         (t.charCodeAt(o++) << 8) |
@@ -405,15 +404,15 @@
                                         s.charAt(e) +
                                         s.charAt(n) +
                                         s.charAt(r) +
-                                        s.charAt(i));
-                            } while (o < t.length);
-                            l = h.join("");
-                            var c = t.length % 3;
+                                        s.charAt(i))
+                            } while (o < t.length)
+                            l = h.join("")
+                            var c = t.length % 3
                             return (
                                 (c ? l.slice(0, c - 3) : l) +
                                 "===".slice(c || 3)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "_b64_decode",
@@ -428,11 +427,11 @@
                                     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
                                 u = 0,
                                 l = 0,
-                                h = [];
-                            if (!t) return t;
-                            t += "";
+                                h = []
+                            if (!t) return t
+                            t += ""
                             do {
-                                (e =
+                                ;(e =
                                     ((s =
                                         (o.indexOf(t.charAt(u++)) << 18) |
                                         (o.indexOf(t.charAt(u++)) << 12) |
@@ -447,27 +446,27 @@
                                             ? String.fromCharCode(e)
                                             : 64 == a
                                               ? String.fromCharCode(e, n)
-                                              : String.fromCharCode(e, n, r));
-                            } while (u < t.length);
-                            return h.join("");
-                        }
+                                              : String.fromCharCode(e, n, r))
+                            } while (u < t.length)
+                            return h.join("")
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
-                            return this.value;
-                        }
-                    }
+                            return this.value
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e) {
-                            return new t(e);
-                        }
-                    }
-                ]
-            );
+                            return new t(e)
+                        },
+                    },
+                ],
+            )
         })(),
         D = /([PDWHMTS]{1,1})/,
         T = ["weeks", "days", "hours", "minutes", "seconds", "isNegative"],
@@ -483,7 +482,7 @@
                     u(this, "icalclass", "icalduration"),
                     u(this, "icaltype", "duration"),
                     (this.wrappedJSObject = this),
-                    this.fromData(e);
+                    this.fromData(e)
             }
             return o(
                 t,
@@ -491,8 +490,8 @@
                     {
                         key: "clone",
                         value: function () {
-                            return t.fromData(this);
-                        }
+                            return t.fromData(this)
+                        },
                     },
                     {
                         key: "toSeconds",
@@ -502,14 +501,14 @@
                                 60 * this.minutes +
                                 3600 * this.hours +
                                 86400 * this.days +
-                                604800 * this.weeks;
-                            return this.isNegative ? -t : t;
-                        }
+                                604800 * this.weeks
+                            return this.isNegative ? -t : t
+                        },
                     },
                     {
                         key: "fromSeconds",
                         value: function (t) {
-                            var e = Math.abs(t);
+                            var e = Math.abs(t)
                             return (
                                 (this.isNegative = t < 0),
                                 (this.days = F(e / 86400)),
@@ -524,48 +523,48 @@
                                 (e -= 60 * this.minutes),
                                 (this.seconds = e),
                                 this
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (t) {
                             for (var e = 0, n = T; e < n.length; e++) {
-                                var r = n[e];
-                                this[r] = t && r in t ? t[r] : 0;
+                                var r = n[e]
+                                this[r] = t && r in t ? t[r] : 0
                             }
-                        }
+                        },
                     },
                     {
                         key: "reset",
                         value: function () {
-                            (this.isNegative = !1),
+                            ;(this.isNegative = !1),
                                 (this.weeks = 0),
                                 (this.days = 0),
                                 (this.hours = 0),
                                 (this.minutes = 0),
-                                (this.seconds = 0);
-                        }
+                                (this.seconds = 0)
+                        },
                     },
                     {
                         key: "compare",
                         value: function (t) {
                             var e = this.toSeconds(),
-                                n = t.toSeconds();
-                            return (e > n) - (e < n);
-                        }
+                                n = t.toSeconds()
+                            return (e > n) - (e < n)
+                        },
                     },
                     {
                         key: "normalize",
                         value: function () {
-                            this.fromSeconds(this.toSeconds());
-                        }
+                            this.fromSeconds(this.toSeconds())
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
-                            if (0 == this.toSeconds()) return "PT0S";
-                            var t = "";
+                            if (0 == this.toSeconds()) return "PT0S"
+                            var t = ""
                             return (
                                 this.isNegative && (t += "-"),
                                 (t += "P"),
@@ -577,28 +576,28 @@
                                     this.minutes && (t += this.minutes + "M"),
                                     this.seconds && (t += this.seconds + "S")),
                                 t
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "toICALString",
                         value: function () {
-                            return this.toString();
-                        }
-                    }
+                            return this.toString()
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromSeconds",
                         value: function (e) {
-                            return new t().fromSeconds(e);
-                        }
+                            return new t().fromSeconds(e)
+                        },
                     },
                     {
                         key: "isValueString",
                         value: function (t) {
-                            return "P" === t[0] || "P" === t[1];
-                        }
+                            return "P" === t[0] || "P" === t[1]
+                        },
                     },
                     {
                         key: "fromString",
@@ -609,68 +608,68 @@
 
                             ) {
                                 var a = e[n],
-                                    s = e.slice(0, Math.max(0, n));
-                                (e = e.slice(n + 1)), (i += k(a, s, r));
+                                    s = e.slice(0, Math.max(0, n))
+                                ;(e = e.slice(n + 1)), (i += k(a, s, r))
                             }
                             if (i < 2)
                                 throw new Error(
                                     'invalid duration value: Not enough duration components in "' +
                                         e +
-                                        '"'
-                                );
-                            return new t(r);
-                        }
+                                        '"',
+                                )
+                            return new t(r)
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (e) {
-                            return new t(e);
-                        }
-                    }
-                ]
-            );
-        })();
+                            return new t(e)
+                        },
+                    },
+                ],
+            )
+        })()
     function k(t, e, n) {
-        var r;
+        var r
         switch (t) {
             case "P":
-                n.isNegative = !(!e || "-" !== e);
-                break;
+                n.isNegative = !(!e || "-" !== e)
+                break
             case "D":
-                r = "days";
-                break;
+                r = "days"
+                break
             case "W":
-                r = "weeks";
-                break;
+                r = "weeks"
+                break
             case "H":
-                r = "hours";
-                break;
+                r = "hours"
+                break
             case "M":
-                r = "minutes";
-                break;
+                r = "minutes"
+                break
             case "S":
-                r = "seconds";
-                break;
+                r = "seconds"
+                break
             default:
-                return 0;
+                return 0
         }
         if (r) {
             if (!e && 0 !== e)
                 throw new Error(
-                    'invalid duration value: Missing number before "' + t + '"'
-                );
-            var i = parseInt(e, 10);
+                    'invalid duration value: Missing number before "' + t + '"',
+                )
+            var i = parseInt(e, 10)
             if (L(i))
                 throw new Error(
                     'invalid duration value: Invalid number "' +
                         e +
                         '" before "' +
                         t +
-                        '"'
-                );
-            n[r] = i;
+                        '"',
+                )
+            n[r] = i
         }
-        return 1;
+        return 1
     }
     var b = (function () {
         function e(t, n) {
@@ -679,16 +678,16 @@
                 u(this, "_cachedUnixTime", null),
                 u(this, "zone", null),
                 u(this, "_pendingNormalization", !1),
-                (this.wrappedJSObject = this);
-            var r = (this._time = Object.create(null));
-            (r.year = 0),
+                (this.wrappedJSObject = this)
+            var r = (this._time = Object.create(null))
+            ;(r.year = 0),
                 (r.month = 1),
                 (r.day = 1),
                 (r.hour = 0),
                 (r.minute = 0),
                 (r.second = 0),
                 (r.isDate = !1),
-                this.fromData(t, n);
+                this.fromData(t, n)
         }
         return o(
             e,
@@ -696,20 +695,20 @@
                 {
                     key: "icaltype",
                     get: function () {
-                        return this.isDate ? "date" : "date-time";
-                    }
+                        return this.isDate ? "date" : "date-time"
+                    },
                 },
                 {
                     key: "clone",
                     value: function () {
-                        return new e(this._time, this.zone);
-                    }
+                        return new e(this._time, this.zone)
+                    },
                 },
                 {
                     key: "reset",
                     value: function () {
-                        this.fromData(e.epochTime), (this.zone = N.utcTimezone);
-                    }
+                        this.fromData(e.epochTime), (this.zone = N.utcTimezone)
+                    },
                 },
                 {
                     key: "resetTo",
@@ -721,9 +720,9 @@
                             hour: r,
                             minute: i,
                             second: a,
-                            zone: s
-                        });
-                    }
+                            zone: s,
+                        })
+                    },
                 },
                 {
                     key: "fromJSDate",
@@ -748,8 +747,8 @@
                                 : this.reset(),
                             (this._cachedUnixTime = null),
                             this
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "fromData",
@@ -762,8 +761,8 @@
                             ) {
                                 var i = d(r[n], 2),
                                     a = i[0],
-                                    s = i[1];
-                                "icaltype" !== a && (this[a] = s);
+                                    s = i[1]
+                                "icaltype" !== a && (this[a] = s)
                             }
                         if (
                             (e && (this.zone = e),
@@ -774,16 +773,16 @@
                                   (this.isDate = t.isDate),
                             t && "timezone" in t)
                         ) {
-                            var o = z.get(t.timezone);
-                            this.zone = o || N.localTimezone;
+                            var o = z.get(t.timezone)
+                            this.zone = o || N.localTimezone
                         }
                         return (
                             t && "zone" in t && (this.zone = t.zone),
                             this.zone || (this.zone = N.localTimezone),
                             (this._cachedUnixTime = null),
                             this
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "dayOfWeek",
@@ -793,12 +792,12 @@
                                 (this.year << 12) +
                                 (this.month << 8) +
                                 (this.day << 3) +
-                                n;
-                        if (r in e._dowCache) return e._dowCache[r];
+                                n
+                        if (r in e._dowCache) return e._dowCache[r]
                         var i = this.day,
                             a = this.month + (this.month < 3 ? 12 : 0),
                             s = this.year - (this.month < 3 ? 1 : 0),
-                            o = i + s + F((26 * (a + 1)) / 10) + F(s / 4);
+                            o = i + s + F((26 * (a + 1)) / 10) + F(s / 4)
                         return (
                             (o =
                                 (((o += 6 * F(s / 100) + F(s / 400)) + 7 - n) %
@@ -806,24 +805,24 @@
                                 1),
                             (e._dowCache[r] = o),
                             o
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "dayOfYear",
                     value: function () {
-                        var t = e.isLeapYear(this.year) ? 1 : 0;
+                        var t = e.isLeapYear(this.year) ? 1 : 0
                         return (
                             e.daysInYearPassedMonth[t][this.month - 1] +
                             this.day
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "startOfWeek",
                     value: function (t) {
                         var n = t || e.SUNDAY,
-                            r = this.clone();
+                            r = this.clone()
                         return (
                             (r.day -= (this.dayOfWeek() + 7 - n) % 7),
                             (r.isDate = !0),
@@ -831,14 +830,14 @@
                             (r.minute = 0),
                             (r.second = 0),
                             r
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "endOfWeek",
                     value: function (t) {
                         var n = t || e.SUNDAY,
-                            r = this.clone();
+                            r = this.clone()
                         return (
                             (r.day +=
                                 (7 - this.dayOfWeek() + n - e.SUNDAY) % 7),
@@ -847,13 +846,13 @@
                             (r.minute = 0),
                             (r.second = 0),
                             r
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "startOfMonth",
                     value: function () {
-                        var t = this.clone();
+                        var t = this.clone()
                         return (
                             (t.day = 1),
                             (t.isDate = !0),
@@ -861,13 +860,13 @@
                             (t.minute = 0),
                             (t.second = 0),
                             t
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "endOfMonth",
                     value: function () {
-                        var t = this.clone();
+                        var t = this.clone()
                         return (
                             (t.day = e.daysInMonth(t.month, t.year)),
                             (t.isDate = !0),
@@ -875,13 +874,13 @@
                             (t.minute = 0),
                             (t.second = 0),
                             t
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "startOfYear",
                     value: function () {
-                        var t = this.clone();
+                        var t = this.clone()
                         return (
                             (t.day = 1),
                             (t.month = 1),
@@ -890,13 +889,13 @@
                             (t.minute = 0),
                             (t.second = 0),
                             t
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "endOfYear",
                     value: function () {
-                        var t = this.clone();
+                        var t = this.clone()
                         return (
                             (t.day = 31),
                             (t.month = 12),
@@ -905,22 +904,22 @@
                             (t.minute = 0),
                             (t.second = 0),
                             t
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "startDoyWeek",
                     value: function (t) {
                         var n = t || e.SUNDAY,
-                            r = this.dayOfWeek() - n;
-                        return r < 0 && (r += 7), this.dayOfYear() - r;
-                    }
+                            r = this.dayOfWeek() - n
+                        return r < 0 && (r += 7), this.dayOfYear() - r
+                    },
                 },
                 {
                     key: "getDominicalLetter",
                     value: function () {
-                        return e.getDominicalLetter(this.year);
-                    }
+                        return e.getDominicalLetter(this.year)
+                    },
                 },
                 {
                     key: "nthWeekDay",
@@ -929,29 +928,29 @@
                             i = e.daysInMonth(this.month, this.year),
                             a = n,
                             s = 0,
-                            o = this.clone();
+                            o = this.clone()
                         if (a >= 0) {
-                            (o.day = 1), 0 != a && a--, (s = o.day);
-                            var u = t - o.dayOfWeek();
-                            u < 0 && (u += 7), (s += u), (s -= t), (r = t);
+                            ;(o.day = 1), 0 != a && a--, (s = o.day)
+                            var u = t - o.dayOfWeek()
+                            u < 0 && (u += 7), (s += u), (s -= t), (r = t)
                         } else {
-                            (o.day = i),
+                            ;(o.day = i),
                                 a++,
                                 (r = o.dayOfWeek() - t) < 0 && (r += 7),
-                                (r = i - r);
+                                (r = i - r)
                         }
-                        return s + (r += 7 * a);
-                    }
+                        return s + (r += 7 * a)
+                    },
                 },
                 {
                     key: "isNthWeekDay",
                     value: function (t, e) {
-                        var n = this.dayOfWeek();
+                        var n = this.dayOfWeek()
                         return (
                             (0 === e && n === t) ||
                             this.nthWeekDay(t, e) === this.day
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "weekNumber",
@@ -961,23 +960,21 @@
                                 (this.year << 12) +
                                 (this.month << 8) +
                                 (this.day << 3) +
-                                t;
-                        if (r in e._wnCache) return e._wnCache[r];
-                        var i = this.clone();
-                        i.isDate = !0;
-                        var a = this.year;
+                                t
+                        if (r in e._wnCache) return e._wnCache[r]
+                        var i = this.clone()
+                        i.isDate = !0
+                        var a = this.year
                         12 == i.month && i.day > 25
                             ? ((n = e.weekOneStarts(a + 1, t)),
                               i.compare(n) < 0
                                   ? (n = e.weekOneStarts(a, t))
                                   : a++)
                             : ((n = e.weekOneStarts(a, t)),
-                              i.compare(n) < 0 &&
-                                  (n = e.weekOneStarts(--a, t)));
-                        var s =
-                            F(i.subtractDate(n).toSeconds() / 86400 / 7) + 1;
-                        return (e._wnCache[r] = s), s;
-                    }
+                              i.compare(n) < 0 && (n = e.weekOneStarts(--a, t)))
+                        var s = F(i.subtractDate(n).toSeconds() / 86400 / 7) + 1
+                        return (e._wnCache[r] = s), s
+                    },
                 },
                 {
                     key: "addDuration",
@@ -986,8 +983,8 @@
                             n = this.second,
                             r = this.minute,
                             i = this.hour,
-                            a = this.day;
-                        (n += e * t.seconds),
+                            a = this.day
+                        ;(n += e * t.seconds),
                             (r += e * t.minutes),
                             (i += e * t.hours),
                             (a += e * t.days),
@@ -996,58 +993,58 @@
                             (this.minute = r),
                             (this.hour = i),
                             (this.day = a),
-                            (this._cachedUnixTime = null);
-                    }
+                            (this._cachedUnixTime = null)
+                    },
                 },
                 {
                     key: "subtractDate",
                     value: function (t) {
                         var e = this.toUnixTime() + this.utcOffset(),
-                            n = t.toUnixTime() + t.utcOffset();
-                        return Y.fromSeconds(e - n);
-                    }
+                            n = t.toUnixTime() + t.utcOffset()
+                        return Y.fromSeconds(e - n)
+                    },
                 },
                 {
                     key: "subtractDateTz",
                     value: function (t) {
                         var e = this.toUnixTime(),
-                            n = t.toUnixTime();
-                        return Y.fromSeconds(e - n);
-                    }
+                            n = t.toUnixTime()
+                        return Y.fromSeconds(e - n)
+                    },
                 },
                 {
                     key: "compare",
                     value: function (t) {
                         var e = this.toUnixTime(),
-                            n = t.toUnixTime();
-                        return e > n ? 1 : n > e ? -1 : 0;
-                    }
+                            n = t.toUnixTime()
+                        return e > n ? 1 : n > e ? -1 : 0
+                    },
                 },
                 {
                     key: "compareDateOnlyTz",
                     value: function (t, n) {
                         var r = this.convertToZone(n),
                             i = t.convertToZone(n),
-                            a = 0;
+                            a = 0
                         return (
                             0 != (a = e._cmp_attr(r, i, "year")) ||
                                 0 != (a = e._cmp_attr(r, i, "month")) ||
                                 (a = e._cmp_attr(r, i, "day")),
                             a
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "convertToZone",
                     value: function (t) {
                         var e = this.clone(),
-                            n = this.zone.tzid == t.tzid;
+                            n = this.zone.tzid == t.tzid
                         return (
                             this.isDate || n || N.convert_time(e, this.zone, t),
                             (e.zone = t),
                             e
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "utcOffset",
@@ -1055,23 +1052,23 @@
                         return this.zone == N.localTimezone ||
                             this.zone == N.utcTimezone
                             ? 0
-                            : this.zone.utcOffset(this);
-                    }
+                            : this.zone.utcOffset(this)
+                    },
                 },
                 {
                     key: "toICALString",
                     value: function () {
-                        var t = this.toString();
+                        var t = this.toString()
                         return t.length > 10
                             ? It.icalendar.value["date-time"].toICAL(t)
-                            : It.icalendar.value.date.toICAL(t);
-                    }
+                            : It.icalendar.value.date.toICAL(t)
+                    },
                 },
                 {
                     key: "toString",
                     value: function () {
                         var t =
-                            this.year + "-" + W(this.month) + "-" + W(this.day);
+                            this.year + "-" + W(this.month) + "-" + W(this.day)
                         return (
                             this.isDate ||
                                 ((t +=
@@ -1083,8 +1080,8 @@
                                     W(this.second)),
                                 this.zone === N.utcTimezone && (t += "Z")),
                             t
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "toJSDate",
@@ -1099,10 +1096,10 @@
                                       this.hour,
                                       this.minute,
                                       this.second,
-                                      0
+                                      0,
                                   )
-                            : new Date(1e3 * this.toUnixTime());
-                    }
+                            : new Date(1e3 * this.toUnixTime())
+                    },
                 },
                 {
                     key: "_normalize",
@@ -1114,8 +1111,8 @@
                                 (this._time.second = 0)),
                             this.adjust(0, 0, 0, 0),
                             this
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "adjust",
@@ -1129,7 +1126,7 @@
                             f,
                             d = 0,
                             y = 0,
-                            m = a || this._time;
+                            m = a || this._time
                         if (
                             (m.isDate ||
                                 ((u = m.second + i),
@@ -1158,22 +1155,22 @@
                             )
                                 m.month++,
                                     m.month > 12 && (m.year++, (m.month = 1)),
-                                    (c -= f);
+                                    (c -= f)
                         else
                             for (; c <= 0; )
                                 1 == m.month
                                     ? (m.year--, (m.month = 12))
                                     : m.month--,
-                                    (c += e.daysInMonth(m.month, m.year));
-                        return (m.day = c), (this._cachedUnixTime = null), this;
-                    }
+                                    (c += e.daysInMonth(m.month, m.year))
+                        return (m.day = c), (this._cachedUnixTime = null), this
+                    },
                 },
                 {
                     key: "fromUnixTime",
                     value: function (t) {
-                        this.zone = N.utcTimezone;
-                        var e = new Date(1e3 * t);
-                        (this.year = e.getUTCFullYear()),
+                        this.zone = N.utcTimezone
+                        var e = new Date(1e3 * t)
+                        ;(this.year = e.getUTCFullYear()),
                             (this.month = e.getUTCMonth() + 1),
                             (this.day = e.getUTCDate()),
                             this._time.isDate
@@ -1183,14 +1180,14 @@
                                 : ((this.hour = e.getUTCHours()),
                                   (this.minute = e.getUTCMinutes()),
                                   (this.second = e.getUTCSeconds())),
-                            (this._cachedUnixTime = null);
-                    }
+                            (this._cachedUnixTime = null)
+                    },
                 },
                 {
                     key: "toUnixTime",
                     value: function () {
                         if (null !== this._cachedUnixTime)
-                            return this._cachedUnixTime;
+                            return this._cachedUnixTime
                         var t = this.utcOffset(),
                             e = Date.UTC(
                                 this.year,
@@ -1198,13 +1195,13 @@
                                 this.day,
                                 this.hour,
                                 this.minute,
-                                this.second - t
-                            );
+                                this.second - t,
+                            )
                         return (
                             (this._cachedUnixTime = e / 1e3),
                             this._cachedUnixTime
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "toJSON",
@@ -1218,7 +1215,7 @@
                                     "hour",
                                     "minute",
                                     "second",
-                                    "isDate"
+                                    "isDate",
                                 ],
                                 n = Object.create(null),
                                 r = 0,
@@ -1226,67 +1223,67 @@
                             r < i;
                             r++
                         )
-                            n[(t = e[r])] = this[t];
-                        return this.zone && (n.timezone = this.zone.tzid), n;
-                    }
-                }
+                            n[(t = e[r])] = this[t]
+                        return this.zone && (n.timezone = this.zone.tzid), n
+                    },
+                },
             ],
             [
                 {
                     key: "daysInMonth",
                     value: function (t, n) {
-                        var r = 30;
+                        var r = 30
                         return (
                             t < 1 ||
                                 t > 12 ||
                                 ((r = [
                                     0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                    30, 31
+                                    30, 31,
                                 ][t]),
                                 2 == t && (r += e.isLeapYear(n))),
                             r
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "isLeapYear",
                     value: function (t) {
                         return t <= 1752
                             ? t % 4 == 0
-                            : (t % 4 == 0 && t % 100 != 0) || t % 400 == 0;
-                    }
+                            : (t % 4 == 0 && t % 100 != 0) || t % 400 == 0
+                    },
                 },
                 {
                     key: "fromDayOfYear",
                     value: function (t, n) {
                         var r = n,
                             i = t,
-                            a = new e();
-                        a.auto_normalize = !1;
-                        var s = e.isLeapYear(r) ? 1 : 0;
+                            a = new e()
+                        a.auto_normalize = !1
+                        var s = e.isLeapYear(r) ? 1 : 0
                         if (i < 1)
                             return (
                                 r--,
                                 (s = e.isLeapYear(r) ? 1 : 0),
                                 (i += e.daysInYearPassedMonth[s][12]),
                                 e.fromDayOfYear(i, r)
-                            );
+                            )
                         if (i > e.daysInYearPassedMonth[s][12])
                             return (
                                 (s = e.isLeapYear(r) ? 1 : 0),
                                 (i -= e.daysInYearPassedMonth[s][12]),
                                 r++,
                                 e.fromDayOfYear(i, r)
-                            );
-                        (a.year = r), (a.isDate = !0);
+                            )
+                        ;(a.year = r), (a.isDate = !0)
                         for (var o = 11; o >= 0; o--)
                             if (i > e.daysInYearPassedMonth[s][o]) {
-                                (a.month = o + 1),
-                                    (a.day = i - e.daysInYearPassedMonth[s][o]);
-                                break;
+                                ;(a.month = o + 1),
+                                    (a.day = i - e.daysInYearPassedMonth[s][o])
+                                break
                             }
-                        return (a.auto_normalize = !0), a;
-                    }
+                        return (a.auto_normalize = !0), a
+                    },
                 },
                 {
                     key: "fromStringv2",
@@ -1295,9 +1292,9 @@
                             year: parseInt(t.slice(0, 4), 10),
                             month: parseInt(t.slice(5, 7), 10),
                             day: parseInt(t.slice(8, 10), 10),
-                            isDate: !0
-                        });
-                    }
+                            isDate: !0,
+                        })
+                    },
                 },
                 {
                     key: "fromDateString",
@@ -1306,18 +1303,18 @@
                             year: P(t.slice(0, 4)),
                             month: P(t.slice(5, 7)),
                             day: P(t.slice(8, 10)),
-                            isDate: !0
-                        });
-                    }
+                            isDate: !0,
+                        })
+                    },
                 },
                 {
                     key: "fromDateTimeString",
                     value: function (t, n) {
                         if (t.length < 19)
                             throw new Error(
-                                'invalid date-time value: "' + t + '"'
-                            );
-                        var r, i;
+                                'invalid date-time value: "' + t + '"',
+                            )
+                        var r, i
                         t[19] && "Z" === t[19]
                             ? (r = N.utcTimezone)
                             : n &&
@@ -1326,38 +1323,37 @@
                                   ("standard" === n.parent.name ||
                                   "daylight" === n.parent.name
                                       ? (r = N.localTimezone)
-                                      : i &&
-                                        (r = n.parent.getTimeZoneByID(i))));
+                                      : i && (r = n.parent.getTimeZoneByID(i))))
                         var a = {
                             year: P(t.slice(0, 4)),
                             month: P(t.slice(5, 7)),
                             day: P(t.slice(8, 10)),
                             hour: P(t.slice(11, 13)),
                             minute: P(t.slice(14, 16)),
-                            second: P(t.slice(17, 19))
-                        };
-                        return i && !r && (a.timezone = i), new e(a, r);
-                    }
+                            second: P(t.slice(17, 19)),
+                        }
+                        return i && !r && (a.timezone = i), new e(a, r)
+                    },
                 },
                 {
                     key: "fromString",
                     value: function (t, n) {
                         return t.length > 10
                             ? e.fromDateTimeString(t, n)
-                            : e.fromDateString(t);
-                    }
+                            : e.fromDateString(t)
+                    },
                 },
                 {
                     key: "fromJSDate",
                     value: function (t, n) {
-                        return new e().fromJSDate(t, n);
-                    }
+                        return new e().fromJSDate(t, n)
+                    },
                 },
                 {
                     key: "now",
                     value: function () {
-                        return e.fromJSDate(new Date(), !1);
-                    }
+                        return e.fromJSDate(new Date(), !1)
+                    },
                 },
                 {
                     key: "weekOneStarts",
@@ -1366,17 +1362,17 @@
                                 year: t,
                                 month: 1,
                                 day: 1,
-                                isDate: !0
+                                isDate: !0,
                             }),
                             i = r.dayOfWeek(),
-                            a = n || e.DEFAULT_WEEK_START;
+                            a = n || e.DEFAULT_WEEK_START
                         return (
                             i > e.THURSDAY && (r.day += 7),
                             a > e.THURSDAY && (r.day -= 7),
                             (r.day -= i - a),
                             r
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "getDominicalLetter",
@@ -1388,9 +1384,9 @@
                                     ((t / 400) | 0) -
                                     ((t / 100) | 0) -
                                     1) %
-                                7;
-                        return e.isLeapYear(t) ? n[(r + 6) % 7] + n[r] : n[r];
-                    }
+                                7
+                        return e.isLeapYear(t) ? n[(r + 6) % 7] + n[r] : n[r]
+                    },
                 },
                 {
                     key: "epochTime",
@@ -1408,32 +1404,32 @@
                                         minute: 0,
                                         second: 0,
                                         isDate: !1,
-                                        timezone: "Z"
-                                    })
+                                        timezone: "Z",
+                                    }),
                                 )),
                             t(e, this, O)._
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "_cmp_attr",
                     value: function (t, e, n) {
-                        return t[n] > e[n] ? 1 : t[n] < e[n] ? -1 : 0;
-                    }
-                }
-            ]
-        );
-    })();
-    (_ = b),
+                        return t[n] > e[n] ? 1 : t[n] < e[n] ? -1 : 0
+                    },
+                },
+            ],
+        )
+    })()
+    ;(_ = b),
         u(b, "_dowCache", {}),
         u(b, "_wnCache", {}),
         u(b, "fromData", function (t, e) {
-            return new _().fromData(t, e);
-        });
-    var O = { _: null };
+            return new _().fromData(t, e)
+        })
+    var O = { _: null }
     u(b, "daysInYearPassedMonth", [
         [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
-        [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]
+        [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366],
     ]),
         u(b, "SUNDAY", 1),
         u(b, "MONDAY", 2),
@@ -1452,7 +1448,7 @@
                                 (this._normalize(),
                                 (this._pendingNormalization = !1)),
                             this._time[t]
-                        );
+                        )
                     },
                     set: function (e) {
                         "isDate" === t &&
@@ -1461,9 +1457,9 @@
                             this.adjust(0, 0, 0, 0),
                             (this._cachedUnixTime = null),
                             (this._pendingNormalization = !0),
-                            (this._time[t] = e);
-                    }
-                });
+                            (this._time[t] = e)
+                    },
+                })
             }
             t("year"),
                 t("month"),
@@ -1471,44 +1467,44 @@
                 t("hour"),
                 t("minute"),
                 t("second"),
-                t("isDate");
-        })();
+                t("isDate")
+        })()
     var A = /[^ \t]/,
         S = ":",
-        w = { "^'": '"', "^n": "\n", "^^": "^" };
+        w = { "^'": '"', "^n": "\n", "^^": "^" }
     function E(t) {
         var e = {},
-            n = (e.component = []);
+            n = (e.component = [])
         if (
             ((e.stack = [n]),
             E._eachLine(t, function (t, n) {
-                E._handleContentLine(n, e);
+                E._handleContentLine(n, e)
             }),
             e.stack.length > 1)
         )
-            throw new C("invalid ical body. component began but did not end");
-        return (e = null), 1 == n.length ? n[0] : n;
+            throw new C("invalid ical body. component began but did not end")
+        return (e = null), 1 == n.length ? n[0] : n
     }
-    (E.property = function (t, e) {
-        var n = { component: [[], []], designSet: e || It.defaultSet };
-        return E._handleContentLine(t, n), n.component[1][0];
+    ;(E.property = function (t, e) {
+        var n = { component: [[], []], designSet: e || It.defaultSet }
+        return E._handleContentLine(t, n), n.component[1][0]
     }),
         (E.component = function (t) {
-            return E(t);
-        });
+            return E(t)
+        })
     var C = (function (t) {
         function n() {
-            var t;
-            a(this, n);
+            var t
+            a(this, n)
             for (var r = arguments.length, i = new Array(r), s = 0; s < r; s++)
-                i[s] = arguments[s];
+                i[s] = arguments[s]
             return (
                 u((t = e(this, n, [].concat(i))), "name", t.constructor.name), t
-            );
+            )
         }
-        return l(n, t), o(n);
-    })(f(Error));
-    (E.ParserError = C),
+        return l(n, t), o(n)
+    })(f(Error))
+    ;(E.ParserError = C),
         (E._handleContentLine = function (t, e) {
             var n,
                 r,
@@ -1518,7 +1514,7 @@
                 o,
                 u = t.indexOf(S),
                 l = t.indexOf(";"),
-                h = {};
+                h = {}
             if ((-1 !== l && -1 !== u && l > u && (l = -1), -1 !== l)) {
                 if (
                     ((i = t.slice(0, Math.max(0, l)).toLowerCase()),
@@ -1526,28 +1522,28 @@
                         (s = E._parseParameters(
                             t.slice(Math.max(0, l)),
                             0,
-                            e.designSet
+                            e.designSet,
                         ))[2])
                 )
-                    throw new C("Invalid parameters in '" + t + "'");
+                    throw new C("Invalid parameters in '" + t + "'")
                 if (
                     ((h = s[0]),
                     (n = s[1].length + s[2] + l),
                     -1 === (r = t.slice(Math.max(0, n)).indexOf(S)))
                 )
-                    throw new C("Missing parameter value in '" + t + "'");
-                a = t.slice(Math.max(0, n + r + 1));
+                    throw new C("Missing parameter value in '" + t + "'")
+                a = t.slice(Math.max(0, n + r + 1))
             } else {
                 if (-1 === u)
                     throw new C(
-                        'invalid line (no token ";" or ":") "' + t + '"'
-                    );
+                        'invalid line (no token ";" or ":") "' + t + '"',
+                    )
                 if (
                     ((i = t.slice(0, Math.max(0, u)).toLowerCase()),
                     (a = t.slice(Math.max(0, u + 1))),
                     "begin" === i)
                 ) {
-                    var c = [a.toLowerCase(), [], []];
+                    var c = [a.toLowerCase(), [], []]
                     return (
                         1 === e.stack.length
                             ? e.component.push(c)
@@ -1558,16 +1554,16 @@
                             e.designSet ||
                             (e.designSet = It.getDesignSet(e.component[0]))
                         )
-                    );
+                    )
                 }
-                if ("end" === i) return void (e.component = e.stack.pop());
+                if ("end" === i) return void (e.component = e.stack.pop())
             }
             var f,
                 d,
                 y,
                 m,
                 p = !1,
-                v = !1;
+                v = !1
             e.designSet.propertyGroups && -1 !== i.indexOf(".")
                 ? ((d = i.split(".")), (h.group = d[0]), (y = d[1]))
                 : (y = i),
@@ -1596,8 +1592,8 @@
                               [],
                               p,
                               e.designSet,
-                              v
-                          ))
+                              v,
+                          )),
                       ])
                     : p
                       ? ((m = [y, h, o]),
@@ -1614,25 +1610,25 @@
                                       [],
                                       null,
                                       e.designSet,
-                                      v
-                                  ))
+                                      v,
+                                  )),
                               ]
                             : [
                                   y,
                                   h,
                                   o,
-                                  (a = E._parseValue(a, o, e.designSet, !1))
+                                  (a = E._parseValue(a, o, e.designSet, !1)),
                               ]),
                 "vcard" !== e.component[0] ||
                     0 !== e.component[1].length ||
                     ("version" === i && "4.0" === a) ||
                     (e.designSet = It.getDesignSet("vcard3")),
-                e.component[1].push(m);
+                e.component[1].push(m)
         }),
         (E._parseValue = function (t, e, n, r) {
             return e in n.value && "fromICAL" in n.value[e]
                 ? n.value[e].fromICAL(t, r)
-                : t;
+                : t
         }),
         (E._parseParameters = function (t, e, n) {
             for (
@@ -1641,7 +1637,7 @@
 
             ) {
                 if (0 == (r = t.slice(l + 1, h)).length)
-                    throw new C("Empty parameter name in '" + t + "'");
+                    throw new C("Empty parameter name in '" + t + "'")
                 if (
                     ((u = !1),
                     (o = !1),
@@ -1659,56 +1655,56 @@
                         for (var d = !0; d; )
                             t[h + 1] == o && '"' == t[h + 2]
                                 ? (h = t.indexOf('"', h + 3))
-                                : (d = !1);
+                                : (d = !1)
                     if (-1 === h)
                         throw new C(
                             'invalid line (no matching double quote) "' +
                                 t +
-                                '"'
-                        );
-                    (a = t.slice(f, h)), (l = t.indexOf(";", h));
-                    var y = t.indexOf(S, h);
-                    (-1 === l || (-1 !== y && l > y)) && (h = !1);
+                                '"',
+                        )
+                    ;(a = t.slice(f, h)), (l = t.indexOf(";", h))
+                    var y = t.indexOf(S, h)
+                    ;(-1 === l || (-1 !== y && l > y)) && (h = !1)
                 } else {
-                    f = h + 1;
+                    f = h + 1
                     var m = t.indexOf(";", f),
-                        p = t.indexOf(S, f);
-                    -1 !== p && m > p
+                        p = t.indexOf(S, f)
+                    ;-1 !== p && m > p
                         ? ((m = p), (h = !1))
                         : -1 === m
                           ? ((m = -1 === p ? t.length : p), (h = !1))
                           : ((l = m), (h = m)),
-                        (a = t.slice(f, m));
+                        (a = t.slice(f, m))
                 }
                 if (((f += a.length - (a = E._rfc6868Escape(a)).length), o)) {
-                    var v = u || o;
-                    a = E._parseMultiValue(a, v, s, [], null, n);
-                } else a = E._parseValue(a, s, n);
+                    var v = u || o
+                    a = E._parseMultiValue(a, v, s, [], null, n)
+                } else a = E._parseValue(a, s, n)
                 o && i in c
                     ? Array.isArray(c[i])
                         ? c[i].push(a)
                         : (c[i] = [c[i], a])
-                    : (c[i] = a);
+                    : (c[i] = a)
             }
-            return [c, a, f];
+            return [c, a, f]
         }),
         (E._rfc6868Escape = function (t) {
             return t.replace(/\^['n^]/g, function (t) {
-                return w[t];
-            });
+                return w[t]
+            })
         }),
         (E._parseMultiValue = function (t, e, n, r, i, a, s) {
             var o,
                 u = 0,
-                l = 0;
-            if (0 === e.length) return t;
+                l = 0
+            if (0 === e.length) return t
             for (; -1 !== (u = j(t, e, l)); )
                 (o = t.slice(l, u)),
                     (o = i
                         ? E._parseMultiValue(o, i, n, [], null, a, s)
                         : E._parseValue(o, n, a, s)),
                     r.push(o),
-                    (l = u + e.length);
+                    (l = u + e.length)
             return (
                 (o = t.slice(l)),
                 (o = i
@@ -1716,7 +1712,7 @@
                     : E._parseValue(o, n, a, s)),
                 r.push(o),
                 1 == r.length ? r[0] : r
-            );
+            )
         }),
         (E._eachLine = function (t, e) {
             var n,
@@ -1724,9 +1720,9 @@
                 i,
                 a = t.length,
                 s = t.search(A),
-                o = s;
+                o = s
             do {
-                (i =
+                ;(i =
                     (o = t.indexOf("\n", s) + 1) > 1 && "\r" === t[o - 2]
                         ? 2
                         : 1),
@@ -1734,10 +1730,10 @@
                     " " === (r = t[s]) || "\t" === r
                         ? (n += t.slice(s + 1, o - i))
                         : (n && e(null, n), (n = t.slice(s, o - i))),
-                    (s = o);
-            } while (o !== a);
-            (n = n.trim()).length && e(null, n);
-        });
+                    (s = o)
+            } while (o !== a)
+            ;(n = n.trim()).length && e(null, n)
+        })
     var x = ["tzid", "location", "tznames", "latitude", "longitude"],
         N = (function () {
             function e(t) {
@@ -1751,7 +1747,7 @@
                     u(this, "expandedUntilYear", 0),
                     u(this, "icalclass", "icaltimezone"),
                     (this.wrappedJSObject = this),
-                    this.fromData(t);
+                    this.fromData(t)
             }
             return o(
                 e,
@@ -1764,19 +1760,19 @@
                                 (this.changes = []),
                                 t instanceof Ut)
                             )
-                                this.component = t;
+                                this.component = t
                             else {
                                 if (t && "component" in t)
                                     if ("string" == typeof t.component) {
-                                        var e = E(t.component);
-                                        this.component = new Ut(e);
+                                        var e = E(t.component)
+                                        this.component = new Ut(e)
                                     } else
                                         t.component instanceof Ut
                                             ? (this.component = t.component)
-                                            : (this.component = null);
+                                            : (this.component = null)
                                 for (var n = 0, r = x; n < r.length; n++) {
-                                    var i = r[n];
-                                    t && i in t && (this[i] = t[i]);
+                                    var i = r[n]
+                                    t && i in t && (this[i] = t[i])
                                 }
                             }
                             return (
@@ -1784,11 +1780,11 @@
                                     !this.tzid &&
                                     (this.tzid =
                                         this.component.getFirstPropertyValue(
-                                            "tzid"
+                                            "tzid",
                                         )),
                                 this
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "utcOffset",
@@ -1797,12 +1793,12 @@
                                 this == e.utcTimezone ||
                                 this == e.localTimezone
                             )
-                                return 0;
+                                return 0
                             if (
                                 (this._ensureCoverage(t.year),
                                 !this.changes.length)
                             )
-                                return 0;
+                                return 0
                             for (
                                 var n = {
                                         year: t.year,
@@ -1810,7 +1806,7 @@
                                         day: t.day,
                                         hour: t.hour,
                                         minute: t.minute,
-                                        second: t.second
+                                        second: t.second,
                                     },
                                     r = this._findNearbyChange(n),
                                     i = -1,
@@ -1818,7 +1814,7 @@
                                 ;
 
                             ) {
-                                var s = H(this.changes[r], !0);
+                                var s = H(this.changes[r], !0)
                                 if (
                                     (s.utcOffset < s.prevUtcOffset
                                         ? e.adjust_change(
@@ -1826,64 +1822,64 @@
                                               0,
                                               0,
                                               0,
-                                              s.utcOffset
+                                              s.utcOffset,
                                           )
                                         : e.adjust_change(
                                               s,
                                               0,
                                               0,
                                               0,
-                                              s.prevUtcOffset
+                                              s.prevUtcOffset,
                                           ),
                                     e._compare_change_fn(n, s) >= 0
                                         ? (i = r)
                                         : (a = -1),
                                     -1 == a && -1 != i)
                                 )
-                                    break;
-                                if ((r += a) < 0) return 0;
-                                if (r >= this.changes.length) break;
+                                    break
+                                if ((r += a) < 0) return 0
+                                if (r >= this.changes.length) break
                             }
-                            var o = this.changes[i];
+                            var o = this.changes[i]
                             if (o.utcOffset - o.prevUtcOffset < 0 && i > 0) {
-                                var u = H(o, !0);
+                                var u = H(o, !0)
                                 if (
                                     (e.adjust_change(
                                         u,
                                         0,
                                         0,
                                         0,
-                                        u.prevUtcOffset
+                                        u.prevUtcOffset,
                                     ),
                                     e._compare_change_fn(n, u) < 0)
                                 ) {
                                     var l = this.changes[i - 1],
-                                        h = !1;
+                                        h = !1
                                     o.is_daylight != h &&
                                         l.is_daylight == h &&
-                                        (o = l);
+                                        (o = l)
                                 }
                             }
-                            return o.utcOffset;
-                        }
+                            return o.utcOffset
+                        },
                     },
                     {
                         key: "_findNearbyChange",
                         value: function (t) {
-                            var n = V(this.changes, t, e._compare_change_fn);
+                            var n = V(this.changes, t, e._compare_change_fn)
                             return n >= this.changes.length
                                 ? this.changes.length - 1
-                                : n;
-                        }
+                                : n
+                        },
                     },
                     {
                         key: "_ensureCoverage",
                         value: function (t) {
                             if (-1 == e._minimumExpansionYear) {
-                                var n = b.now();
-                                e._minimumExpansionYear = n.year;
+                                var n = b.now()
+                                e._minimumExpansionYear = n.year
                             }
-                            var r = t;
+                            var r = t
                             if (
                                 (r < e._minimumExpansionYear &&
                                     (r = e._minimumExpansionYear),
@@ -1899,15 +1895,11 @@
                                     s < a;
                                     s++
                                 )
-                                    this._expandComponent(
-                                        i[s],
-                                        r,
-                                        this.changes
-                                    );
+                                    this._expandComponent(i[s], r, this.changes)
                                 this.changes.sort(e._compare_change_fn),
-                                    (this.expandedUntilYear = r);
+                                    (this.expandedUntilYear = r)
                             }
-                        }
+                        },
                     },
                     {
                         key: "_expandComponent",
@@ -1917,43 +1909,43 @@
                                 !t.hasProperty("tzoffsetto") ||
                                 !t.hasProperty("tzoffsetfrom")
                             )
-                                return null;
+                                return null
                             var i,
                                 a = t
                                     .getFirstProperty("dtstart")
-                                    .getFirstValue();
+                                    .getFirstValue()
                             function s(t) {
                                 return (
                                     t.factor * (3600 * t.hours + 60 * t.minutes)
-                                );
+                                )
                             }
                             function o() {
-                                var e = {};
+                                var e = {}
                                 return (
                                     (e.is_daylight = "daylight" == t.name),
                                     (e.utcOffset = s(
                                         t
                                             .getFirstProperty("tzoffsetto")
-                                            .getFirstValue()
+                                            .getFirstValue(),
                                     )),
                                     (e.prevUtcOffset = s(
                                         t
                                             .getFirstProperty("tzoffsetfrom")
-                                            .getFirstValue()
+                                            .getFirstValue(),
                                     )),
                                     e
-                                );
+                                )
                             }
                             if (
                                 t.hasProperty("rrule") ||
                                 t.hasProperty("rdate")
                             ) {
                                 var u,
-                                    l = v(t.getAllProperties("rdate"));
+                                    l = v(t.getAllProperties("rdate"))
                                 try {
                                     for (l.s(); !(u = l.n()).done; ) {
-                                        var h = u.value.getFirstValue();
-                                        ((i = o()).year = h.year),
+                                        var h = u.value.getFirstValue()
+                                        ;((i = o()).year = h.year),
                                             (i.month = h.month),
                                             (i.day = h.day),
                                             h.isDate
@@ -1966,7 +1958,7 @@
                                                           0,
                                                           0,
                                                           0,
-                                                          -i.prevUtcOffset
+                                                          -i.prevUtcOffset,
                                                       ))
                                                 : ((i.hour = h.hour),
                                                   (i.minute = h.minute),
@@ -1977,18 +1969,18 @@
                                                           0,
                                                           0,
                                                           0,
-                                                          -i.prevUtcOffset
+                                                          -i.prevUtcOffset,
                                                       )),
-                                            r.push(i);
+                                            r.push(i)
                                     }
                                 } catch (t) {
-                                    l.e(t);
+                                    l.e(t)
                                 } finally {
-                                    l.f();
+                                    l.f()
                                 }
-                                var c = t.getFirstProperty("rrule");
+                                var c = t.getFirstProperty("rrule")
                                 if (c) {
-                                    (c = c.getFirstValue()),
+                                    ;(c = c.getFirstValue()),
                                         (i = o()),
                                         c.until &&
                                             c.until.zone == e.utcTimezone &&
@@ -1996,9 +1988,9 @@
                                                 0,
                                                 0,
                                                 0,
-                                                i.prevUtcOffset
+                                                i.prevUtcOffset,
                                             ),
-                                            (c.until.zone = e.localTimezone));
+                                            (c.until.zone = e.localTimezone))
                                     for (
                                         var f, d = c.iterator(a);
                                         (f = d.next()) &&
@@ -2017,9 +2009,9 @@
                                                 0,
                                                 0,
                                                 0,
-                                                -i.prevUtcOffset
+                                                -i.prevUtcOffset,
                                             ),
-                                            r.push(i);
+                                            r.push(i)
                                 }
                             } else
                                 ((i = o()).year = a.year),
@@ -2033,18 +2025,18 @@
                                         0,
                                         0,
                                         0,
-                                        -i.prevUtcOffset
+                                        -i.prevUtcOffset,
                                     ),
-                                    r.push(i);
-                            return r;
-                        }
+                                    r.push(i)
+                            return r
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
-                            return this.tznames ? this.tznames : this.tzid;
-                        }
-                    }
+                            return this.tznames ? this.tznames : this.tzid
+                        },
+                    },
                 ],
                 [
                     {
@@ -2074,8 +2066,8 @@
                                                     ? -1
                                                     : t.second > e.second
                                                       ? 1
-                                                      : 0;
-                        }
+                                                      : 0
+                        },
                     },
                     {
                         key: "convert_time",
@@ -2086,21 +2078,21 @@
                                 n == e.localTimezone ||
                                 r == e.localTimezone
                             )
-                                return (t.zone = r), t;
-                            var i = n.utcOffset(t);
+                                return (t.zone = r), t
+                            var i = n.utcOffset(t)
                             return (
                                 t.adjust(0, 0, 0, -i),
                                 (i = r.utcOffset(t)),
                                 t.adjust(0, 0, 0, i),
                                 null
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (t) {
-                            return new e().fromData(t);
-                        }
+                            return new e().fromData(t)
+                        },
                     },
                     {
                         key: "utcTimezone",
@@ -2110,11 +2102,11 @@
                                     (I._ = t(
                                         e,
                                         this,
-                                        e.fromData({ tzid: "UTC" })
+                                        e.fromData({ tzid: "UTC" }),
                                     )),
                                 t(e, this, I)._
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "localTimezone",
@@ -2124,50 +2116,50 @@
                                     (B._ = t(
                                         e,
                                         this,
-                                        e.fromData({ tzid: "floating" })
+                                        e.fromData({ tzid: "floating" }),
                                     )),
                                 t(e, this, B)._
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "adjust_change",
                         value: function (t, e, n, r, i) {
-                            return b.prototype.adjust.call(t, e, n, r, i, t);
-                        }
-                    }
-                ]
-            );
+                            return b.prototype.adjust.call(t, e, n, r, i, t)
+                        },
+                    },
+                ],
+            )
         })(),
         I = { _: null },
-        B = { _: null };
-    u(N, "_minimumExpansionYear", -1), u(N, "EXTRA_COVERAGE", 5);
+        B = { _: null }
+    u(N, "_minimumExpansionYear", -1), u(N, "EXTRA_COVERAGE", 5)
     var M = null,
         z = {
             get count() {
-                return null === M ? 0 : Object.keys(M).length;
+                return null === M ? 0 : Object.keys(M).length
             },
             reset: function () {
-                M = Object.create(null);
-                var t = N.utcTimezone;
-                (M.Z = t), (M.UTC = t), (M.GMT = t);
+                M = Object.create(null)
+                var t = N.utcTimezone
+                ;(M.Z = t), (M.UTC = t), (M.GMT = t)
             },
             _hard_reset: function () {
-                M = null;
+                M = null
             },
             has: function (t) {
-                return null !== M && !!M[t];
+                return null !== M && !!M[t]
             },
             get: function (t) {
-                return null === M && this.reset(), M[t];
+                return null === M && this.reset(), M[t]
             },
             register: function (t, e) {
                 if (
                     (null === M && this.reset(),
                     "string" == typeof t && e instanceof N)
                 ) {
-                    var n = [e, t];
-                    (t = n[0]), (e = n[1]);
+                    var n = [e, t]
+                    ;(t = n[0]), (e = n[1])
                 }
                 if (
                     (e ||
@@ -2178,76 +2170,76 @@
                     !e)
                 )
                     throw new TypeError(
-                        "Neither a timezone nor a name was passed"
-                    );
+                        "Neither a timezone nor a name was passed",
+                    )
                 if (!(t instanceof N))
                     throw new TypeError(
-                        "timezone must be ICAL.Timezone or ICAL.Component"
-                    );
-                M[e] = t;
+                        "timezone must be ICAL.Timezone or ICAL.Component",
+                    )
+                M[e] = t
             },
             remove: function (t) {
-                return null === M ? null : delete M[t];
-            }
-        };
+                return null === M ? null : delete M[t]
+            },
+        }
     function L(t) {
-        return "number" == typeof t && isNaN(t);
+        return "number" == typeof t && isNaN(t)
     }
     function P(t) {
-        var e = parseInt(t, 10);
-        if (L(e)) throw new Error('Could not extract integer from "' + t + '"');
-        return e;
+        var e = parseInt(t, 10)
+        if (L(e)) throw new Error('Could not extract integer from "' + t + '"')
+        return e
     }
     function U(t, e) {
-        if (void 0 !== t) return t instanceof e ? t : new e(t);
+        if (void 0 !== t) return t instanceof e ? t : new e(t)
     }
     function j(t, e, n) {
         for (; -1 !== (n = t.indexOf(e, n)); ) {
-            if (!(n > 0 && "\\" === t[n - 1])) return n;
-            n += 1;
+            if (!(n > 0 && "\\" === t[n - 1])) return n
+            n += 1
         }
-        return -1;
+        return -1
     }
     function V(t, e, n) {
-        if (!t.length) return 0;
+        if (!t.length) return 0
         for (var r, i, a = 0, s = t.length - 1; a <= s; )
-            if ((i = n(e, t[(r = a + Math.floor((s - a) / 2))])) < 0) s = r - 1;
+            if ((i = n(e, t[(r = a + Math.floor((s - a) / 2))])) < 0) s = r - 1
             else {
-                if (!(i > 0)) break;
-                a = r + 1;
+                if (!(i > 0)) break
+                a = r + 1
             }
-        return i < 0 ? r : i > 0 ? r + 1 : r;
+        return i < 0 ? r : i > 0 ? r + 1 : r
     }
     function H(t, e) {
         if (t && "object" == i(t)) {
-            if (t instanceof Date) return new Date(t.getTime());
-            if ("clone" in t) return t.clone();
+            if (t instanceof Date) return new Date(t.getTime())
+            if ("clone" in t) return t.clone()
             if (Array.isArray(t)) {
                 for (var n = [], r = 0; r < t.length; r++)
-                    n.push(e ? H(t[r], !0) : t[r]);
-                return n;
+                    n.push(e ? H(t[r], !0) : t[r])
+                return n
             }
             for (var a = {}, s = 0, o = Object.entries(t); s < o.length; s++) {
                 var u = d(o[s], 2),
                     l = u[0],
-                    h = u[1];
-                a[l] = e ? H(h, !0) : h;
+                    h = u[1]
+                a[l] = e ? H(h, !0) : h
             }
-            return a;
+            return a
         }
-        return t;
+        return t
     }
     function R(t) {
         for (var e = "", n = t || "", r = 0, i = 0; n.length; ) {
-            var a = n.codePointAt(r);
+            var a = n.codePointAt(r)
             a < 128 ? ++i : (i += a < 2048 ? 2 : a < 65536 ? 3 : 4),
                 i < Wt.foldLength + 1
                     ? (r += a > 65535 ? 2 : 1)
                     : ((e += Wt.newLineChar + " " + n.slice(0, Math.max(0, r))),
                       (n = n.slice(Math.max(0, r))),
-                      (r = i = 0));
+                      (r = i = 0))
         }
-        return e.slice(Wt.newLineChar.length + 1);
+        return e.slice(Wt.newLineChar.length + 1)
     }
     function W(t) {
         switch (
@@ -2256,54 +2248,54 @@
             t.length)
         ) {
             case 0:
-                return "00";
+                return "00"
             case 1:
-                return "0" + t;
+                return "0" + t
             default:
-                return t;
+                return t
         }
     }
     function F(t) {
-        return t < 0 ? Math.ceil(t) : Math.floor(t);
+        return t < 0 ? Math.ceil(t) : Math.floor(t)
     }
     function K(t, e) {
         for (var n in t) {
-            var r = Object.getOwnPropertyDescriptor(t, n);
+            var r = Object.getOwnPropertyDescriptor(t, n)
             r &&
                 !Object.getOwnPropertyDescriptor(e, n) &&
-                Object.defineProperty(e, n, r);
+                Object.defineProperty(e, n, r)
         }
-        return e;
+        return e
     }
     var q = Object.freeze({
             __proto__: null,
             updateTimezones: function (t) {
-                var e, n, r, i, a;
-                if (!t || "vcalendar" !== t.name) return t;
+                var e, n, r, i, a
+                if (!t || "vcalendar" !== t.name) return t
                 for (
                     e = t.getAllSubcomponents(), n = [], r = {}, a = 0;
                     a < e.length;
                     a++
                 ) {
                     if ("vtimezone" === e[a].name)
-                        r[e[a].getFirstProperty("tzid").getFirstValue()] = e[a];
-                    else n = n.concat(e[a].getAllProperties());
+                        r[e[a].getFirstProperty("tzid").getFirstValue()] = e[a]
+                    else n = n.concat(e[a].getAllProperties())
                 }
                 for (i = {}, a = 0; a < n.length; a++) {
-                    var s = n[a].getParameter("tzid");
-                    s && (i[s] = !0);
+                    var s = n[a].getParameter("tzid")
+                    s && (i[s] = !0)
                 }
                 for (var o = 0, u = Object.entries(r); o < u.length; o++) {
                     var l = d(u[o], 2),
                         h = l[0],
-                        c = l[1];
-                    i[h] || t.removeSubcomponent(c);
+                        c = l[1]
+                    i[h] || t.removeSubcomponent(c)
                 }
                 for (var f = 0, y = Object.keys(i); f < y.length; f++) {
-                    var m = y[f];
-                    !r[m] && z.has(m) && t.addSubcomponent(z.get(m).component);
+                    var m = y[f]
+                    !r[m] && z.has(m) && t.addSubcomponent(z.get(m).component)
                 }
-                return t;
+                return t
             },
             isStrictlyNaN: L,
             strictParseInt: P,
@@ -2314,7 +2306,7 @@
             foldline: R,
             pad2: W,
             trunc: F,
-            extend: K
+            extend: K,
         }),
         J = (function () {
             function t(e) {
@@ -2323,7 +2315,7 @@
                     u(this, "minutes", 0),
                     u(this, "factor", 1),
                     u(this, "icaltype", "utc-offset"),
-                    this.fromData(e);
+                    this.fromData(e)
             }
             return o(
                 t,
@@ -2331,8 +2323,8 @@
                     {
                         key: "clone",
                         value: function () {
-                            return t.fromSeconds(this.toSeconds());
-                        }
+                            return t.fromSeconds(this.toSeconds())
+                        },
                     },
                     {
                         key: "fromData",
@@ -2345,24 +2337,24 @@
                                 ) {
                                     var r = d(n[e], 2),
                                         i = r[0],
-                                        a = r[1];
-                                    this[i] = a;
+                                        a = r[1]
+                                    this[i] = a
                                 }
-                            this._normalize();
-                        }
+                            this._normalize()
+                        },
                     },
                     {
                         key: "fromSeconds",
                         value: function (t) {
-                            var e = Math.abs(t);
+                            var e = Math.abs(t)
                             return (
                                 (this.factor = t < 0 ? -1 : 1),
                                 (this.hours = F(e / 3600)),
                                 (e -= 3600 * this.hours),
                                 (this.minutes = F(e / 60)),
                                 this
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "toSeconds",
@@ -2370,16 +2362,16 @@
                             return (
                                 this.factor *
                                 (60 * this.minutes + 3600 * this.hours)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "compare",
                         value: function (t) {
                             var e = this.toSeconds(),
-                                n = t.toSeconds();
-                            return (e > n) - (n > e);
-                        }
+                                n = t.toSeconds()
+                            return (e > n) - (n > e)
+                        },
                     },
                     {
                         key: "_normalize",
@@ -2389,18 +2381,18 @@
                                 t < -43200;
 
                             )
-                                t += 97200;
-                            for (; t > 50400; ) t -= 97200;
-                            this.fromSeconds(t), 0 == t && (this.factor = e);
-                        }
+                                t += 97200
+                            for (; t > 50400; ) t -= 97200
+                            this.fromSeconds(t), 0 == t && (this.factor = e)
+                        },
                     },
                     {
                         key: "toICALString",
                         value: function () {
                             return It.icalendar.value["utc-offset"].toICAL(
-                                this.toString()
-                            );
-                        }
+                                this.toString(),
+                            )
+                        },
                     },
                     {
                         key: "toString",
@@ -2410,43 +2402,43 @@
                                 W(this.hours) +
                                 ":" +
                                 W(this.minutes)
-                            );
-                        }
-                    }
+                            )
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e) {
-                            var n = {};
+                            var n = {}
                             return (
                                 (n.factor = "+" === e[0] ? 1 : -1),
                                 (n.hours = P(e.slice(1, 3))),
                                 (n.minutes = P(e.slice(4, 6))),
                                 new t(n)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "fromSeconds",
                         value: function (e) {
-                            var n = new t();
-                            return n.fromSeconds(e), n;
-                        }
-                    }
-                ]
-            );
+                            var n = new t()
+                            return n.fromSeconds(e), n
+                        },
+                    },
+                ],
+            )
         })(),
         Z = (function (t) {
             function n(t, r, i) {
-                var s;
+                var s
                 return (
                     a(this, n),
                     u((s = e(this, n, [t, r])), "icalclass", "vcardtime"),
                     u(s, "icaltype", "date-and-or-time"),
                     (s.icaltype = i || "date-and-or-time"),
                     s
-                );
+                )
             }
             return (
                 l(n, t),
@@ -2459,15 +2451,15 @@
                                 return new n(
                                     this._time,
                                     this.zone,
-                                    this.icaltype
-                                );
-                            }
+                                    this.icaltype,
+                                )
+                            },
                         },
                         {
                             key: "_normalize",
                             value: function () {
-                                return this;
-                            }
+                                return this
+                            },
                         },
                         {
                             key: "utcOffset",
@@ -2476,17 +2468,17 @@
                                     ? this.zone.toSeconds()
                                     : b.prototype.utcOffset.apply(
                                           this,
-                                          arguments
-                                      );
-                            }
+                                          arguments,
+                                      )
+                            },
                         },
                         {
                             key: "toICALString",
                             value: function () {
                                 return It.vcard.value[this.icaltype].toICAL(
-                                    this.toString()
-                                );
-                            }
+                                    this.toString(),
+                                )
+                            },
                         },
                         {
                             key: "toString",
@@ -2517,37 +2509,37 @@
                                         (h ? W(a) : "") +
                                         (l || h ? "" : "-") +
                                         (h && c ? ":" : "") +
-                                        (c ? W(s) : "");
-                                if (this.zone === N.utcTimezone) t = "Z";
+                                        (c ? W(s) : "")
+                                if (this.zone === N.utcTimezone) t = "Z"
                                 else if (this.zone instanceof J)
-                                    t = this.zone.toString();
-                                else if (this.zone === N.localTimezone) t = "";
+                                    t = this.zone.toString()
+                                else if (this.zone === N.localTimezone) t = ""
                                 else if (this.zone instanceof N) {
                                     t = J.fromSeconds(
-                                        this.zone.utcOffset(this)
-                                    ).toString();
-                                } else t = "";
+                                        this.zone.utcOffset(this),
+                                    ).toString()
+                                } else t = ""
                                 switch (this.icaltype) {
                                     case "time":
-                                        return d + t;
+                                        return d + t
                                     case "date-and-or-time":
                                     case "date-time":
                                         return (
                                             f + ("--" == d ? "" : "T" + d + t)
-                                        );
+                                        )
                                     case "date":
-                                        return f;
+                                        return f
                                 }
-                                return null;
-                            }
-                        }
+                                return null
+                            },
+                        },
                     ],
                     [
                         {
                             key: "fromDateAndOrTimeString",
                             value: function (t, e) {
                                 function r(t, e, n) {
-                                    return t ? P(t.slice(e, e + n)) : null;
+                                    return t ? P(t.slice(e, e + n)) : null
                                 }
                                 var i = t.split("T"),
                                     a = i[0],
@@ -2560,7 +2552,7 @@
                                     h = a ? a.length : 0,
                                     c = l ? l.length : 0,
                                     f = a && "-" == a[0] && "-" == a[1],
-                                    d = l && "-" == l[0];
+                                    d = l && "-" == l[0]
                                 return new n(
                                     {
                                         year: f ? null : r(a, 0, 4),
@@ -2592,7 +2584,7 @@
                                                   ? r(l, 4, 2)
                                                   : 8 == c
                                                     ? r(l, 6, 2)
-                                                    : null
+                                                    : null,
                                     },
                                     (u =
                                         "Z" == u
@@ -2600,13 +2592,13 @@
                                             : u && ":" == u[3]
                                               ? J.fromString(u)
                                               : null),
-                                    e
-                                );
-                            }
-                        }
-                    ]
+                                    e,
+                                )
+                            },
+                        },
+                    ],
                 )
-            );
+            )
         })(b),
         G = (function () {
             function t(e) {
@@ -2621,7 +2613,7 @@
                     u(this, "by_data", null),
                     u(this, "days", null),
                     u(this, "days_index", 0),
-                    this.fromData(e);
+                    this.fromData(e)
             }
             return o(t, [
                 {
@@ -2629,12 +2621,12 @@
                     value: function (t) {
                         if (((this.rule = U(t.rule, rt)), !this.rule))
                             throw new Error(
-                                "iterator requires a (ICAL.Recur) rule"
-                            );
+                                "iterator requires a (ICAL.Recur) rule",
+                            )
                         if (((this.dtstart = U(t.dtstart, b)), !this.dtstart))
                             throw new Error(
-                                "iterator requires a (ICAL.Time) dtstart"
-                            );
+                                "iterator requires a (ICAL.Time) dtstart",
+                            )
                         if (
                             (t.by_data
                                 ? (this.by_data = t.by_data)
@@ -2652,26 +2644,26 @@
                                     BYDAY: 0,
                                     BYMONTH: 0,
                                     BYWEEKNO: 0,
-                                    BYMONTHDAY: 0
+                                    BYMONTHDAY: 0,
                                 }),
                             (this.initialized = t.initialized || !1),
                             !this.initialized)
                         )
                             try {
-                                this.init();
+                                this.init()
                             } catch (t) {
-                                if (!(t instanceof X)) throw t;
-                                this.completed = !0;
+                                if (!(t instanceof X)) throw t
+                                this.completed = !0
                             }
-                    }
+                    },
                 },
                 {
                     key: "init",
                     value: function () {
-                        var t = this;
-                        (this.initialized = !0),
-                            (this.last = this.dtstart.clone());
-                        var e = this.by_data;
+                        var t = this
+                        ;(this.initialized = !0),
+                            (this.last = this.dtstart.clone())
+                        var e = this.by_data
                         if (
                             ("BYDAY" in e && this.sort_byday_rules(e.BYDAY),
                             "BYYEARDAY" in e &&
@@ -2680,54 +2672,54 @@
                                     "BYMONTHDAY" in e ||
                                     "BYDAY" in e))
                         )
-                            throw new Error("Invalid BYYEARDAY rule");
+                            throw new Error("Invalid BYYEARDAY rule")
                         if ("BYWEEKNO" in e && "BYMONTHDAY" in e)
                             throw new Error(
-                                "BYWEEKNO does not fit to BYMONTHDAY"
-                            );
+                                "BYWEEKNO does not fit to BYMONTHDAY",
+                            )
                         if (
                             "MONTHLY" == this.rule.freq &&
                             ("BYYEARDAY" in e || "BYWEEKNO" in e)
                         )
                             throw new Error(
-                                "For MONTHLY recurrences neither BYYEARDAY nor BYWEEKNO may appear"
-                            );
+                                "For MONTHLY recurrences neither BYYEARDAY nor BYWEEKNO may appear",
+                            )
                         if (
                             "WEEKLY" == this.rule.freq &&
                             ("BYYEARDAY" in e || "BYMONTHDAY" in e)
                         )
                             throw new Error(
-                                "For WEEKLY recurrences neither BYMONTHDAY nor BYYEARDAY may appear"
-                            );
+                                "For WEEKLY recurrences neither BYMONTHDAY nor BYYEARDAY may appear",
+                            )
                         if ("YEARLY" != this.rule.freq && "BYYEARDAY" in e)
                             throw new Error(
-                                "BYYEARDAY may only appear in YEARLY rules"
-                            );
+                                "BYYEARDAY may only appear in YEARLY rules",
+                            )
                         if (
                             ((this.last.second = this.setup_defaults(
                                 "BYSECOND",
                                 "SECONDLY",
-                                this.dtstart.second
+                                this.dtstart.second,
                             )),
                             (this.last.minute = this.setup_defaults(
                                 "BYMINUTE",
                                 "MINUTELY",
-                                this.dtstart.minute
+                                this.dtstart.minute,
                             )),
                             (this.last.hour = this.setup_defaults(
                                 "BYHOUR",
                                 "HOURLY",
-                                this.dtstart.hour
+                                this.dtstart.hour,
                             )),
                             (this.last.day = this.setup_defaults(
                                 "BYMONTHDAY",
                                 "DAILY",
-                                this.dtstart.day
+                                this.dtstart.day,
                             )),
                             (this.last.month = this.setup_defaults(
                                 "BYMONTH",
                                 "MONTHLY",
-                                this.dtstart.month
+                                this.dtstart.month,
                             )),
                             "WEEKLY" == this.rule.freq)
                         )
@@ -2735,20 +2727,20 @@
                                 var n = d(
                                         this.ruleDayOfWeek(
                                             e.BYDAY[0],
-                                            this.rule.wkst
+                                            this.rule.wkst,
                                         ),
-                                        2
+                                        2,
                                     )[1],
-                                    r = n - this.last.dayOfWeek(this.rule.wkst);
-                                ((this.last.dayOfWeek(this.rule.wkst) < n &&
+                                    r = n - this.last.dayOfWeek(this.rule.wkst)
+                                ;((this.last.dayOfWeek(this.rule.wkst) < n &&
                                     r >= 0) ||
                                     r < 0) &&
-                                    (this.last.day += r);
+                                    (this.last.day += r)
                             } else {
                                 var i = rt.numericDayToIcalDay(
-                                    this.dtstart.dayOfWeek()
-                                );
-                                e.BYDAY = [i];
+                                    this.dtstart.dayOfWeek(),
+                                )
+                                e.BYDAY = [i]
                             }
                         if ("YEARLY" == this.rule.freq) {
                             for (
@@ -2760,9 +2752,9 @@
                                 !(this.days.length > 0));
 
                             )
-                                this.increment_year(this.rule.interval);
-                            if (0 == this.days.length) throw new X();
-                            this._nextByYearDay();
+                                this.increment_year(this.rule.interval)
+                            if (0 == this.days.length) throw new X()
+                            this._nextByYearDay()
                         }
                         if ("MONTHLY" == this.rule.freq)
                             if (this.has_by_data("BYDAY")) {
@@ -2771,43 +2763,43 @@
                                     u = this.last.clone(),
                                     l = b.daysInMonth(
                                         this.last.month,
-                                        this.last.year
+                                        this.last.year,
                                     ),
-                                    h = v(this.by_data.BYDAY);
+                                    h = v(this.by_data.BYDAY)
                                 try {
                                     for (h.s(); !(s = h.n()).done; ) {
-                                        var c = s.value;
-                                        this.last = u.clone();
+                                        var c = s.value
+                                        this.last = u.clone()
                                         var f = d(this.ruleDayOfWeek(c), 2),
                                             y = f[0],
                                             m = f[1],
-                                            p = this.last.nthWeekDay(m, y);
+                                            p = this.last.nthWeekDay(m, y)
                                         if (y >= 6 || y <= -6)
                                             throw new Error(
-                                                "Malformed values in BYDAY part"
-                                            );
+                                                "Malformed values in BYDAY part",
+                                            )
                                         if (p > l || p <= 0) {
                                             if (o && o.month == u.month)
-                                                continue;
+                                                continue
                                             for (; p > l || p <= 0; )
                                                 this.increment_month(),
                                                     (l = b.daysInMonth(
                                                         this.last.month,
-                                                        this.last.year
+                                                        this.last.year,
                                                     )),
                                                     (p = this.last.nthWeekDay(
                                                         m,
-                                                        y
-                                                    ));
+                                                        y,
+                                                    ))
                                         }
-                                        (this.last.day = p),
+                                        ;(this.last.day = p),
                                             (!o || this.last.compare(o) < 0) &&
-                                                (o = this.last.clone());
+                                                (o = this.last.clone())
                                     }
                                 } catch (t) {
-                                    h.e(t);
+                                    h.e(t)
                                 } finally {
-                                    h.f();
+                                    h.f()
                                 }
                                 if (
                                     ((this.last = o.clone()),
@@ -2816,28 +2808,28 @@
                                     this.last.day > l || 0 == this.last.day)
                                 )
                                     throw new Error(
-                                        "Malformed values in BYDAY part"
-                                    );
+                                        "Malformed values in BYDAY part",
+                                    )
                             } else if (this.has_by_data("BYMONTHDAY")) {
-                                this.last.day = 1;
+                                this.last.day = 1
                                 var _ = this.normalizeByMonthDayRules(
                                     this.last.year,
                                     this.last.month,
-                                    this.rule.parts.BYMONTHDAY
+                                    this.rule.parts.BYMONTHDAY,
                                 ).filter(function (e) {
-                                    return e >= t.last.day;
-                                });
+                                    return e >= t.last.day
+                                })
                                 if (_.length)
                                     (this.last.day = _[0]),
-                                        (this.by_data.BYMONTHDAY = _);
+                                        (this.by_data.BYMONTHDAY = _)
                                 else if (
                                     !this.next_month() &&
                                     !this.next_month() &&
                                     !this.next_month()
                                 )
-                                    throw new Error("No possible occurrences");
+                                    throw new Error("No possible occurrences")
                             }
-                    }
+                    },
                 },
                 {
                     key: "next",
@@ -2847,7 +2839,7 @@
                                 arguments.length > 0 &&
                                 void 0 !== arguments[0] &&
                                 arguments[0],
-                            n = this.last ? this.last.clone() : null;
+                            n = this.last ? this.last.clone() : null
                         if (
                             (((this.rule.count &&
                                 this.occurrence_number >= this.rule.count) ||
@@ -2856,55 +2848,55 @@
                                 (this.completed = !0),
                             this.completed)
                         )
-                            return null;
+                            return null
                         if (
                             0 == this.occurrence_number &&
                             this.last.compare(this.dtstart) >= 0
                         )
-                            return this.occurrence_number++, this.last;
+                            return this.occurrence_number++, this.last
                         do {
                             switch (((t = 1), this.rule.freq)) {
                                 case "SECONDLY":
-                                    this.next_second();
-                                    break;
+                                    this.next_second()
+                                    break
                                 case "MINUTELY":
-                                    this.next_minute();
-                                    break;
+                                    this.next_minute()
+                                    break
                                 case "HOURLY":
-                                    this.next_hour();
-                                    break;
+                                    this.next_hour()
+                                    break
                                 case "DAILY":
-                                    this.next_day();
-                                    break;
+                                    this.next_day()
+                                    break
                                 case "WEEKLY":
-                                    this.next_week();
-                                    break;
+                                    this.next_week()
+                                    break
                                 case "MONTHLY":
-                                    t = this.next_month();
-                                    break;
+                                    t = this.next_month()
+                                    break
                                 case "YEARLY":
-                                    this.next_year();
-                                    break;
+                                    this.next_year()
+                                    break
                                 default:
-                                    return null;
+                                    return null
                             }
                         } while (
                             !this.check_contracting_rules() ||
                             this.last.compare(this.dtstart) < 0 ||
                             !t
-                        );
+                        )
                         if (0 == this.last.compare(n)) {
                             if (e)
                                 throw new Error(
-                                    "Same occurrence found twice, protecting you from death by recursion"
-                                );
-                            this.next(!0);
+                                    "Same occurrence found twice, protecting you from death by recursion",
+                                )
+                            this.next(!0)
                         }
                         return this.rule.until &&
                             this.last.compare(this.rule.until) > 0
                             ? ((this.completed = !0), null)
-                            : (this.occurrence_number++, this.last);
-                    }
+                            : (this.occurrence_number++, this.last)
+                    },
                 },
                 {
                     key: "next_second",
@@ -2913,20 +2905,15 @@
                             "BYSECOND",
                             "SECONDLY",
                             "second",
-                            "minute"
-                        );
-                    }
+                            "minute",
+                        )
+                    },
                 },
                 {
                     key: "increment_second",
                     value: function (t) {
-                        return this.increment_generic(
-                            t,
-                            "second",
-                            60,
-                            "minute"
-                        );
-                    }
+                        return this.increment_generic(t, "second", 60, "minute")
+                    },
                 },
                 {
                     key: "next_minute",
@@ -2936,15 +2923,15 @@
                             "MINUTELY",
                             "minute",
                             "hour",
-                            "next_second"
-                        );
-                    }
+                            "next_second",
+                        )
+                    },
                 },
                 {
                     key: "increment_minute",
                     value: function (t) {
-                        return this.increment_generic(t, "minute", 60, "hour");
-                    }
+                        return this.increment_generic(t, "minute", 60, "hour")
+                    },
                 },
                 {
                     key: "next_hour",
@@ -2954,50 +2941,50 @@
                             "HOURLY",
                             "hour",
                             "monthday",
-                            "next_minute"
-                        );
-                    }
+                            "next_minute",
+                        )
+                    },
                 },
                 {
                     key: "increment_hour",
                     value: function (t) {
-                        this.increment_generic(t, "hour", 24, "monthday");
-                    }
+                        this.increment_generic(t, "hour", 24, "monthday")
+                    },
                 },
                 {
                     key: "next_day",
                     value: function () {
-                        var t = "DAILY" == this.rule.freq;
+                        var t = "DAILY" == this.rule.freq
                         return (
                             0 == this.next_hour() ||
                                 (t
                                     ? this.increment_monthday(
-                                          this.rule.interval
+                                          this.rule.interval,
                                       )
                                     : this.increment_monthday(1)),
                             0
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "next_week",
                     value: function () {
-                        var t = 0;
-                        if (0 == this.next_weekday_by_week()) return t;
+                        var t = 0
+                        if (0 == this.next_weekday_by_week()) return t
                         if (this.has_by_data("BYWEEKNO")) {
                             this.by_indices.BYWEEKNO++,
                                 this.by_indices.BYWEEKNO ==
                                     this.by_data.BYWEEKNO.length &&
                                     ((this.by_indices.BYWEEKNO = 0), (t = 1)),
                                 (this.last.month = 1),
-                                (this.last.day = 1);
+                                (this.last.day = 1)
                             var e =
-                                this.by_data.BYWEEKNO[this.by_indices.BYWEEKNO];
-                            (this.last.day += 7 * e),
-                                t && this.increment_year(1);
-                        } else this.increment_monthday(7 * this.rule.interval);
-                        return t;
-                    }
+                                this.by_data.BYWEEKNO[this.by_indices.BYWEEKNO]
+                            ;(this.last.day += 7 * e),
+                                t && this.increment_year(1)
+                        } else this.increment_monthday(7 * this.rule.interval)
+                        return t
+                    },
                 },
                 {
                     key: "normalizeByMonthDayRules",
@@ -3012,17 +2999,17 @@
                             s++
                         ) {
                             if (((r = parseInt(n[s], 10)), isNaN(r)))
-                                throw new Error("Invalid BYMONTHDAY value");
+                                throw new Error("Invalid BYMONTHDAY value")
                             if (!(Math.abs(r) > i)) {
-                                if (r < 0) r = i + (r + 1);
-                                else if (0 === r) continue;
-                                -1 === a.indexOf(r) && a.push(r);
+                                if (r < 0) r = i + (r + 1)
+                                else if (0 === r) continue
+                                ;-1 === a.indexOf(r) && a.push(r)
                             }
                         }
                         return a.sort(function (t, e) {
-                            return t - e;
-                        });
-                    }
+                            return t - e
+                        })
+                    },
                 },
                 {
                     key: "_byDayAndMonthDay",
@@ -3036,77 +3023,77 @@
                             o = a.length,
                             u = 0,
                             l = this,
-                            h = this.last.day;
+                            h = this.last.day
                         function c() {
                             for (
                                 i = b.daysInMonth(l.last.month, l.last.year),
                                     e = l.normalizeByMonthDayRules(
                                         l.last.year,
                                         l.last.month,
-                                        l.by_data.BYMONTHDAY
+                                        l.by_data.BYMONTHDAY,
                                     ),
                                     r = e.length;
                                 e[s] <= h && (!t || e[s] != h) && s < r - 1;
 
                             )
-                                s++;
+                                s++
                         }
                         function f() {
-                            (h = 0), l.increment_month(), (s = 0), c();
+                            ;(h = 0), l.increment_month(), (s = 0), c()
                         }
-                        c(), t && (h -= 1);
+                        c(), t && (h -= 1)
                         for (var d = 48; !u && d; )
-                            if ((d--, (n = h + 1) > i)) f();
+                            if ((d--, (n = h + 1) > i)) f()
                             else {
-                                var y = e[s++];
+                                var y = e[s++]
                                 if (y >= n) {
-                                    h = y;
+                                    h = y
                                     for (var m = 0; m < o; m++) {
                                         var p = this.ruleDayOfWeek(a[m]),
                                             v = p[0],
-                                            _ = p[1];
+                                            _ = p[1]
                                         if (
                                             ((this.last.day = h),
                                             this.last.isNthWeekDay(_, v))
                                         ) {
-                                            u = 1;
-                                            break;
+                                            u = 1
+                                            break
                                         }
                                     }
-                                    u || s !== r || f();
-                                } else f();
+                                    u || s !== r || f()
+                                } else f()
                             }
                         if (d <= 0)
                             throw new Error(
-                                "Malformed values in BYDAY combined with BYMONTHDAY parts"
-                            );
-                        return u;
-                    }
+                                "Malformed values in BYDAY combined with BYMONTHDAY parts",
+                            )
+                        return u
+                    },
                 },
                 {
                     key: "next_month",
                     value: function () {
-                        var t = 1;
-                        if (0 == this.next_hour()) return t;
+                        var t = 1
+                        if (0 == this.next_hour()) return t
                         if (
                             this.has_by_data("BYDAY") &&
                             this.has_by_data("BYMONTHDAY")
                         )
-                            t = this._byDayAndMonthDay();
+                            t = this._byDayAndMonthDay()
                         else if (this.has_by_data("BYDAY")) {
                             var e,
                                 n = b.daysInMonth(
                                     this.last.month,
-                                    this.last.year
+                                    this.last.year,
                                 ),
                                 r = 0,
-                                i = 0;
+                                i = 0
                             if (this.has_by_data("BYSETPOS")) {
                                 for (var a = this.last.day, s = 1; s <= n; s++)
                                     (this.last.day = s),
                                         this.is_day_in_byday(this.last) &&
-                                            (i++, s <= a && r++);
-                                this.last.day = a;
+                                            (i++, s <= a && r++)
+                                this.last.day = a
                             }
                             for (t = 0, e = this.last.day + 1; e <= n; e++)
                                 if (
@@ -3116,8 +3103,8 @@
                                             this.check_set_position(++r) ||
                                             this.check_set_position(r - i - 1)))
                                 ) {
-                                    t = 1;
-                                    break;
+                                    t = 1
+                                    break
                                 }
                             e > n &&
                                 ((this.last.day = 1),
@@ -3126,7 +3113,7 @@
                                     ? (this.has_by_data("BYSETPOS") &&
                                           !this.check_set_position(1)) ||
                                       (t = 1)
-                                    : (t = 0));
+                                    : (t = 0))
                         } else if (this.has_by_data("BYMONTHDAY")) {
                             if (
                                 (this.by_indices.BYMONTHDAY++,
@@ -3137,70 +3124,70 @@
                                     this.by_indices.BYMONTHDAY >=
                                         this.by_data.BYMONTHDAY.length))
                             )
-                                return 0;
+                                return 0
                             var o = b.daysInMonth(
                                     this.last.month,
-                                    this.last.year
+                                    this.last.year,
                                 ),
                                 u =
                                     this.by_data.BYMONTHDAY[
                                         this.by_indices.BYMONTHDAY
-                                    ];
+                                    ]
                             u < 0 && (u = o + u + 1),
                                 u > o
                                     ? ((this.last.day = 1),
                                       (t = this.is_day_in_byday(this.last)))
-                                    : (this.last.day = u);
+                                    : (this.last.day = u)
                         } else {
-                            this.increment_month();
+                            this.increment_month()
                             var l = b.daysInMonth(
                                 this.last.month,
-                                this.last.year
-                            );
+                                this.last.year,
+                            )
                             this.by_data.BYMONTHDAY[0] > l
                                 ? (t = 0)
-                                : (this.last.day = this.by_data.BYMONTHDAY[0]);
+                                : (this.last.day = this.by_data.BYMONTHDAY[0])
                         }
-                        return t;
-                    }
+                        return t
+                    },
                 },
                 {
                     key: "next_weekday_by_week",
                     value: function () {
-                        var t = 0;
-                        if (0 == this.next_hour()) return t;
-                        if (!this.has_by_data("BYDAY")) return 1;
+                        var t = 0
+                        if (0 == this.next_hour()) return t
+                        if (!this.has_by_data("BYDAY")) return 1
                         for (;;) {
-                            var e = new b();
+                            var e = new b()
                             this.by_indices.BYDAY++,
                                 this.by_indices.BYDAY ==
                                     Object.keys(this.by_data.BYDAY).length &&
-                                    ((this.by_indices.BYDAY = 0), (t = 1));
+                                    ((this.by_indices.BYDAY = 0), (t = 1))
                             var n = this.by_data.BYDAY[this.by_indices.BYDAY],
-                                r = this.ruleDayOfWeek(n)[1];
-                            (r -= this.rule.wkst) < 0 && (r += 7),
+                                r = this.ruleDayOfWeek(n)[1]
+                            ;(r -= this.rule.wkst) < 0 && (r += 7),
                                 (e.year = this.last.year),
                                 (e.month = this.last.month),
-                                (e.day = this.last.day);
-                            var i = e.startDoyWeek(this.rule.wkst);
+                                (e.day = this.last.day)
+                            var i = e.startDoyWeek(this.rule.wkst)
                             if (!(r + i < 1) || t) {
-                                var a = b.fromDayOfYear(i + r, this.last.year);
+                                var a = b.fromDayOfYear(i + r, this.last.year)
                                 return (
                                     (this.last.year = a.year),
                                     (this.last.month = a.month),
                                     (this.last.day = a.day),
                                     t
-                                );
+                                )
                             }
                         }
-                    }
+                    },
                 },
                 {
                     key: "next_year",
                     value: function () {
-                        if (0 == this.next_hour()) return 0;
+                        if (0 == this.next_hour()) return 0
                         if (++this.days_index == this.days.length) {
-                            this.days_index = 0;
+                            this.days_index = 0
                             do {
                                 this.increment_year(this.rule.interval),
                                     this.has_by_data("BYMONTHDAY") &&
@@ -3208,52 +3195,52 @@
                                             this.normalizeByMonthDayRules(
                                                 this.last.year,
                                                 this.last.month,
-                                                this.rule.parts.BYMONTHDAY
+                                                this.rule.parts.BYMONTHDAY,
                                             )),
-                                    this.expand_year_days(this.last.year);
-                            } while (0 == this.days.length);
+                                    this.expand_year_days(this.last.year)
+                            } while (0 == this.days.length)
                         }
-                        return this._nextByYearDay(), 1;
-                    }
+                        return this._nextByYearDay(), 1
+                    },
                 },
                 {
                     key: "_nextByYearDay",
                     value: function () {
                         var t = this.days[this.days_index],
-                            e = this.last.year;
-                        t < 1 && ((t += 1), (e += 1));
-                        var n = b.fromDayOfYear(t, e);
-                        (this.last.day = n.day), (this.last.month = n.month);
-                    }
+                            e = this.last.year
+                        t < 1 && ((t += 1), (e += 1))
+                        var n = b.fromDayOfYear(t, e)
+                        ;(this.last.day = n.day), (this.last.month = n.month)
+                    },
                 },
                 {
                     key: "ruleDayOfWeek",
                     value: function (t, e) {
-                        var n = t.match(/([+-]?[0-9])?(MO|TU|WE|TH|FR|SA|SU)/);
+                        var n = t.match(/([+-]?[0-9])?(MO|TU|WE|TH|FR|SA|SU)/)
                         return n
                             ? [
                                   parseInt(n[1] || 0, 10),
-                                  (t = rt.icalDayToNumericDay(n[2], e))
+                                  (t = rt.icalDayToNumericDay(n[2], e)),
                               ]
-                            : [0, 0];
-                    }
+                            : [0, 0]
+                    },
                 },
                 {
                     key: "next_generic",
                     value: function (t, e, n, r, i) {
                         var a = t in this.by_data,
                             s = this.rule.freq == e,
-                            o = 0;
-                        if (i && 0 == this[i]()) return o;
+                            o = 0
+                        if (i && 0 == this[i]()) return o
                         if (a) {
-                            this.by_indices[t]++;
-                            var u = this.by_data[t];
+                            this.by_indices[t]++
+                            var u = this.by_data[t]
                             this.by_indices[t] == u.length &&
                                 ((this.by_indices[t] = 0), (o = 1)),
-                                (this.last[n] = u[this.by_indices[t]]);
-                        } else s && this["increment_" + n](this.rule.interval);
-                        return a && o && s && this["increment_" + r](1), o;
-                    }
+                                (this.last[n] = u[this.by_indices[t]])
+                        } else s && this["increment_" + n](this.rule.interval)
+                        return a && o && s && this["increment_" + r](1), o
+                    },
                 },
                 {
                     key: "increment_monthday",
@@ -3261,14 +3248,14 @@
                         for (var e = 0; e < t; e++) {
                             var n = b.daysInMonth(
                                 this.last.month,
-                                this.last.year
-                            );
+                                this.last.year,
+                            )
                             this.last.day++,
                                 this.last.day > n &&
                                     ((this.last.day -= n),
-                                    this.increment_month());
+                                    this.increment_month())
                         }
-                    }
+                    },
                 },
                 {
                     key: "increment_month",
@@ -3282,52 +3269,52 @@
                                 (this.last.month =
                                     this.by_data.BYMONTH[
                                         this.by_indices.BYMONTH
-                                    ]);
+                                    ])
                         else {
                             "MONTHLY" == this.rule.freq
                                 ? (this.last.month += this.rule.interval)
                                 : this.last.month++,
-                                this.last.month--;
-                            var t = F(this.last.month / 12);
-                            (this.last.month %= 12),
+                                this.last.month--
+                            var t = F(this.last.month / 12)
+                            ;(this.last.month %= 12),
                                 this.last.month++,
-                                0 != t && this.increment_year(t);
+                                0 != t && this.increment_year(t)
                         }
                         this.has_by_data("BYMONTHDAY") &&
                             (this.by_data.BYMONTHDAY =
                                 this.normalizeByMonthDayRules(
                                     this.last.year,
                                     this.last.month,
-                                    this.rule.parts.BYMONTHDAY
-                                ));
-                    }
+                                    this.rule.parts.BYMONTHDAY,
+                                ))
+                    },
                 },
                 {
                     key: "increment_year",
                     value: function (t) {
-                        (this.last.day = 1), (this.last.year += t);
-                    }
+                        ;(this.last.day = 1), (this.last.year += t)
+                    },
                 },
                 {
                     key: "increment_generic",
                     value: function (t, e, n, r) {
-                        this.last[e] += t;
-                        var i = F(this.last[e] / n);
-                        (this.last[e] %= n),
-                            0 != i && this["increment_" + r](i);
-                    }
+                        this.last[e] += t
+                        var i = F(this.last[e] / n)
+                        ;(this.last[e] %= n),
+                            0 != i && this["increment_" + r](i)
+                    },
                 },
                 {
                     key: "has_by_data",
                     value: function (t) {
-                        return t in this.rule.parts;
-                    }
+                        return t in this.rule.parts
+                    },
                 },
                 {
                     key: "expand_year_days",
                     value: function (t) {
-                        var e = new b();
-                        this.days = [];
+                        var e = new b()
+                        this.days = []
                         for (
                             var n = {},
                                 r = 0,
@@ -3336,29 +3323,29 @@
                                     "BYWEEKNO",
                                     "BYMONTHDAY",
                                     "BYMONTH",
-                                    "BYYEARDAY"
+                                    "BYYEARDAY",
                                 ];
                             r < i.length;
                             r++
                         ) {
-                            var a = i[r];
-                            a in this.rule.parts && (n[a] = this.rule.parts[a]);
+                            var a = i[r]
+                            a in this.rule.parts && (n[a] = this.rule.parts[a])
                         }
                         if ("BYMONTH" in n && "BYWEEKNO" in n) {
                             var s = 1,
-                                o = {};
-                            (e.year = t), (e.isDate = !0);
+                                o = {}
+                            ;(e.year = t), (e.isDate = !0)
                             for (
                                 var u = 0;
                                 u < this.by_data.BYMONTH.length;
                                 u++
                             ) {
-                                var l = this.by_data.BYMONTH[u];
-                                (e.month = l), (e.day = 1);
-                                var h = e.weekNumber(this.rule.wkst);
-                                e.day = b.daysInMonth(l, t);
-                                var c = e.weekNumber(this.rule.wkst);
-                                for (u = h; u < c; u++) o[u] = 1;
+                                var l = this.by_data.BYMONTH[u]
+                                ;(e.month = l), (e.day = 1)
+                                var h = e.weekNumber(this.rule.wkst)
+                                e.day = b.daysInMonth(l, t)
+                                var c = e.weekNumber(this.rule.wkst)
+                                for (u = h; u < c; u++) o[u] = 1
                             }
                             for (
                                 var f = 0;
@@ -3367,50 +3354,50 @@
                             ) {
                                 this.by_data.BYWEEKNO[f] < 52
                                     ? (s &= o[f])
-                                    : (s = 0);
+                                    : (s = 0)
                             }
-                            s ? delete n.BYMONTH : delete n.BYWEEKNO;
+                            s ? delete n.BYMONTH : delete n.BYWEEKNO
                         }
-                        var d = Object.keys(n).length;
+                        var d = Object.keys(n).length
                         if (0 == d) {
-                            var y = this.dtstart.clone();
-                            (y.year = this.last.year),
-                                this.days.push(y.dayOfYear());
+                            var y = this.dtstart.clone()
+                            ;(y.year = this.last.year),
+                                this.days.push(y.dayOfYear())
                         } else if (1 == d && "BYMONTH" in n) {
                             var m,
-                                p = v(this.by_data.BYMONTH);
+                                p = v(this.by_data.BYMONTH)
                             try {
                                 for (p.s(); !(m = p.n()).done; ) {
                                     var _ = m.value,
-                                        g = this.dtstart.clone();
-                                    (g.year = t),
+                                        g = this.dtstart.clone()
+                                    ;(g.year = t),
                                         (g.month = _),
                                         (g.isDate = !0),
-                                        this.days.push(g.dayOfYear());
+                                        this.days.push(g.dayOfYear())
                                 }
                             } catch (t) {
-                                p.e(t);
+                                p.e(t)
                             } finally {
-                                p.f();
+                                p.f()
                             }
                         } else if (1 == d && "BYMONTHDAY" in n) {
                             var D,
-                                T = v(this.by_data.BYMONTHDAY);
+                                T = v(this.by_data.BYMONTHDAY)
                             try {
                                 for (T.s(); !(D = T.n()).done; ) {
                                     var Y = D.value,
-                                        k = this.dtstart.clone();
+                                        k = this.dtstart.clone()
                                     if (Y < 0)
-                                        Y = Y + b.daysInMonth(k.month, t) + 1;
-                                    (k.day = Y),
+                                        Y = Y + b.daysInMonth(k.month, t) + 1
+                                    ;(k.day = Y),
                                         (k.year = t),
                                         (k.isDate = !0),
-                                        this.days.push(k.dayOfYear());
+                                        this.days.push(k.dayOfYear())
                                 }
                             } catch (t) {
-                                T.e(t);
+                                T.e(t)
                             } finally {
-                                T.f();
+                                T.f()
                             }
                         } else if (
                             2 == d &&
@@ -3418,33 +3405,33 @@
                             "BYMONTH" in n
                         ) {
                             var O,
-                                A = v(this.by_data.BYMONTH);
+                                A = v(this.by_data.BYMONTH)
                             try {
                                 for (A.s(); !(O = A.n()).done; ) {
                                     var S,
                                         w = O.value,
                                         E = b.daysInMonth(w, t),
-                                        C = v(this.by_data.BYMONTHDAY);
+                                        C = v(this.by_data.BYMONTHDAY)
                                     try {
                                         for (C.s(); !(S = C.n()).done; ) {
-                                            var x = S.value;
+                                            var x = S.value
                                             x < 0 && (x = x + E + 1),
                                                 (e.day = x),
                                                 (e.month = w),
                                                 (e.year = t),
                                                 (e.isDate = !0),
-                                                this.days.push(e.dayOfYear());
+                                                this.days.push(e.dayOfYear())
                                         }
                                     } catch (t) {
-                                        C.e(t);
+                                        C.e(t)
                                     } finally {
-                                        C.f();
+                                        C.f()
                                     }
                                 }
                             } catch (t) {
-                                A.e(t);
+                                A.e(t)
                             } finally {
-                                A.f();
+                                A.f()
                             }
                         } else if (1 == d && "BYWEEKNO" in n);
                         else if (
@@ -3453,36 +3440,36 @@
                             "BYMONTHDAY" in n
                         );
                         else if (1 == d && "BYDAY" in n)
-                            this.days = this.days.concat(this.expand_by_day(t));
+                            this.days = this.days.concat(this.expand_by_day(t))
                         else if (2 == d && "BYDAY" in n && "BYMONTH" in n) {
                             var N,
-                                I = v(this.by_data.BYMONTH);
+                                I = v(this.by_data.BYMONTH)
                             try {
                                 for (I.s(); !(N = I.n()).done; ) {
                                     var B = N.value,
-                                        M = b.daysInMonth(B, t);
-                                    (e.year = t),
+                                        M = b.daysInMonth(B, t)
+                                    ;(e.year = t),
                                         (e.month = B),
                                         (e.day = 1),
-                                        (e.isDate = !0);
+                                        (e.isDate = !0)
                                     var z = e.dayOfWeek(),
-                                        L = e.dayOfYear() - 1;
-                                    e.day = M;
-                                    var P = e.dayOfWeek();
+                                        L = e.dayOfYear() - 1
+                                    e.day = M
+                                    var P = e.dayOfWeek()
                                     if (this.has_by_data("BYSETPOS")) {
                                         for (var U = [], j = 1; j <= M; j++)
                                             (e.day = j),
                                                 this.is_day_in_byday(e) &&
-                                                    U.push(j);
+                                                    U.push(j)
                                         for (var V = 0; V < U.length; V++)
                                             (this.check_set_position(V + 1) ||
                                                 this.check_set_position(
-                                                    V - U.length
+                                                    V - U.length,
                                                 )) &&
-                                                this.days.push(L + U[V]);
+                                                this.days.push(L + U[V])
                                     } else {
                                         var H,
-                                            R = v(this.by_data.BYDAY);
+                                            R = v(this.by_data.BYDAY)
                                         try {
                                             for (R.s(); !(H = R.n()).done; ) {
                                                 var W = H.value,
@@ -3491,14 +3478,14 @@
                                                     q = F[1],
                                                     J = void 0,
                                                     Z = ((q + 7 - z) % 7) + 1,
-                                                    G = M - ((P + 7 - q) % 7);
+                                                    G = M - ((P + 7 - q) % 7)
                                                 if (0 == K)
                                                     for (
                                                         var X = Z;
                                                         X <= M;
                                                         X += 7
                                                     )
-                                                        this.days.push(L + X);
+                                                        this.days.push(L + X)
                                                 else
                                                     K > 0
                                                         ? (J =
@@ -3509,41 +3496,41 @@
                                                         : (J =
                                                               G + 7 * (K + 1)) >
                                                               0 &&
-                                                          this.days.push(L + J);
+                                                          this.days.push(L + J)
                                             }
                                         } catch (t) {
-                                            R.e(t);
+                                            R.e(t)
                                         } finally {
-                                            R.f();
+                                            R.f()
                                         }
                                     }
                                 }
                             } catch (t) {
-                                I.e(t);
+                                I.e(t)
                             } finally {
-                                I.f();
+                                I.f()
                             }
                             this.days.sort(function (t, e) {
-                                return t - e;
-                            });
+                                return t - e
+                            })
                         } else if (
                             2 == d &&
                             "BYDAY" in n &&
                             "BYMONTHDAY" in n
                         ) {
                             var Q,
-                                $ = v(this.expand_by_day(t));
+                                $ = v(this.expand_by_day(t))
                             try {
                                 for ($.s(); !(Q = $.n()).done; ) {
                                     var tt = Q.value,
-                                        et = b.fromDayOfYear(tt, t);
+                                        et = b.fromDayOfYear(tt, t)
                                     this.by_data.BYMONTHDAY.indexOf(et.day) >=
-                                        0 && this.days.push(tt);
+                                        0 && this.days.push(tt)
                                 }
                             } catch (t) {
-                                $.e(t);
+                                $.e(t)
                             } finally {
-                                $.f();
+                                $.f()
                             }
                         } else if (
                             3 == d &&
@@ -3552,39 +3539,39 @@
                             "BYMONTH" in n
                         ) {
                             var nt,
-                                rt = v(this.expand_by_day(t));
+                                rt = v(this.expand_by_day(t))
                             try {
                                 for (rt.s(); !(nt = rt.n()).done; ) {
                                     var it = nt.value,
-                                        at = b.fromDayOfYear(it, t);
+                                        at = b.fromDayOfYear(it, t)
                                     this.by_data.BYMONTH.indexOf(at.month) >=
                                         0 &&
                                         this.by_data.BYMONTHDAY.indexOf(
-                                            at.day
+                                            at.day,
                                         ) >= 0 &&
-                                        this.days.push(it);
+                                        this.days.push(it)
                                 }
                             } catch (t) {
-                                rt.e(t);
+                                rt.e(t)
                             } finally {
-                                rt.f();
+                                rt.f()
                             }
                         } else if (2 == d && "BYDAY" in n && "BYWEEKNO" in n) {
                             var st,
-                                ot = v(this.expand_by_day(t));
+                                ot = v(this.expand_by_day(t))
                             try {
                                 for (ot.s(); !(st = ot.n()).done; ) {
                                     var ut = st.value,
                                         lt = b
                                             .fromDayOfYear(ut, t)
-                                            .weekNumber(this.rule.wkst);
+                                            .weekNumber(this.rule.wkst)
                                     this.by_data.BYWEEKNO.indexOf(lt) &&
-                                        this.days.push(ut);
+                                        this.days.push(ut)
                                 }
                             } catch (t) {
-                                ot.e(t);
+                                ot.e(t)
                             } finally {
-                                ot.f();
+                                ot.f()
                             }
                         } else
                             (3 == d &&
@@ -3594,97 +3581,97 @@
                                 (this.days =
                                     1 == d && "BYYEARDAY" in n
                                         ? this.days.concat(
-                                              this.by_data.BYYEARDAY
+                                              this.by_data.BYYEARDAY,
                                           )
-                                        : []);
-                        var ht = b.isLeapYear(t) ? 366 : 365;
+                                        : [])
+                        var ht = b.isLeapYear(t) ? 366 : 365
                         return (
                             this.days.sort(function (t, e) {
                                 return (
                                     t < 0 && (t += ht + 1),
                                     e < 0 && (e += ht + 1),
                                     t - e
-                                );
+                                )
                             }),
                             0
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "expand_by_day",
                     value: function (t) {
                         var e = [],
-                            n = this.last.clone();
-                        (n.year = t),
+                            n = this.last.clone()
+                        ;(n.year = t),
                             (n.month = 1),
                             (n.day = 1),
-                            (n.isDate = !0);
-                        var r = n.dayOfWeek();
-                        (n.month = 12), (n.day = 31), (n.isDate = !0);
+                            (n.isDate = !0)
+                        var r = n.dayOfWeek()
+                        ;(n.month = 12), (n.day = 31), (n.isDate = !0)
                         var i,
                             a = n.dayOfWeek(),
                             s = n.dayOfYear(),
-                            o = v(this.by_data.BYDAY);
+                            o = v(this.by_data.BYDAY)
                         try {
                             for (o.s(); !(i = o.n()).done; ) {
                                 var u = i.value,
                                     l = this.ruleDayOfWeek(u),
                                     h = l[0],
-                                    c = l[1];
+                                    c = l[1]
                                 if (0 == h)
                                     for (
                                         var f = ((c + 7 - r) % 7) + 1;
                                         f <= s;
                                         f += 7
                                     )
-                                        e.push(f);
+                                        e.push(f)
                                 else if (h > 0) {
-                                    var d = void 0;
-                                    (d = c >= r ? c - r + 1 : c - r + 8),
-                                        e.push(d + 7 * (h - 1));
+                                    var d = void 0
+                                    ;(d = c >= r ? c - r + 1 : c - r + 8),
+                                        e.push(d + 7 * (h - 1))
                                 } else {
-                                    var y = void 0;
-                                    (h = -h),
+                                    var y = void 0
+                                    ;(h = -h),
                                         (y =
                                             c <= a ? s - a + c : s - a + c - 7),
-                                        e.push(y - 7 * (h - 1));
+                                        e.push(y - 7 * (h - 1))
                                 }
                             }
                         } catch (t) {
-                            o.e(t);
+                            o.e(t)
                         } finally {
-                            o.f();
+                            o.f()
                         }
-                        return e;
-                    }
+                        return e
+                    },
                 },
                 {
                     key: "is_day_in_byday",
                     value: function (t) {
                         if (this.by_data.BYDAY) {
                             var e,
-                                n = v(this.by_data.BYDAY);
+                                n = v(this.by_data.BYDAY)
                             try {
                                 for (n.s(); !(e = n.n()).done; ) {
                                     var r = e.value,
                                         i = this.ruleDayOfWeek(r),
                                         a = i[0],
                                         s = i[1],
-                                        o = t.dayOfWeek();
+                                        o = t.dayOfWeek()
                                     if (
                                         (0 == a && s == o) ||
                                         t.nthWeekDay(s, a) == t.day
                                     )
-                                        return 1;
+                                        return 1
                                 }
                             } catch (t) {
-                                n.e(t);
+                                n.e(t)
                             } finally {
-                                n.f();
+                                n.f()
                             }
                         }
-                        return 0;
-                    }
+                        return 0
+                    },
                 },
                 {
                     key: "check_set_position",
@@ -3692,8 +3679,8 @@
                         return (
                             !!this.has_by_data("BYSETPOS") &&
                             -1 !== this.by_data.BYSETPOS.indexOf(t)
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "sort_byday_rules",
@@ -3703,92 +3690,92 @@
                                 if (
                                     this.ruleDayOfWeek(
                                         t[n],
-                                        this.rule.wkst
+                                        this.rule.wkst,
                                     )[1] >
                                     this.ruleDayOfWeek(t[e], this.rule.wkst)[1]
                                 ) {
-                                    var r = t[e];
-                                    (t[e] = t[n]), (t[n] = r);
+                                    var r = t[e]
+                                    ;(t[e] = t[n]), (t[n] = r)
                                 }
                             }
-                    }
+                    },
                 },
                 {
                     key: "check_contract_restriction",
                     value: function (e, n) {
                         var r = t._indexMap[e],
                             i = t._expandMap[this.rule.freq][r],
-                            a = !1;
+                            a = !1
                         if (e in this.by_data && i == t.CONTRACT) {
                             var s,
-                                o = v(this.by_data[e]);
+                                o = v(this.by_data[e])
                             try {
                                 for (o.s(); !(s = o.n()).done; ) {
                                     if (s.value == n) {
-                                        a = !0;
-                                        break;
+                                        a = !0
+                                        break
                                     }
                                 }
                             } catch (t) {
-                                o.e(t);
+                                o.e(t)
                             } finally {
-                                o.f();
+                                o.f()
                             }
-                        } else a = !0;
-                        return a;
-                    }
+                        } else a = !0
+                        return a
+                    },
                 },
                 {
                     key: "check_contracting_rules",
                     value: function () {
                         var t = this.last.dayOfWeek(),
                             e = this.last.weekNumber(this.rule.wkst),
-                            n = this.last.dayOfYear();
+                            n = this.last.dayOfYear()
                         return (
                             this.check_contract_restriction(
                                 "BYSECOND",
-                                this.last.second
+                                this.last.second,
                             ) &&
                             this.check_contract_restriction(
                                 "BYMINUTE",
-                                this.last.minute
+                                this.last.minute,
                             ) &&
                             this.check_contract_restriction(
                                 "BYHOUR",
-                                this.last.hour
+                                this.last.hour,
                             ) &&
                             this.check_contract_restriction(
                                 "BYDAY",
-                                rt.numericDayToIcalDay(t)
+                                rt.numericDayToIcalDay(t),
                             ) &&
                             this.check_contract_restriction("BYWEEKNO", e) &&
                             this.check_contract_restriction(
                                 "BYMONTHDAY",
-                                this.last.day
+                                this.last.day,
                             ) &&
                             this.check_contract_restriction(
                                 "BYMONTH",
-                                this.last.month
+                                this.last.month,
                             ) &&
                             this.check_contract_restriction("BYYEARDAY", n)
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "setup_defaults",
                     value: function (e, n, r) {
-                        var i = t._indexMap[e];
+                        var i = t._indexMap[e]
                         return t._expandMap[this.rule.freq][i] != t.CONTRACT &&
                             (e in this.by_data || (this.by_data[e] = [r]),
                             this.rule.freq != n)
                             ? this.by_data[e][0]
-                            : r;
-                    }
+                            : r
+                    },
                 },
                 {
                     key: "toJSON",
                     value: function () {
-                        var t = Object.create(null);
+                        var t = Object.create(null)
                         return (
                             (t.initialized = this.initialized),
                             (t.rule = this.rule.toJSON()),
@@ -3799,11 +3786,11 @@
                             (t.by_indices = this.by_indices),
                             (t.occurrence_number = this.occurrence_number),
                             t
-                        );
-                    }
-                }
-            ]);
-        })();
+                        )
+                    },
+                },
+            ])
+        })()
     u(G, "_indexMap", {
         BYSECOND: 0,
         BYMINUTE: 1,
@@ -3813,7 +3800,7 @@
         BYYEARDAY: 5,
         BYWEEKNO: 6,
         BYMONTH: 7,
-        BYSETPOS: 8
+        BYSETPOS: 8,
     }),
         u(G, "_expandMap", {
             SECONDLY: [1, 1, 1, 1, 1, 1, 1, 1],
@@ -3822,20 +3809,20 @@
             DAILY: [2, 2, 2, 1, 1, 1, 1, 1],
             WEEKLY: [2, 2, 2, 2, 3, 3, 1, 1],
             MONTHLY: [2, 2, 2, 2, 2, 3, 3, 1],
-            YEARLY: [2, 2, 2, 2, 2, 2, 2, 2]
+            YEARLY: [2, 2, 2, 2, 2, 2, 2, 2],
         }),
         u(G, "UNKNOWN", 0),
         u(G, "CONTRACT", 1),
         u(G, "EXPAND", 2),
-        u(G, "ILLEGAL", 3);
+        u(G, "ILLEGAL", 3)
     var X = (function (t) {
             function n() {
                 return (
                     a(this, n),
                     e(this, n, ["Recurrence rule has no valid occurrences"])
-                );
+                )
             }
-            return l(n, t), o(n);
+            return l(n, t), o(n)
         })(f(Error)),
         Q = /^(SU|MO|TU|WE|TH|FR|SA)$/,
         $ = /^([+-])?(5[0-3]|[1-4][0-9]|[1-9])?(SU|MO|TU|WE|TH|FR|SA)$/,
@@ -3846,12 +3833,12 @@
             WE: b.WEDNESDAY,
             TH: b.THURSDAY,
             FR: b.FRIDAY,
-            SA: b.SATURDAY
+            SA: b.SATURDAY,
         },
         et = Object.fromEntries(
             Object.entries(tt).map(function (t) {
-                return t.reverse();
-            })
+                return t.reverse()
+            }),
         ),
         nt = [
             "SECONDLY",
@@ -3860,7 +3847,7 @@
             "DAILY",
             "WEEKLY",
             "MONTHLY",
-            "YEARLY"
+            "YEARLY",
         ],
         rt = (function () {
             function t(e) {
@@ -3875,7 +3862,7 @@
                     u(this, "icaltype", "recur"),
                     (this.wrappedJSObject = this),
                     (this.parts = {}),
-                    e && "object" === i(e) && this.fromData(e);
+                    e && "object" === i(e) && this.fromData(e)
             }
             return o(
                 t,
@@ -3883,70 +3870,70 @@
                     {
                         key: "iterator",
                         value: function (t) {
-                            return new G({ rule: this, dtstart: t });
-                        }
+                            return new G({ rule: this, dtstart: t })
+                        },
                     },
                     {
                         key: "clone",
                         value: function () {
-                            return new t(this.toJSON());
-                        }
+                            return new t(this.toJSON())
+                        },
                     },
                     {
                         key: "isFinite",
                         value: function () {
-                            return !(!this.count && !this.until);
-                        }
+                            return !(!this.count && !this.until)
+                        },
                     },
                     {
                         key: "isByCount",
                         value: function () {
-                            return !(!this.count || this.until);
-                        }
+                            return !(!this.count || this.until)
+                        },
                     },
                     {
                         key: "addComponent",
                         value: function (t, e) {
-                            var n = t.toUpperCase();
+                            var n = t.toUpperCase()
                             n in this.parts
                                 ? this.parts[n].push(e)
-                                : (this.parts[n] = [e]);
-                        }
+                                : (this.parts[n] = [e])
+                        },
                     },
                     {
                         key: "setComponent",
                         value: function (t, e) {
-                            this.parts[t.toUpperCase()] = e.slice();
-                        }
+                            this.parts[t.toUpperCase()] = e.slice()
+                        },
                     },
                     {
                         key: "getComponent",
                         value: function (t) {
-                            var e = t.toUpperCase();
-                            return e in this.parts ? this.parts[e].slice() : [];
-                        }
+                            var e = t.toUpperCase()
+                            return e in this.parts ? this.parts[e].slice() : []
+                        },
                     },
                     {
                         key: "getNextOccurrence",
                         value: function (t, e) {
                             var n,
-                                r = this.iterator(t);
+                                r = this.iterator(t)
                             do {
-                                n = r.next();
-                            } while (n && n.compare(e) <= 0);
-                            return n && e.zone && (n.zone = e.zone), n;
-                        }
+                                n = r.next()
+                            } while (n && n.compare(e) <= 0)
+                            return n && e.zone && (n.zone = e.zone), n
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (e) {
                             for (var n in e) {
-                                var r = n.toUpperCase();
+                                var r = n.toUpperCase()
                                 r in st
                                     ? Array.isArray(e[n])
                                         ? (this.parts[r] = e[n])
                                         : (this.parts[r] = [e[n]])
-                                    : (this[n] = e[n]);
+                                    : (this[n] = e[n])
                             }
                             this.interval &&
                                 "number" != typeof this.interval &&
@@ -3954,21 +3941,21 @@
                                 this.wkst &&
                                     "number" != typeof this.wkst &&
                                     (this.wkst = t.icalDayToNumericDay(
-                                        this.wkst
+                                        this.wkst,
                                     )),
                                 !this.until ||
                                     this.until instanceof b ||
-                                    (this.until = b.fromString(this.until));
-                        }
+                                    (this.until = b.fromString(this.until))
+                        },
                     },
                     {
                         key: "toJSON",
                         value: function () {
-                            var e = Object.create(null);
-                            (e.freq = this.freq),
+                            var e = Object.create(null)
+                            ;(e.freq = this.freq),
                                 this.count && (e.count = this.count),
                                 this.interval > 1 &&
-                                    (e.interval = this.interval);
+                                    (e.interval = this.interval)
                             for (
                                 var n = 0, r = Object.entries(this.parts);
                                 n < r.length;
@@ -3976,10 +3963,10 @@
                             ) {
                                 var i = d(r[n], 2),
                                     a = i[0],
-                                    s = i[1];
+                                    s = i[1]
                                 Array.isArray(s) && 1 == s.length
                                     ? (e[a.toLowerCase()] = s[0])
-                                    : (e[a.toLowerCase()] = H(s));
+                                    : (e[a.toLowerCase()] = H(s))
                             }
                             return (
                                 this.until && (e.until = this.until.toString()),
@@ -3987,23 +3974,23 @@
                                     this.wkst !== b.DEFAULT_WEEK_START &&
                                     (e.wkst = t.numericDayToIcalDay(this.wkst)),
                                 e
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
-                            var e = "FREQ=" + this.freq;
+                            var e = "FREQ=" + this.freq
                             this.count && (e += ";COUNT=" + this.count),
                                 this.interval > 1 &&
-                                    (e += ";INTERVAL=" + this.interval);
+                                    (e += ";INTERVAL=" + this.interval)
                             for (
                                 var n = 0, r = Object.entries(this.parts);
                                 n < r.length;
                                 n++
                             ) {
-                                var i = d(r[n], 2);
-                                e += ";" + i[0] + "=" + i[1];
+                                var i = d(r[n], 2)
+                                e += ";" + i[0] + "=" + i[1]
                             }
                             return (
                                 this.until &&
@@ -4015,22 +4002,22 @@
                                         ";WKST=" +
                                         t.numericDayToIcalDay(this.wkst)),
                                 e
-                            );
-                        }
-                    }
+                            )
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e) {
-                            return new t(this._stringToData(e, !1));
-                        }
+                            return new t(this._stringToData(e, !1))
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (e) {
-                            return new t(e);
-                        }
+                            return new t(e)
+                        },
                     },
                     {
                         key: "_stringToData",
@@ -4047,57 +4034,57 @@
                                     o = s[0].toUpperCase(),
                                     u = s[0].toLowerCase(),
                                     l = e ? u : o,
-                                    h = s[1];
+                                    h = s[1]
                                 if (o in st) {
                                     var c,
                                         f = h.split(","),
                                         d = new Set(),
-                                        m = v(f);
+                                        m = v(f)
                                     try {
                                         for (m.s(); !(c = m.n()).done; ) {
-                                            var p = c.value;
-                                            d.add(st[o](p));
+                                            var p = c.value
+                                            d.add(st[o](p))
                                         }
                                     } catch (t) {
-                                        m.e(t);
+                                        m.e(t)
                                     } finally {
-                                        m.f();
+                                        m.f()
                                     }
-                                    (f = y(d)),
-                                        (n[l] = 1 == f.length ? f[0] : f);
-                                } else o in at ? at[o](h, n, e) : (n[u] = h);
+                                    ;(f = y(d)),
+                                        (n[l] = 1 == f.length ? f[0] : f)
+                                } else o in at ? at[o](h, n, e) : (n[u] = h)
                             }
-                            return n;
-                        }
+                            return n
+                        },
                     },
                     {
                         key: "icalDayToNumericDay",
                         value: function (t, e) {
-                            var n = e || b.SUNDAY;
-                            return ((tt[t] - n + 7) % 7) + 1;
-                        }
+                            var n = e || b.SUNDAY
+                            return ((tt[t] - n + 7) % 7) + 1
+                        },
                     },
                     {
                         key: "numericDayToIcalDay",
                         value: function (t, e) {
-                            var n = t + (e || b.SUNDAY) - b.SUNDAY;
-                            return n > 7 && (n -= 7), et[n];
-                        }
-                    }
-                ]
-            );
-        })();
+                            var n = t + (e || b.SUNDAY) - b.SUNDAY
+                            return n > 7 && (n -= 7), et[n]
+                        },
+                    },
+                ],
+            )
+        })()
     function it(t, e, n, r) {
-        var i = r;
+        var i = r
         if (
             ("+" === r[0] && (i = r.slice(1)),
             (i = P(i)),
             void 0 !== e && r < e)
         )
-            throw new Error(t + ': invalid value "' + r + '" must be > ' + e);
+            throw new Error(t + ': invalid value "' + r + '" must be > ' + e)
         if (void 0 !== n && r > n)
-            throw new Error(t + ': invalid value "' + r + '" must be < ' + e);
-        return i;
+            throw new Error(t + ': invalid value "' + r + '" must be < ' + e)
+        return i
     }
     var at = {
             FREQ: function (t, e, n) {
@@ -4107,41 +4094,41 @@
                             t +
                             '" expected: "' +
                             nt.join(", ") +
-                            '"'
-                    );
-                e.freq = t;
+                            '"',
+                    )
+                e.freq = t
             },
             COUNT: function (t, e, n) {
-                e.count = P(t);
+                e.count = P(t)
             },
             INTERVAL: function (t, e, n) {
-                (e.interval = P(t)), e.interval < 1 && (e.interval = 1);
+                ;(e.interval = P(t)), e.interval < 1 && (e.interval = 1)
             },
             UNTIL: function (t, e, n) {
                 t.length > 10
                     ? (e.until = It.icalendar.value["date-time"].fromICAL(t))
                     : (e.until = It.icalendar.value.date.fromICAL(t)),
-                    n || (e.until = b.fromString(e.until));
+                    n || (e.until = b.fromString(e.until))
             },
             WKST: function (t, e, n) {
                 if (!Q.test(t))
-                    throw new Error('invalid WKST value "' + t + '"');
-                e.wkst = rt.icalDayToNumericDay(t);
-            }
+                    throw new Error('invalid WKST value "' + t + '"')
+                e.wkst = rt.icalDayToNumericDay(t)
+            },
         },
         st = {
             BYSECOND: it.bind(void 0, "BYSECOND", 0, 60),
             BYMINUTE: it.bind(void 0, "BYMINUTE", 0, 59),
             BYHOUR: it.bind(void 0, "BYHOUR", 0, 23),
             BYDAY: function (t) {
-                if ($.test(t)) return t;
-                throw new Error('invalid BYDAY value "' + t + '"');
+                if ($.test(t)) return t
+                throw new Error('invalid BYDAY value "' + t + '"')
             },
             BYMONTHDAY: it.bind(void 0, "BYMONTHDAY", -31, 31),
             BYYEARDAY: it.bind(void 0, "BYYEARDAY", -366, 366),
             BYWEEKNO: it.bind(void 0, "BYWEEKNO", -53, 53),
             BYMONTH: it.bind(void 0, "BYMONTH", 1, 12),
-            BYSETPOS: it.bind(void 0, "BYSETPOS", -366, 366)
+            BYSETPOS: it.bind(void 0, "BYSETPOS", -366, 366),
         },
         ot = (function () {
             function t(e) {
@@ -4157,25 +4144,25 @@
                 ) {
                     if (e.start && !(e.start instanceof b))
                         throw new TypeError(
-                            ".start must be an instance of ICAL.Time"
-                        );
-                    this.start = e.start;
+                            ".start must be an instance of ICAL.Time",
+                        )
+                    this.start = e.start
                 }
                 if (e && e.end && e.duration)
-                    throw new Error("cannot accept both end and duration");
+                    throw new Error("cannot accept both end and duration")
                 if (e && "end" in e) {
                     if (e.end && !(e.end instanceof b))
                         throw new TypeError(
-                            ".end must be an instance of ICAL.Time"
-                        );
-                    this.end = e.end;
+                            ".end must be an instance of ICAL.Time",
+                        )
+                    this.end = e.end
                 }
                 if (e && "duration" in e) {
                     if (e.duration && !(e.duration instanceof Y))
                         throw new TypeError(
-                            ".duration must be an instance of ICAL.Duration"
-                        );
-                    this.duration = e.duration;
+                            ".duration must be an instance of ICAL.Duration",
+                        )
+                    this.duration = e.duration
                 }
             }
             return o(
@@ -4189,42 +4176,42 @@
                                 end: this.end ? this.end.clone() : null,
                                 duration: this.duration
                                     ? this.duration.clone()
-                                    : null
-                            });
-                        }
+                                    : null,
+                            })
+                        },
                     },
                     {
                         key: "getDuration",
                         value: function () {
                             return this.duration
                                 ? this.duration
-                                : this.end.subtractDate(this.start);
-                        }
+                                : this.end.subtractDate(this.start)
+                        },
                     },
                     {
                         key: "getEnd",
                         value: function () {
-                            if (this.end) return this.end;
-                            var t = this.start.clone();
-                            return t.addDuration(this.duration), t;
-                        }
+                            if (this.end) return this.end
+                            var t = this.start.clone()
+                            return t.addDuration(this.duration), t
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
                             return (
                                 this.start + "/" + (this.end || this.duration)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "toJSON",
                         value: function () {
                             return [
                                 this.start.toString(),
-                                (this.end || this.duration).toString()
-                            ];
-                        }
+                                (this.end || this.duration).toString(),
+                            ]
+                        },
                     },
                     {
                         key: "toICALString",
@@ -4233,36 +4220,36 @@
                                 this.start.toICALString() +
                                 "/" +
                                 (this.end || this.duration).toICALString()
-                            );
-                        }
-                    }
+                            )
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e, n) {
-                            var r = e.split("/");
+                            var r = e.split("/")
                             if (2 !== r.length)
                                 throw new Error(
                                     'Invalid string value: "' +
                                         e +
-                                        '" must contain a "/" char.'
-                                );
+                                        '" must contain a "/" char.',
+                                )
                             var i = { start: b.fromDateTimeString(r[0], n) },
-                                a = r[1];
+                                a = r[1]
                             return (
                                 Y.isValueString(a)
                                     ? (i.duration = Y.fromString(a))
                                     : (i.end = b.fromDateTimeString(a, n)),
                                 new t(i)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "fromData",
                         value: function (e) {
-                            return new t(e);
-                        }
+                            return new t(e)
+                        },
                     },
                     {
                         key: "fromJSON",
@@ -4270,55 +4257,55 @@
                             function i(t, e) {
                                 return r
                                     ? b.fromString(t, e)
-                                    : b.fromDateTimeString(t, e);
+                                    : b.fromDateTimeString(t, e)
                             }
                             return Y.isValueString(e[1])
                                 ? t.fromData({
                                       start: i(e[0], n),
-                                      duration: Y.fromString(e[1])
+                                      duration: Y.fromString(e[1]),
                                   })
                                 : t.fromData({
                                       start: i(e[0], n),
-                                      end: i(e[1], n)
-                                  });
-                        }
-                    }
-                ]
-            );
+                                      end: i(e[1], n),
+                                  })
+                        },
+                    },
+                ],
+            )
         })(),
         ut = /\\\\|\\,|\\[Nn]/g,
-        lt = /\\|,|\n/g;
+        lt = /\\|,|\n/g
     function ht(t, e) {
         return {
             matches: /.*/,
             fromICAL: function (e, n) {
                 return (function (t, e, n) {
-                    if (-1 === t.indexOf("\\")) return t;
-                    n && (e = new RegExp(e.source + "|\\\\" + n, e.flags));
-                    return t.replace(e, Tt);
-                })(e, t, n);
+                    if (-1 === t.indexOf("\\")) return t
+                    n && (e = new RegExp(e.source + "|\\\\" + n, e.flags))
+                    return t.replace(e, Tt)
+                })(e, t, n)
             },
             toICAL: function (t, n) {
-                var r = e;
+                var r = e
                 return (
                     n && (r = new RegExp(r.source + "|" + n, r.flags)),
                     t.replace(r, function (t) {
                         switch (t) {
                             case "\\":
-                                return "\\\\";
+                                return "\\\\"
                             case ";":
-                                return "\\;";
+                                return "\\;"
                             case ",":
-                                return "\\,";
+                                return "\\,"
                             case "\n":
-                                return "\\n";
+                                return "\\n"
                             default:
-                                return t;
+                                return t
                         }
                     })
-                );
-            }
-        };
+                )
+            },
+        }
     }
     var ct = { defaultType: "text" },
         ft = { defaultType: "text", multiValue: "," },
@@ -4331,21 +4318,21 @@
         gt = { defaultType: "recur" },
         Dt = {
             defaultType: "date-and-or-time",
-            allowedTypes: ["date-time", "date", "text"]
-        };
+            allowedTypes: ["date-time", "date", "text"],
+        }
     function Tt(t) {
         switch (t) {
             case "\\\\":
-                return "\\";
+                return "\\"
             case "\\;":
-                return ";";
+                return ";"
             case "\\,":
-                return ",";
+                return ","
             case "\\n":
             case "\\N":
-                return "\n";
+                return "\n"
             default:
-                return t;
+                return t
         }
     }
     var Yt = { categories: ft, url: vt, version: ct, uid: ct },
@@ -4353,36 +4340,36 @@
             boolean: {
                 values: ["TRUE", "FALSE"],
                 fromICAL: function (t) {
-                    return "TRUE" === t;
+                    return "TRUE" === t
                 },
                 toICAL: function (t) {
-                    return t ? "TRUE" : "FALSE";
-                }
+                    return t ? "TRUE" : "FALSE"
+                },
             },
             float: {
                 matches: /^[+-]?\d+\.\d+$/,
                 fromICAL: function (t) {
-                    var e = parseFloat(t);
-                    return L(e) ? 0 : e;
+                    var e = parseFloat(t)
+                    return L(e) ? 0 : e
                 },
                 toICAL: function (t) {
-                    return String(t);
-                }
+                    return String(t)
+                },
             },
             integer: {
                 fromICAL: function (t) {
-                    var e = parseInt(t);
-                    return L(e) ? 0 : e;
+                    var e = parseInt(t)
+                    return L(e) ? 0 : e
                 },
                 toICAL: function (t) {
-                    return String(t);
-                }
+                    return String(t)
+                },
             },
             "utc-offset": {
                 toICAL: function (t) {
                     return t.length < 7
                         ? t.slice(0, 3) + t.slice(4, 6)
-                        : t.slice(0, 3) + t.slice(4, 6) + t.slice(7, 9);
+                        : t.slice(0, 3) + t.slice(4, 6) + t.slice(7, 9)
                 },
                 fromICAL: function (t) {
                     return t.length < 6
@@ -4391,36 +4378,36 @@
                               ":" +
                               t.slice(3, 5) +
                               ":" +
-                              t.slice(5, 7);
+                              t.slice(5, 7)
                 },
                 decorate: function (t) {
-                    return J.fromString(t);
+                    return J.fromString(t)
                 },
                 undecorate: function (t) {
-                    return t.toString();
-                }
-            }
+                    return t.toString()
+                },
+            },
         },
         bt = K(kt, {
             text: ht(/\\\\|\\;|\\,|\\[Nn]/g, /\\|;|,|\n/g),
             uri: {},
             binary: {
                 decorate: function (t) {
-                    return g.fromString(t);
+                    return g.fromString(t)
                 },
                 undecorate: function (t) {
-                    return t.toString();
-                }
+                    return t.toString()
+                },
             },
             "cal-address": {},
             date: {
                 decorate: function (t, e) {
                     return It.strict
                         ? b.fromDateString(t, e)
-                        : b.fromString(t, e);
+                        : b.fromString(t, e)
                 },
                 undecorate: function (t) {
-                    return t.toString();
+                    return t.toString()
                 },
                 fromICAL: function (t) {
                     return !It.strict && t.length >= 15
@@ -4429,16 +4416,16 @@
                               "-" +
                               t.slice(4, 6) +
                               "-" +
-                              t.slice(6, 8);
+                              t.slice(6, 8)
                 },
                 toICAL: function (t) {
-                    var e = t.length;
+                    var e = t.length
                     return 10 == e
                         ? t.slice(0, 4) + t.slice(5, 7) + t.slice(8, 10)
                         : e >= 19
                           ? bt["date-time"].toICAL(t)
-                          : t;
-                }
+                          : t
+                },
             },
             "date-time": {
                 fromICAL: function (t) {
@@ -4454,13 +4441,13 @@
                             ":" +
                             t.slice(11, 13) +
                             ":" +
-                            t.slice(13, 15);
-                        return t[15] && "Z" === t[15] && (e += "Z"), e;
+                            t.slice(13, 15)
+                        return t[15] && "Z" === t[15] && (e += "Z"), e
                     }
-                    return bt.date.fromICAL(t);
+                    return bt.date.fromICAL(t)
                 },
                 toICAL: function (t) {
-                    var e = t.length;
+                    var e = t.length
                     if (10 != e || It.strict) {
                         if (e >= 19) {
                             var n =
@@ -4468,39 +4455,39 @@
                                 t.slice(5, 7) +
                                 t.slice(8, 13) +
                                 t.slice(14, 16) +
-                                t.slice(17, 19);
-                            return t[19] && "Z" === t[19] && (n += "Z"), n;
+                                t.slice(17, 19)
+                            return t[19] && "Z" === t[19] && (n += "Z"), n
                         }
-                        return t;
+                        return t
                     }
-                    return bt.date.toICAL(t);
+                    return bt.date.toICAL(t)
                 },
                 decorate: function (t, e) {
                     return It.strict
                         ? b.fromDateTimeString(t, e)
-                        : b.fromString(t, e);
+                        : b.fromString(t, e)
                 },
                 undecorate: function (t) {
-                    return t.toString();
-                }
+                    return t.toString()
+                },
             },
             duration: {
                 decorate: function (t) {
-                    return Y.fromString(t);
+                    return Y.fromString(t)
                 },
                 undecorate: function (t) {
-                    return t.toString();
-                }
+                    return t.toString()
+                },
             },
             period: {
                 fromICAL: function (t) {
-                    var e = t.split("/");
+                    var e = t.split("/")
                     return (
                         (e[0] = bt["date-time"].fromICAL(e[0])),
                         Y.isValueString(e[1]) ||
                             (e[1] = bt["date-time"].fromICAL(e[1])),
                         e
-                    );
+                    )
                 },
                 toICAL: function (t) {
                     return (
@@ -4513,18 +4500,18 @@
                                 ? (t[1] = bt["date-time"].toICAL(t[1]))
                                 : (t[1] = bt.date.toICAL(t[1]))),
                         t.join("/")
-                    );
+                    )
                 },
                 decorate: function (t, e) {
-                    return ot.fromJSON(t, e, !It.strict);
+                    return ot.fromJSON(t, e, !It.strict)
                 },
                 undecorate: function (t) {
-                    return t.toJSON();
-                }
+                    return t.toJSON()
+                },
             },
             recur: {
                 fromICAL: function (t) {
-                    return rt._stringToData(t, !0);
+                    return rt._stringToData(t, !0)
                 },
                 toICAL: function (t) {
                     for (
@@ -4534,7 +4521,7 @@
                     ) {
                         var i = d(r[n], 2),
                             a = i[0],
-                            s = i[1];
+                            s = i[1]
                         "until" == a
                             ? (s =
                                   s.length > 10
@@ -4544,34 +4531,34 @@
                               ? "number" == typeof s &&
                                 (s = rt.numericDayToIcalDay(s))
                               : Array.isArray(s) && (s = s.join(",")),
-                            (e += a.toUpperCase() + "=" + s + ";");
+                            (e += a.toUpperCase() + "=" + s + ";")
                     }
-                    return e.slice(0, Math.max(0, e.length - 1));
+                    return e.slice(0, Math.max(0, e.length - 1))
                 },
                 decorate: function (t) {
-                    return rt.fromData(t);
+                    return rt.fromData(t)
                 },
                 undecorate: function (t) {
-                    return t.toJSON();
-                }
+                    return t.toJSON()
+                },
             },
             time: {
                 fromICAL: function (t) {
-                    if (t.length < 6) return t;
+                    if (t.length < 6) return t
                     var e =
                         t.slice(0, 2) +
                         ":" +
                         t.slice(2, 4) +
                         ":" +
-                        t.slice(4, 6);
-                    return "Z" === t[6] && (e += "Z"), e;
+                        t.slice(4, 6)
+                    return "Z" === t[6] && (e += "Z"), e
                 },
                 toICAL: function (t) {
-                    if (t.length < 8) return t;
-                    var e = t.slice(0, 2) + t.slice(3, 5) + t.slice(6, 8);
-                    return "Z" === t[8] && (e += "Z"), e;
-                }
-            }
+                    if (t.length < 8) return t
+                    var e = t.slice(0, 2) + t.slice(3, 5) + t.slice(6, 8)
+                    return "Z" === t[8] && (e += "Z"), e
+                },
+            },
         }),
         Ot = K(Yt, {
             action: ct,
@@ -4592,7 +4579,7 @@
             exdate: {
                 defaultType: "date-time",
                 allowedTypes: ["date-time", "date"],
-                multiValue: ","
+                multiValue: ",",
             },
             exrule: gt,
             freebusy: { defaultType: "period", multiValue: "," },
@@ -4615,8 +4602,8 @@
                         ? "period"
                         : -1 === t.indexOf("T")
                           ? "date"
-                          : "date-time";
-                }
+                          : "date-time"
+                },
             },
             "recurrence-id": mt,
             resources: ft,
@@ -4628,50 +4615,50 @@
             transp: ct,
             trigger: {
                 defaultType: "duration",
-                allowedTypes: ["duration", "date-time"]
+                allowedTypes: ["duration", "date-time"],
             },
             tzoffsetfrom: _t,
             tzoffsetto: _t,
             tzurl: vt,
             tzid: ct,
-            tzname: ct
+            tzname: ct,
         }),
         At = K(kt, {
             text: ht(ut, lt),
             uri: ht(ut, lt),
             date: {
                 decorate: function (t) {
-                    return Z.fromDateAndOrTimeString(t, "date");
+                    return Z.fromDateAndOrTimeString(t, "date")
                 },
                 undecorate: function (t) {
-                    return t.toString();
+                    return t.toString()
                 },
                 fromICAL: function (t) {
                     return 8 == t.length
                         ? bt.date.fromICAL(t)
                         : "-" == t[0] && 6 == t.length
                           ? t.slice(0, 4) + "-" + t.slice(4)
-                          : t;
+                          : t
                 },
                 toICAL: function (t) {
                     return 10 == t.length
                         ? bt.date.toICAL(t)
                         : "-" == t[0] && 7 == t.length
                           ? t.slice(0, 4) + t.slice(5)
-                          : t;
-                }
+                          : t
+                },
             },
             time: {
                 decorate: function (t) {
-                    return Z.fromDateAndOrTimeString("T" + t, "time");
+                    return Z.fromDateAndOrTimeString("T" + t, "time")
                 },
                 undecorate: function (t) {
-                    return t.toString();
+                    return t.toString()
                 },
                 fromICAL: function (t) {
                     var e = At.time._splitZone(t, !0),
                         n = e[0],
-                        r = e[1];
+                        r = e[1]
                     return (
                         6 == r.length
                             ? (r =
@@ -4688,12 +4675,12 @@
                             ("-" != n[0] && "+" != n[0]) ||
                             (n = n.slice(0, 3) + ":" + n.slice(3)),
                         r + n
-                    );
+                    )
                 },
                 toICAL: function (t) {
                     var e = At.time._splitZone(t),
                         n = e[0],
-                        r = e[1];
+                        r = e[1]
                     return (
                         8 == r.length
                             ? (r =
@@ -4706,14 +4693,14 @@
                             ("-" != n[0] && "+" != n[0]) ||
                             (n = n.slice(0, 3) + n.slice(4)),
                         r + n
-                    );
+                    )
                 },
                 _splitZone: function (t, e) {
                     var n,
                         r,
                         i = t.length - 1,
                         a = t.length - (e ? 5 : 6),
-                        s = t[a];
+                        s = t[a]
                     return (
                         "Z" == t[i]
                             ? ((n = t[i]), (r = t.slice(0, Math.max(0, i))))
@@ -4722,44 +4709,44 @@
                                 (r = t.slice(0, Math.max(0, a))))
                               : ((n = ""), (r = t)),
                         [n, r]
-                    );
-                }
+                    )
+                },
             },
             "date-time": {
                 decorate: function (t) {
-                    return Z.fromDateAndOrTimeString(t, "date-time");
+                    return Z.fromDateAndOrTimeString(t, "date-time")
                 },
                 undecorate: function (t) {
-                    return t.toString();
+                    return t.toString()
                 },
                 fromICAL: function (t) {
-                    return At["date-and-or-time"].fromICAL(t);
+                    return At["date-and-or-time"].fromICAL(t)
                 },
                 toICAL: function (t) {
-                    return At["date-and-or-time"].toICAL(t);
-                }
+                    return At["date-and-or-time"].toICAL(t)
+                },
             },
             "date-and-or-time": {
                 decorate: function (t) {
-                    return Z.fromDateAndOrTimeString(t, "date-and-or-time");
+                    return Z.fromDateAndOrTimeString(t, "date-and-or-time")
                 },
                 undecorate: function (t) {
-                    return t.toString();
+                    return t.toString()
                 },
                 fromICAL: function (t) {
-                    var e = t.split("T");
+                    var e = t.split("T")
                     return (
                         (e[0] ? At.date.fromICAL(e[0]) : "") +
                         (e[1] ? "T" + At.time.fromICAL(e[1]) : "")
-                    );
+                    )
                 },
                 toICAL: function (t) {
-                    var e = t.split("T");
+                    var e = t.split("T")
                     return (
                         At.date.toICAL(e[0]) +
                         (e[1] ? "T" + At.time.toICAL(e[1]) : "")
-                    );
-                }
+                    )
+                },
             },
             timestamp: bt["date-time"],
             "language-tag": { matches: /^[a-zA-Z0-9-]+$/ },
@@ -4767,18 +4754,18 @@
                 fromICAL: function (t) {
                     return Array.from(t)
                         .filter(function (t) {
-                            return "\\" === t ? void 0 : t;
+                            return "\\" === t ? void 0 : t
                         })
-                        .join("");
+                        .join("")
                 },
                 toICAL: function (t) {
                     return Array.from(t)
                         .map(function (t) {
-                            return "," === t || ";" === t ? "\\" + t : t;
+                            return "," === t || ";" === t ? "\\" + t : t
                         })
-                        .join("");
-                }
-            }
+                        .join("")
+                },
+            },
         }),
         St = K(Yt, {
             adr: { defaultType: "text", structuredValue: ";", multiValue: "," },
@@ -4812,9 +4799,9 @@
             title: ct,
             tz: {
                 defaultType: "text",
-                allowedTypes: ["text", "utc-offset", "uri"]
+                allowedTypes: ["text", "utc-offset", "uri"],
             },
-            xml: ct
+            xml: ct,
         }),
         wt = K(kt, {
             binary: bt.binary,
@@ -4827,18 +4814,18 @@
             vcard: bt.text,
             "utc-offset": {
                 toICAL: function (t) {
-                    return t.slice(0, 7);
+                    return t.slice(0, 7)
                 },
                 fromICAL: function (t) {
-                    return t.slice(0, 7);
+                    return t.slice(0, 7)
                 },
                 decorate: function (t) {
-                    return J.fromString(t);
+                    return J.fromString(t)
                 },
                 undecorate: function (t) {
-                    return t.toString();
-                }
-            }
+                    return t.toString()
+                },
+            },
         }),
         Et = K(Yt, {
             fn: ct,
@@ -4849,8 +4836,8 @@
                 defaultType: "date-time",
                 allowedTypes: ["date-time", "date"],
                 detectType: function (t) {
-                    return -1 === t.indexOf("T") ? "date" : "date-time";
-                }
+                    return -1 === t.indexOf("T") ? "date" : "date-time"
+                },
             },
             adr: { defaultType: "text", structuredValue: ";", multiValue: "," },
             label: ct,
@@ -4859,7 +4846,7 @@
             mailer: ct,
             tz: {
                 defaultType: "utc-offset",
-                allowedTypes: ["utc-offset", "text"]
+                allowedTypes: ["utc-offset", "text"],
             },
             geo: { defaultType: "float", structuredValue: ";" },
             title: ct,
@@ -4867,7 +4854,7 @@
             logo: { defaultType: "binary", allowedTypes: ["binary", "uri"] },
             agent: {
                 defaultType: "vcard",
-                allowedTypes: ["vcard", "text", "uri"]
+                allowedTypes: ["vcard", "text", "uri"],
             },
             org: dt,
             note: ft,
@@ -4876,13 +4863,13 @@
                 defaultType: "date-time",
                 allowedTypes: ["date-time", "date"],
                 detectType: function (t) {
-                    return -1 === t.indexOf("T") ? "date" : "date-time";
-                }
+                    return -1 === t.indexOf("T") ? "date" : "date-time"
+                },
             },
             "sort-string": ct,
             sound: { defaultType: "binary", allowedTypes: ["binary", "uri"] },
             class: ct,
-            key: { defaultType: "binary", allowedTypes: ["binary", "text"] }
+            key: { defaultType: "binary", allowedTypes: ["binary", "text"] },
         }),
         Ct = {
             value: bt,
@@ -4893,20 +4880,20 @@
                         "GROUP",
                         "RESOURCE",
                         "ROOM",
-                        "UNKNOWN"
+                        "UNKNOWN",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
+                    allowIanaToken: !0,
                 },
                 "delegated-from": {
                     valueType: "cal-address",
                     multiValue: ",",
-                    multiValueSeparateDQuote: !0
+                    multiValueSeparateDQuote: !0,
                 },
                 "delegated-to": {
                     valueType: "cal-address",
                     multiValue: ",",
-                    multiValueSeparateDQuote: !0
+                    multiValueSeparateDQuote: !0,
                 },
                 encoding: { values: ["8BIT", "BASE64"] },
                 fbtype: {
@@ -4914,15 +4901,15 @@
                         "FREE",
                         "BUSY",
                         "BUSY-UNAVAILABLE",
-                        "BUSY-TENTATIVE"
+                        "BUSY-TENTATIVE",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
+                    allowIanaToken: !0,
                 },
                 member: {
                     valueType: "cal-address",
                     multiValue: ",",
-                    multiValueSeparateDQuote: !0
+                    multiValueSeparateDQuote: !0,
                 },
                 partstat: {
                     values: [
@@ -4932,27 +4919,27 @@
                         "TENTATIVE",
                         "DELEGATED",
                         "COMPLETED",
-                        "IN-PROCESS"
+                        "IN-PROCESS",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
+                    allowIanaToken: !0,
                 },
                 range: { values: ["THISANDFUTURE"] },
                 related: { values: ["START", "END"] },
                 reltype: {
                     values: ["PARENT", "CHILD", "SIBLING"],
                     allowXName: !0,
-                    allowIanaToken: !0
+                    allowIanaToken: !0,
                 },
                 role: {
                     values: [
                         "REQ-PARTICIPANT",
                         "CHAIR",
                         "OPT-PARTICIPANT",
-                        "NON-PARTICIPANT"
+                        "NON-PARTICIPANT",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
+                    allowIanaToken: !0,
                 },
                 rsvp: { values: ["TRUE", "FALSE"] },
                 "sent-by": { valueType: "cal-address" },
@@ -4972,14 +4959,14 @@
                         "text",
                         "time",
                         "uri",
-                        "utc-offset"
+                        "utc-offset",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
-                }
+                    allowIanaToken: !0,
+                },
             },
             property: Ot,
-            propertyGroups: !1
+            propertyGroups: !1,
         },
         xt = {
             value: At,
@@ -4998,14 +4985,14 @@
                         "integer",
                         "float",
                         "utc-offset",
-                        "language-tag"
+                        "language-tag",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
-                }
+                    allowIanaToken: !0,
+                },
             },
             property: St,
-            propertyGroups: !0
+            propertyGroups: !0,
         },
         Nt = {
             value: wt,
@@ -5024,14 +5011,14 @@
                         "float",
                         "utc-offset",
                         "vcard",
-                        "binary"
+                        "binary",
                     ],
                     allowXName: !0,
-                    allowIanaToken: !0
-                }
+                    allowIanaToken: !0,
+                },
             },
             property: Et,
-            propertyGroups: !0
+            propertyGroups: !0,
         },
         It = {
             strict: !0,
@@ -5046,7 +5033,7 @@
                 valarm: Ct,
                 vtimezone: Ct,
                 daylight: Ct,
-                standard: Ct
+                standard: Ct,
             },
             icalendar: Ct,
             vcard: xt,
@@ -5054,25 +5041,25 @@
             getDesignSet: function (t) {
                 return t && t in It.components
                     ? It.components[t]
-                    : It.defaultSet;
-            }
+                    : It.defaultSet
+            },
         },
         Bt = "\r\n",
         Mt = "unknown",
-        zt = { '"': "^'", "\n": "^n", "^": "^^" };
+        zt = { '"': "^'", "\n": "^n", "^": "^^" }
     function Lt(t) {
-        "string" == typeof t[0] && (t = [t]);
+        "string" == typeof t[0] && (t = [t])
         for (var e = 0, n = t.length, r = ""; e < n; e++)
-            r += Lt.component(t[e]) + Bt;
-        return r;
+            r += Lt.component(t[e]) + Bt
+        return r
     }
-    (Lt.component = function (t, e) {
+    ;(Lt.component = function (t, e) {
         var n = t[0].toUpperCase(),
             r = "BEGIN:" + n + Bt,
             i = t[1],
             a = 0,
             s = i.length,
-            o = t[0];
+            o = t[0]
         for (
             "vcard" === o &&
                 t[1].length > 0 &&
@@ -5082,54 +5069,54 @@
             a < s;
             a++
         )
-            r += Lt.property(i[a], e) + Bt;
+            r += Lt.property(i[a], e) + Bt
         for (var u = t[2] || [], l = 0, h = u.length; l < h; l++)
-            r += Lt.component(u[l], e) + Bt;
-        return (r += "END:" + n);
+            r += Lt.component(u[l], e) + Bt
+        return (r += "END:" + n)
     }),
         (Lt.property = function (t, e, n) {
             var r = t[0].toUpperCase(),
                 i = t[0],
-                a = t[1];
-            e || (e = It.defaultSet);
+                a = t[1]
+            e || (e = It.defaultSet)
             var s,
-                o = a.group;
-            s = e.propertyGroups && o ? o.toUpperCase() + "." + r : r;
+                o = a.group
+            s = e.propertyGroups && o ? o.toUpperCase() + "." + r : r
             for (
                 var u = function () {
                         var t = d(h[l], 2),
                             n = t[0],
-                            r = t[1];
-                        if (e.propertyGroups && "group" == n) return 1;
+                            r = t[1]
+                        if (e.propertyGroups && "group" == n) return 1
                         var i = e.param[n],
-                            a = i && i.multiValue;
+                            a = i && i.multiValue
                         a && Array.isArray(r)
                             ? ((r = r.map(function (t) {
                                   return (
                                       (t = Lt._rfc6868Unescape(t)),
                                       (t = Lt.paramPropertyValue(
                                           t,
-                                          i.multiValueSeparateDQuote
+                                          i.multiValueSeparateDQuote,
                                       ))
-                                  );
+                                  )
                               })),
                               (r = Lt.multiValue(r, a, "unknown", null, e)))
                             : ((r = Lt._rfc6868Unescape(r)),
                               (r = Lt.paramPropertyValue(r))),
-                            (s += ";" + n.toUpperCase() + "=" + r);
+                            (s += ";" + n.toUpperCase() + "=" + r)
                     },
                     l = 0,
                     h = Object.entries(a);
                 l < h.length;
                 l++
             )
-                u();
-            if (3 === t.length) return s + ":";
+                u()
+            if (3 === t.length) return s + ":"
             var c,
                 f = t[2],
                 y = !1,
                 m = !1,
-                p = !1;
+                p = !1
             return (
                 i in e.property
                     ? ("multiValue" in (c = e.property[i]) &&
@@ -5152,7 +5139,7 @@
                             ? Lt.multiValue(t[3], m, f, null, e, m)
                             : Lt.value(t[3], f, e, !1)),
                 n ? s : R(s)
-            );
+            )
         }),
         (Lt.paramPropertyValue = function (t, e) {
             return e ||
@@ -5160,26 +5147,26 @@
                 -1 !== t.indexOf(":") ||
                 -1 !== t.indexOf(";")
                 ? '"' + t + '"'
-                : t;
+                : t
         }),
         (Lt.multiValue = function (t, e, n, r, i, a) {
             for (var s = "", o = t.length, u = 0; u < o; u++)
                 r && Array.isArray(t[u])
                     ? (s += Lt.multiValue(t[u], r, n, null, i, a))
                     : (s += Lt.value(t[u], n, i, a)),
-                    u !== o - 1 && (s += e);
-            return s;
+                    u !== o - 1 && (s += e)
+            return s
         }),
         (Lt.value = function (t, e, n, r) {
             return e in n.value && "toICAL" in n.value[e]
                 ? n.value[e].toICAL(t, r)
-                : t;
+                : t
         }),
         (Lt._rfc6868Unescape = function (t) {
             return t.replace(/[\n^"]/g, function (t) {
-                return zt[t];
-            });
-        });
+                return zt[t]
+            })
+        })
     var Pt = (function () {
             function t(e, n) {
                 a(this, t),
@@ -5188,7 +5175,7 @@
                         ? ((this.jCal = [e, {}, It.defaultType]),
                           (this.jCal[2] = this.getDefaultType()))
                         : (this.jCal = e),
-                    this._updateType();
+                    this._updateType()
             }
             return o(
                 t,
@@ -5196,43 +5183,43 @@
                     {
                         key: "type",
                         get: function () {
-                            return this.jCal[2];
-                        }
+                            return this.jCal[2]
+                        },
                     },
                     {
                         key: "name",
                         get: function () {
-                            return this.jCal[0];
-                        }
+                            return this.jCal[0]
+                        },
                     },
                     {
                         key: "parent",
                         get: function () {
-                            return this._parent;
+                            return this._parent
                         },
                         set: function (t) {
                             var e =
                                 !this._parent ||
-                                (t && t._designSet != this._parent._designSet);
-                            (this._parent = t),
+                                (t && t._designSet != this._parent._designSet)
+                            ;(this._parent = t),
                                 this.type == It.defaultType &&
                                     e &&
                                     ((this.jCal[2] = this.getDefaultType()),
-                                    this._updateType());
-                        }
+                                    this._updateType())
+                        },
                     },
                     {
                         key: "_designSet",
                         get: function () {
                             return this.parent
                                 ? this.parent._designSet
-                                : It.defaultSet;
-                        }
+                                : It.defaultSet
+                        },
                     },
                     {
                         key: "_updateType",
                         value: function () {
-                            var t = this._designSet;
+                            var t = this._designSet
                             this.type in t.value &&
                                 ("decorate" in t.value[this.type]
                                     ? (this.isDecorated = !0)
@@ -5242,8 +5229,8 @@
                                         "multiValue" in t.property[this.name]),
                                     (this.isStructuredValue =
                                         "structuredValue" in
-                                        t.property[this.name])));
-                        }
+                                        t.property[this.name])))
+                        },
                     },
                     {
                         key: "_hydrateValue",
@@ -5255,28 +5242,28 @@
                                   : this.isDecorated
                                     ? (this._values || (this._values = []),
                                       (this._values[t] = this._decorate(
-                                          this.jCal[3 + t]
+                                          this.jCal[3 + t],
                                       )))
-                                    : this.jCal[3 + t];
-                        }
+                                    : this.jCal[3 + t]
+                        },
                     },
                     {
                         key: "_decorate",
                         value: function (t) {
                             return this._designSet.value[this.type].decorate(
                                 t,
-                                this
-                            );
-                        }
+                                this,
+                            )
+                        },
                     },
                     {
                         key: "_undecorate",
                         value: function (t) {
                             return this._designSet.value[this.type].undecorate(
                                 t,
-                                this
-                            );
-                        }
+                                this,
+                            )
+                        },
                     },
                     {
                         key: "_setDecoratedValue",
@@ -5286,81 +5273,81 @@
                                     ? ((this.jCal[3 + e] = this._undecorate(t)),
                                       (this._values[e] = t))
                                     : ((this.jCal[3 + e] = t),
-                                      (this._values[e] = this._decorate(t)));
-                        }
+                                      (this._values[e] = this._decorate(t)))
+                        },
                     },
                     {
                         key: "getParameter",
                         value: function (t) {
-                            return t in this.jCal[1] ? this.jCal[1][t] : void 0;
-                        }
+                            return t in this.jCal[1] ? this.jCal[1][t] : void 0
+                        },
                     },
                     {
                         key: "getFirstParameter",
                         value: function (t) {
-                            var e = this.getParameter(t);
-                            return Array.isArray(e) ? e[0] : e;
-                        }
+                            var e = this.getParameter(t)
+                            return Array.isArray(e) ? e[0] : e
+                        },
                     },
                     {
                         key: "setParameter",
                         value: function (t, e) {
-                            var n = t.toLowerCase();
+                            var n = t.toLowerCase()
                             "string" == typeof e &&
                                 n in this._designSet.param &&
                                 "multiValue" in this._designSet.param[n] &&
                                 (e = [e]),
-                                (this.jCal[1][t] = e);
-                        }
+                                (this.jCal[1][t] = e)
+                        },
                     },
                     {
                         key: "removeParameter",
                         value: function (t) {
-                            delete this.jCal[1][t];
-                        }
+                            delete this.jCal[1][t]
+                        },
                     },
                     {
                         key: "getDefaultType",
                         value: function () {
                             var t = this.jCal[0],
-                                e = this._designSet;
+                                e = this._designSet
                             if (t in e.property) {
-                                var n = e.property[t];
-                                if ("defaultType" in n) return n.defaultType;
+                                var n = e.property[t]
+                                if ("defaultType" in n) return n.defaultType
                             }
-                            return It.defaultType;
-                        }
+                            return It.defaultType
+                        },
                     },
                     {
                         key: "resetType",
                         value: function (t) {
                             this.removeAllValues(),
                                 (this.jCal[2] = t),
-                                this._updateType();
-                        }
+                                this._updateType()
+                        },
                     },
                     {
                         key: "getFirstValue",
                         value: function () {
-                            return this._hydrateValue(0);
-                        }
+                            return this._hydrateValue(0)
+                        },
                     },
                     {
                         key: "getValues",
                         value: function () {
-                            var t = this.jCal.length - 3;
-                            if (t < 1) return [];
+                            var t = this.jCal.length - 3
+                            if (t < 1) return []
                             for (var e = 0, n = []; e < t; e++)
-                                n[e] = this._hydrateValue(e);
-                            return n;
-                        }
+                                n[e] = this._hydrateValue(e)
+                            return n
+                        },
                     },
                     {
                         key: "removeAllValues",
                         value: function () {
                             this._values && (this._values.length = 0),
-                                (this.jCal.length = 3);
-                        }
+                                (this.jCal.length = 3)
+                        },
                     },
                     {
                         key: "setValues",
@@ -5368,10 +5355,10 @@
                             if (!this.isMultiValue)
                                 throw new Error(
                                     this.name +
-                                        ": does not not support mulitValue.\noverride isMultiValue"
-                                );
+                                        ": does not not support mulitValue.\noverride isMultiValue",
+                                )
                             var e = t.length,
-                                n = 0;
+                                n = 0
                             if (
                                 (this.removeAllValues(),
                                 e > 0 &&
@@ -5381,9 +5368,9 @@
                                 this.isDecorated)
                             )
                                 for (; n < e; n++)
-                                    this._setDecoratedValue(t[n], n);
-                            else for (; n < e; n++) this.jCal[3 + n] = t[n];
-                        }
+                                    this._setDecoratedValue(t[n], n)
+                            else for (; n < e; n++) this.jCal[3 + n] = t[n]
+                        },
                     },
                     {
                         key: "setValue",
@@ -5394,31 +5381,31 @@
                                     this.resetType(t.icaltype),
                                 this.isDecorated
                                     ? this._setDecoratedValue(t, 0)
-                                    : (this.jCal[3] = t);
-                        }
+                                    : (this.jCal[3] = t)
+                        },
                     },
                     {
                         key: "toJSON",
                         value: function () {
-                            return this.jCal;
-                        }
+                            return this.jCal
+                        },
                     },
                     {
                         key: "toICALString",
                         value: function () {
-                            return Lt.property(this.jCal, this._designSet, !0);
-                        }
-                    }
+                            return Lt.property(this.jCal, this._designSet, !0)
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e, n) {
-                            return new t(E.property(e, n));
-                        }
-                    }
-                ]
-            );
+                            return new t(E.property(e, n))
+                        },
+                    },
+                ],
+            )
         })(),
         Ut = (function () {
             function t(e, n) {
@@ -5433,7 +5420,7 @@
                     (this.parent = n || null),
                     this.parent ||
                         "vcalendar" !== this.name ||
-                        (this._timezoneCache = new Map());
+                        (this._timezoneCache = new Map())
             }
             return o(
                 t,
@@ -5441,8 +5428,8 @@
                     {
                         key: "name",
                         get: function () {
-                            return this.jCal[0];
-                        }
+                            return this.jCal[0]
+                        },
                     },
                     {
                         key: "_designSet",
@@ -5450,8 +5437,8 @@
                             return (
                                 (this.parent && this.parent._designSet) ||
                                 It.getDesignSet(this.name)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "_hydrateComponent",
@@ -5462,13 +5449,13 @@
                                     (this._hydratedComponentCount = 0)),
                                 this._components[e])
                             )
-                                return this._components[e];
-                            var n = new t(this.jCal[2][e], this);
+                                return this._components[e]
+                            var n = new t(this.jCal[2][e], this)
                             return (
                                 this._hydratedComponentCount++,
                                 (this._components[e] = n)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "_hydrateProperty",
@@ -5479,13 +5466,13 @@
                                     (this._hydratedPropertyCount = 0)),
                                 this._properties[t])
                             )
-                                return this._properties[t];
-                            var e = new Pt(this.jCal[1][t], this);
+                                return this._properties[t]
+                            var e = new Pt(this.jCal[1][t], this)
                             return (
                                 this._hydratedPropertyCount++,
                                 (this._properties[t] = e)
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "getFirstSubcomponent",
@@ -5497,31 +5484,31 @@
                                     e++
                                 ) {
                                     if (n[e][0] === t)
-                                        return this._hydrateComponent(e);
+                                        return this._hydrateComponent(e)
                                 }
                             else if (this.jCal[2].length)
-                                return this._hydrateComponent(0);
-                            return null;
-                        }
+                                return this._hydrateComponent(0)
+                            return null
+                        },
                     },
                     {
                         key: "getAllSubcomponents",
                         value: function (t) {
                             var e = this.jCal[2].length,
-                                n = 0;
+                                n = 0
                             if (t) {
                                 for (var r = this.jCal[2], i = []; n < e; n++)
                                     t === r[n][0] &&
-                                        i.push(this._hydrateComponent(n));
-                                return i;
+                                        i.push(this._hydrateComponent(n))
+                                return i
                             }
                             if (
                                 !this._components ||
                                 this._hydratedComponentCount !== e
                             )
-                                for (; n < e; n++) this._hydrateComponent(n);
-                            return this._components || [];
-                        }
+                                for (; n < e; n++) this._hydrateComponent(n)
+                            return this._components || []
+                        },
                     },
                     {
                         key: "hasProperty",
@@ -5531,9 +5518,9 @@
                                 r < n;
                                 r++
                             )
-                                if (e[r][0] === t) return !0;
-                            return !1;
-                        }
+                                if (e[r][0] === t) return !0
+                            return !1
+                        },
                     },
                     {
                         key: "getFirstProperty",
@@ -5545,48 +5532,48 @@
                                     e++
                                 ) {
                                     if (n[e][0] === t)
-                                        return this._hydrateProperty(e);
+                                        return this._hydrateProperty(e)
                                 }
                             else if (this.jCal[1].length)
-                                return this._hydrateProperty(0);
-                            return null;
-                        }
+                                return this._hydrateProperty(0)
+                            return null
+                        },
                     },
                     {
                         key: "getFirstPropertyValue",
                         value: function (t) {
-                            var e = this.getFirstProperty(t);
-                            return e ? e.getFirstValue() : null;
-                        }
+                            var e = this.getFirstProperty(t)
+                            return e ? e.getFirstValue() : null
+                        },
                     },
                     {
                         key: "getAllProperties",
                         value: function (t) {
                             var e = this.jCal[1].length,
-                                n = 0;
+                                n = 0
                             if (t) {
                                 for (var r = this.jCal[1], i = []; n < e; n++)
                                     t === r[n][0] &&
-                                        i.push(this._hydrateProperty(n));
-                                return i;
+                                        i.push(this._hydrateProperty(n))
+                                return i
                             }
                             if (
                                 !this._properties ||
                                 this._hydratedPropertyCount !== e
                             )
-                                for (; n < e; n++) this._hydrateProperty(n);
-                            return this._properties || [];
-                        }
+                                for (; n < e; n++) this._hydrateProperty(n)
+                            return this._properties || []
+                        },
                     },
                     {
                         key: "_removeObjectByIndex",
                         value: function (t, e, n) {
                             if ((e = e || [])[n]) {
-                                var r = e[n];
-                                "parent" in r && (r.parent = null);
+                                var r = e[n]
+                                "parent" in r && (r.parent = null)
                             }
-                            e.splice(n, 1), this.jCal[t].splice(n, 1);
-                        }
+                            e.splice(n, 1), this.jCal[t].splice(n, 1)
+                        },
                     },
                     {
                         key: "_removeObject",
@@ -5594,23 +5581,23 @@
                             var r = 0,
                                 i = this.jCal[t],
                                 a = i.length,
-                                s = this[e];
+                                s = this[e]
                             if ("string" == typeof n) {
                                 for (; r < a; r++)
                                     if (i[r][0] === n)
                                         return (
                                             this._removeObjectByIndex(t, s, r),
                                             !0
-                                        );
+                                        )
                             } else if (s)
                                 for (; r < a; r++)
                                     if (s[r] && s[r] === n)
                                         return (
                                             this._removeObjectByIndex(t, s, r),
                                             !0
-                                        );
-                            return !1;
-                        }
+                                        )
+                            return !1
+                        },
                     },
                     {
                         key: "_removeAllObjects",
@@ -5623,8 +5610,8 @@
                                 a--
                             )
                                 (n && i[a][0] !== n) ||
-                                    this._removeObjectByIndex(t, r, a);
-                        }
+                                    this._removeObjectByIndex(t, r, a)
+                        },
                     },
                     {
                         key: "addSubcomponent",
@@ -5632,108 +5619,108 @@
                             this._components ||
                                 ((this._components = []),
                                 (this._hydratedComponentCount = 0)),
-                                t.parent && t.parent.removeSubcomponent(t);
-                            var e = this.jCal[2].push(t.jCal);
+                                t.parent && t.parent.removeSubcomponent(t)
+                            var e = this.jCal[2].push(t.jCal)
                             return (
                                 (this._components[e - 1] = t),
                                 this._hydratedComponentCount++,
                                 (t.parent = this),
                                 t
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "removeSubcomponent",
                         value: function (t) {
-                            var e = this._removeObject(2, "_components", t);
-                            return e && this._hydratedComponentCount--, e;
-                        }
+                            var e = this._removeObject(2, "_components", t)
+                            return e && this._hydratedComponentCount--, e
+                        },
                     },
                     {
                         key: "removeAllSubcomponents",
                         value: function (t) {
-                            var e = this._removeAllObjects(2, "_components", t);
-                            return (this._hydratedComponentCount = 0), e;
-                        }
+                            var e = this._removeAllObjects(2, "_components", t)
+                            return (this._hydratedComponentCount = 0), e
+                        },
                     },
                     {
                         key: "addProperty",
                         value: function (t) {
                             if (!(t instanceof Pt))
                                 throw new TypeError(
-                                    "must be instance of ICAL.Property"
-                                );
+                                    "must be instance of ICAL.Property",
+                                )
                             this._properties ||
                                 ((this._properties = []),
                                 (this._hydratedPropertyCount = 0)),
-                                t.parent && t.parent.removeProperty(t);
-                            var e = this.jCal[1].push(t.jCal);
+                                t.parent && t.parent.removeProperty(t)
+                            var e = this.jCal[1].push(t.jCal)
                             return (
                                 (this._properties[e - 1] = t),
                                 this._hydratedPropertyCount++,
                                 (t.parent = this),
                                 t
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "addPropertyWithValue",
                         value: function (t, e) {
-                            var n = new Pt(t);
-                            return n.setValue(e), this.addProperty(n), n;
-                        }
+                            var n = new Pt(t)
+                            return n.setValue(e), this.addProperty(n), n
+                        },
                     },
                     {
                         key: "updatePropertyWithValue",
                         value: function (t, e) {
-                            var n = this.getFirstProperty(t);
+                            var n = this.getFirstProperty(t)
                             return (
                                 n
                                     ? n.setValue(e)
                                     : (n = this.addPropertyWithValue(t, e)),
                                 n
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "removeProperty",
                         value: function (t) {
-                            var e = this._removeObject(1, "_properties", t);
-                            return e && this._hydratedPropertyCount--, e;
-                        }
+                            var e = this._removeObject(1, "_properties", t)
+                            return e && this._hydratedPropertyCount--, e
+                        },
                     },
                     {
                         key: "removeAllProperties",
                         value: function (t) {
-                            var e = this._removeAllObjects(1, "_properties", t);
-                            return (this._hydratedPropertyCount = 0), e;
-                        }
+                            var e = this._removeAllObjects(1, "_properties", t)
+                            return (this._hydratedPropertyCount = 0), e
+                        },
                     },
                     {
                         key: "toJSON",
                         value: function () {
-                            return this.jCal;
-                        }
+                            return this.jCal
+                        },
                     },
                     {
                         key: "toString",
                         value: function () {
-                            return Lt.component(this.jCal, this._designSet);
-                        }
+                            return Lt.component(this.jCal, this._designSet)
+                        },
                     },
                     {
                         key: "getTimeZoneByID",
                         value: function (t) {
                             if (this.parent)
-                                return this.parent.getTimeZoneByID(t);
-                            if (!this._timezoneCache) return null;
+                                return this.parent.getTimeZoneByID(t)
+                            if (!this._timezoneCache) return null
                             if (this._timezoneCache.has(t))
-                                return this._timezoneCache.get(t);
+                                return this._timezoneCache.get(t)
                             var e,
-                                n = v(this.getAllSubcomponents("vtimezone"));
+                                n = v(this.getAllSubcomponents("vtimezone"))
                             try {
                                 for (n.s(); !(e = n.n()).done; ) {
-                                    var r = e.value;
+                                    var r = e.value
                                     if (
                                         r
                                             .getFirstProperty("tzid")
@@ -5741,29 +5728,29 @@
                                     ) {
                                         var i = new N({
                                             component: r,
-                                            tzid: t
-                                        });
-                                        return this._timezoneCache.set(t, i), i;
+                                            tzid: t,
+                                        })
+                                        return this._timezoneCache.set(t, i), i
                                     }
                                 }
                             } catch (t) {
-                                n.e(t);
+                                n.e(t)
                             } finally {
-                                n.f();
+                                n.f()
                             }
-                            return null;
-                        }
-                    }
+                            return null
+                        },
+                    },
                 ],
                 [
                     {
                         key: "fromString",
                         value: function (e) {
-                            return new t(E.component(e));
-                        }
-                    }
-                ]
-            );
+                            return new t(E.component(e))
+                        },
+                    },
+                ],
+            )
         })(),
         jt = (function () {
             return o(
@@ -5781,54 +5768,54 @@
                         u(this, "last", null),
                         (this.ruleDates = []),
                         (this.exDates = []),
-                        this.fromData(e);
+                        this.fromData(e)
                 },
                 [
                     {
                         key: "fromData",
                         value: function (t) {
-                            var e = U(t.dtstart, b);
+                            var e = U(t.dtstart, b)
                             if (!e)
                                 throw new Error(
-                                    ".dtstart (ICAL.Time) must be given"
-                                );
+                                    ".dtstart (ICAL.Time) must be given",
+                                )
                             if (((this.dtstart = e), t.component))
-                                this._init(t.component);
+                                this._init(t.component)
                             else {
                                 if (
                                     ((this.last = U(t.last, b) || e.clone()),
                                     !t.ruleIterators)
                                 )
                                     throw new Error(
-                                        ".ruleIterators or .component must be given"
-                                    );
-                                (this.ruleIterators = t.ruleIterators.map(
+                                        ".ruleIterators or .component must be given",
+                                    )
+                                ;(this.ruleIterators = t.ruleIterators.map(
                                     function (t) {
-                                        return U(t, G);
-                                    }
+                                        return U(t, G)
+                                    },
                                 )),
                                     (this.ruleDateInc = t.ruleDateInc),
                                     (this.exDateInc = t.exDateInc),
                                     t.ruleDates &&
                                         ((this.ruleDates = t.ruleDates.map(
                                             function (t) {
-                                                return U(t, b);
-                                            }
+                                                return U(t, b)
+                                            },
                                         )),
                                         (this.ruleDate =
                                             this.ruleDates[this.ruleDateInc])),
                                     t.exDates &&
                                         ((this.exDates = t.exDates.map(
                                             function (t) {
-                                                return U(t, b);
-                                            }
+                                                return U(t, b)
+                                            },
                                         )),
                                         (this.exDate =
                                             this.exDates[this.exDateInc])),
                                     void 0 !== t.complete &&
-                                        (this.complete = t.complete);
+                                        (this.complete = t.complete)
                             }
-                        }
+                        },
                     },
                     {
                         key: "next",
@@ -5836,15 +5823,15 @@
                             for (var t, e, n, r = 0; ; ) {
                                 if (r++ > 500)
                                     throw new Error(
-                                        "max tries have occurred, rule may be impossible to fulfill."
-                                    );
+                                        "max tries have occurred, rule may be impossible to fulfill.",
+                                    )
                                 if (
                                     ((e = this.ruleDate),
                                     (t = this._nextRecurrenceIter(this.last)),
                                     !e && !t)
                                 ) {
-                                    this.complete = !0;
-                                    break;
+                                    this.complete = !0
+                                    break
                                 }
                                 if (
                                     ((!e || (t && e.compare(t.last) > 0)) &&
@@ -5856,18 +5843,18 @@
                                             0 && this._nextExDay(),
                                         0 !== n))
                                 )
-                                    return this.last;
-                                this._nextExDay();
+                                    return this.last
+                                this._nextExDay()
                             }
-                        }
+                        },
                     },
                     {
                         key: "toJSON",
                         value: function () {
                             function t(t) {
-                                return t.toJSON();
+                                return t.toJSON()
                             }
-                            var e = Object.create(null);
+                            var e = Object.create(null)
                             return (
                                 (e.ruleIterators = this.ruleIterators.map(t)),
                                 this.ruleDates &&
@@ -5880,8 +5867,8 @@
                                 (e.dtstart = this.dtstart.toJSON()),
                                 (e.complete = this.complete),
                                 e
-                            );
-                        }
+                            )
+                        },
                     },
                     {
                         key: "_extractDates",
@@ -5895,23 +5882,23 @@
                                 i++
                             ) {
                                 var s,
-                                    o = v(r[i].getValues());
+                                    o = v(r[i].getValues())
                                 try {
                                     for (o.s(); !(s = o.n()).done; ) {
                                         var u = s.value,
                                             l = V(n, u, function (t, e) {
-                                                return t.compare(e);
-                                            });
-                                        n.splice(l, 0, u);
+                                                return t.compare(e)
+                                            })
+                                        n.splice(l, 0, u)
                                     }
                                 } catch (t) {
-                                    o.e(t);
+                                    o.e(t)
                                 } finally {
-                                    o.f();
+                                    o.f()
                                 }
                             }
-                            return n;
-                        }
+                            return n
+                        },
                     },
                     {
                         key: "_init",
@@ -5926,12 +5913,12 @@
                                 return (
                                     (this.ruleDate = this.last.clone()),
                                     void (this.complete = !0)
-                                );
+                                )
                             if (
                                 (t.hasProperty("rdate") &&
                                     ((this.ruleDates = this._extractDates(
                                         t,
-                                        "rdate"
+                                        "rdate",
                                     )),
                                     this.ruleDates[0] &&
                                     this.ruleDates[0].compare(this.dtstart) < 0
@@ -5942,8 +5929,8 @@
                                               this.ruleDates,
                                               this.last,
                                               function (t, e) {
-                                                  return t.compare(e);
-                                              }
+                                                  return t.compare(e)
+                                              },
                                           )),
                                     (this.ruleDate =
                                         this.ruleDates[this.ruleDateInc])),
@@ -5961,50 +5948,50 @@
                                         .getFirstValue()
                                         .iterator(this.dtstart)),
                                         this.ruleIterators.push(e),
-                                        e.next();
+                                        e.next()
                             t.hasProperty("exdate") &&
                                 ((this.exDates = this._extractDates(
                                     t,
-                                    "exdate"
+                                    "exdate",
                                 )),
                                 (this.exDateInc = V(
                                     this.exDates,
                                     this.last,
                                     function (t, e) {
-                                        return t.compare(e);
-                                    }
+                                        return t.compare(e)
+                                    },
                                 )),
-                                (this.exDate = this.exDates[this.exDateInc]));
-                        }
+                                (this.exDate = this.exDates[this.exDateInc]))
+                        },
                     },
                     {
                         key: "_nextExDay",
                         value: function () {
-                            this.exDate = this.exDates[++this.exDateInc];
-                        }
+                            this.exDate = this.exDates[++this.exDateInc]
+                        },
                     },
                     {
                         key: "_nextRuleDay",
                         value: function () {
-                            this.ruleDate = this.ruleDates[++this.ruleDateInc];
-                        }
+                            this.ruleDate = this.ruleDates[++this.ruleDateInc]
+                        },
                     },
                     {
                         key: "_nextRecurrenceIter",
                         value: function () {
-                            var t = this.ruleIterators;
-                            if (0 === t.length) return null;
+                            var t = this.ruleIterators
+                            if (0 === t.length) return null
                             for (var e, n, r, i = t.length, a = 0; a < i; a++)
                                 (n = (e = t[a]).last),
                                     e.completed
                                         ? (i--, 0 !== a && a--, t.splice(a, 1))
                                         : (!r || r.last.compare(n) > 0) &&
-                                          (r = e);
-                            return r;
-                        }
-                    }
-                ]
-            );
+                                          (r = e)
+                            return r
+                        },
+                    },
+                ],
+            )
         })(),
         Vt = (function () {
             function t(e, n) {
@@ -6027,8 +6014,8 @@
                               .getAllSubcomponents("vevent")
                               .forEach(function (t) {
                                   t.hasProperty("recurrence-id") &&
-                                      this.relateException(t);
-                              }, this);
+                                      this.relateException(t)
+                              }, this)
             }
             return o(t, [
                 {
@@ -6036,22 +6023,22 @@
                     value: function (e) {
                         if (this.isRecurrenceException())
                             throw new Error(
-                                "cannot relate exception to exceptions"
-                            );
+                                "cannot relate exception to exceptions",
+                            )
                         if (
                             (e instanceof Ut && (e = new t(e)),
                             this.strictExceptions && e.uid !== this.uid)
                         )
                             throw new Error(
-                                "attempted to relate unrelated exception"
-                            );
-                        var n = e.recurrenceId.toString();
+                                "attempted to relate unrelated exception",
+                            )
+                        var n = e.recurrenceId.toString()
                         if (((this.exceptions[n] = e), e.modifiesFuture())) {
                             var r = [e.recurrenceId.toUnixTime(), n],
-                                i = V(this.rangeExceptions, r, Ht);
-                            this.rangeExceptions.splice(i, 0, r);
+                                i = V(this.rangeExceptions, r, Ht)
+                            this.rangeExceptions.splice(i, 0, r)
                         }
-                    }
+                    },
                 },
                 {
                     key: "modifiesFuture",
@@ -6061,19 +6048,19 @@
                             this.component
                                 .getFirstProperty("recurrence-id")
                                 .getParameter("range") === t.THISANDFUTURE
-                        );
-                    }
+                        )
+                    },
                 },
                 {
                     key: "findRangeException",
                     value: function (t) {
-                        if (!this.rangeExceptions.length) return null;
+                        if (!this.rangeExceptions.length) return null
                         var e = t.toUnixTime(),
-                            n = V(this.rangeExceptions, [e], Ht);
-                        if ((n -= 1) < 0) return null;
-                        var r = this.rangeExceptions[n];
-                        return e < r[0] ? null : r[1];
-                    }
+                            n = V(this.rangeExceptions, [e], Ht)
+                        if ((n -= 1) < 0) return null
+                        var r = this.rangeExceptions[n]
+                        return e < r[0] ? null : r[1]
+                    },
                 },
                 {
                     key: "getOccurrenceDetails",
@@ -6081,67 +6068,67 @@
                         var e,
                             n = t.toString(),
                             r = t.convertToZone(N.utcTimezone).toString(),
-                            i = { recurrenceId: t };
+                            i = { recurrenceId: t }
                         if (n in this.exceptions)
                             (e = i.item = this.exceptions[n]),
                                 (i.startDate = e.startDate),
                                 (i.endDate = e.endDate),
-                                (i.item = e);
+                                (i.item = e)
                         else if (r in this.exceptions)
                             (e = this.exceptions[r]),
                                 (i.startDate = e.startDate),
                                 (i.endDate = e.endDate),
-                                (i.item = e);
+                                (i.item = e)
                         else {
                             var a,
-                                s = this.findRangeException(t);
+                                s = this.findRangeException(t)
                             if (s) {
-                                var o = this.exceptions[s];
-                                i.item = o;
-                                var u = this._rangeExceptionCache[s];
+                                var o = this.exceptions[s]
+                                i.item = o
+                                var u = this._rangeExceptionCache[s]
                                 if (!u) {
                                     var l = o.recurrenceId.clone(),
-                                        h = o.startDate.clone();
-                                    (l.zone = h.zone),
+                                        h = o.startDate.clone()
+                                    ;(l.zone = h.zone),
                                         (u = h.subtractDate(l)),
-                                        (this._rangeExceptionCache[s] = u);
+                                        (this._rangeExceptionCache[s] = u)
                                 }
-                                var c = t.clone();
-                                (c.zone = o.startDate.zone),
+                                var c = t.clone()
+                                ;(c.zone = o.startDate.zone),
                                     c.addDuration(u),
                                     (a = c.clone()).addDuration(o.duration),
                                     (i.startDate = c),
-                                    (i.endDate = a);
+                                    (i.endDate = a)
                             } else
                                 (a = t.clone()).addDuration(this.duration),
                                     (i.endDate = a),
                                     (i.startDate = t),
-                                    (i.item = this);
+                                    (i.item = this)
                         }
-                        return i;
-                    }
+                        return i
+                    },
                 },
                 {
                     key: "iterator",
                     value: function (t) {
                         return new jt({
                             component: this.component,
-                            dtstart: t || this.startDate
-                        });
-                    }
+                            dtstart: t || this.startDate,
+                        })
+                    },
                 },
                 {
                     key: "isRecurring",
                     value: function () {
-                        var t = this.component;
-                        return t.hasProperty("rrule") || t.hasProperty("rdate");
-                    }
+                        var t = this.component
+                        return t.hasProperty("rrule") || t.hasProperty("rdate")
+                    },
                 },
                 {
                     key: "isRecurrenceException",
                     value: function () {
-                        return this.component.hasProperty("recurrence-id");
-                    }
+                        return this.component.hasProperty("recurrence-id")
+                    },
                 },
                 {
                     key: "getRecurrenceTypes",
@@ -6154,163 +6141,163 @@
                             e < n;
                             e++
                         ) {
-                            r[t[e].getFirstValue().freq] = !0;
+                            r[t[e].getFirstValue().freq] = !0
                         }
-                        return r;
-                    }
+                        return r
+                    },
                 },
                 {
                     key: "uid",
                     get: function () {
-                        return this._firstProp("uid");
+                        return this._firstProp("uid")
                     },
                     set: function (t) {
-                        this._setProp("uid", t);
-                    }
+                        this._setProp("uid", t)
+                    },
                 },
                 {
                     key: "startDate",
                     get: function () {
-                        return this._firstProp("dtstart");
+                        return this._firstProp("dtstart")
                     },
                     set: function (t) {
-                        this._setTime("dtstart", t);
-                    }
+                        this._setTime("dtstart", t)
+                    },
                 },
                 {
                     key: "endDate",
                     get: function () {
-                        var t = this._firstProp("dtend");
+                        var t = this._firstProp("dtend")
                         if (!t) {
-                            var e = this._firstProp("duration");
-                            (t = this.startDate.clone()),
-                                e ? t.addDuration(e) : t.isDate && (t.day += 1);
+                            var e = this._firstProp("duration")
+                            ;(t = this.startDate.clone()),
+                                e ? t.addDuration(e) : t.isDate && (t.day += 1)
                         }
-                        return t;
+                        return t
                     },
                     set: function (t) {
                         this.component.hasProperty("duration") &&
                             this.component.removeProperty("duration"),
-                            this._setTime("dtend", t);
-                    }
+                            this._setTime("dtend", t)
+                    },
                 },
                 {
                     key: "duration",
                     get: function () {
-                        var t = this._firstProp("duration");
-                        return t || this.endDate.subtractDateTz(this.startDate);
+                        var t = this._firstProp("duration")
+                        return t || this.endDate.subtractDateTz(this.startDate)
                     },
                     set: function (t) {
                         this.component.hasProperty("dtend") &&
                             this.component.removeProperty("dtend"),
-                            this._setProp("duration", t);
-                    }
+                            this._setProp("duration", t)
+                    },
                 },
                 {
                     key: "location",
                     get: function () {
-                        return this._firstProp("location");
+                        return this._firstProp("location")
                     },
                     set: function (t) {
-                        this._setProp("location", t);
-                    }
+                        this._setProp("location", t)
+                    },
                 },
                 {
                     key: "attendees",
                     get: function () {
-                        return this.component.getAllProperties("attendee");
-                    }
+                        return this.component.getAllProperties("attendee")
+                    },
                 },
                 {
                     key: "summary",
                     get: function () {
-                        return this._firstProp("summary");
+                        return this._firstProp("summary")
                     },
                     set: function (t) {
-                        this._setProp("summary", t);
-                    }
+                        this._setProp("summary", t)
+                    },
                 },
                 {
                     key: "description",
                     get: function () {
-                        return this._firstProp("description");
+                        return this._firstProp("description")
                     },
                     set: function (t) {
-                        this._setProp("description", t);
-                    }
+                        this._setProp("description", t)
+                    },
                 },
                 {
                     key: "color",
                     get: function () {
-                        return this._firstProp("color");
+                        return this._firstProp("color")
                     },
                     set: function (t) {
-                        this._setProp("color", t);
-                    }
+                        this._setProp("color", t)
+                    },
                 },
                 {
                     key: "organizer",
                     get: function () {
-                        return this._firstProp("organizer");
+                        return this._firstProp("organizer")
                     },
                     set: function (t) {
-                        this._setProp("organizer", t);
-                    }
+                        this._setProp("organizer", t)
+                    },
                 },
                 {
                     key: "sequence",
                     get: function () {
-                        return this._firstProp("sequence");
+                        return this._firstProp("sequence")
                     },
                     set: function (t) {
-                        this._setProp("sequence", t);
-                    }
+                        this._setProp("sequence", t)
+                    },
                 },
                 {
                     key: "recurrenceId",
                     get: function () {
-                        return this._firstProp("recurrence-id");
+                        return this._firstProp("recurrence-id")
                     },
                     set: function (t) {
-                        this._setTime("recurrence-id", t);
-                    }
+                        this._setTime("recurrence-id", t)
+                    },
                 },
                 {
                     key: "_setTime",
                     value: function (t, e) {
-                        var n = this.component.getFirstProperty(t);
+                        var n = this.component.getFirstProperty(t)
                         n || ((n = new Pt(t)), this.component.addProperty(n)),
                             e.zone === N.localTimezone ||
                             e.zone === N.utcTimezone
                                 ? n.removeParameter("tzid")
                                 : n.setParameter("tzid", e.zone.tzid),
-                            n.setValue(e);
-                    }
+                            n.setValue(e)
+                    },
                 },
                 {
                     key: "_setProp",
                     value: function (t, e) {
-                        this.component.updatePropertyWithValue(t, e);
-                    }
+                        this.component.updatePropertyWithValue(t, e)
+                    },
                 },
                 {
                     key: "_firstProp",
                     value: function (t) {
-                        return this.component.getFirstPropertyValue(t);
-                    }
+                        return this.component.getFirstPropertyValue(t)
+                    },
                 },
                 {
                     key: "toString",
                     value: function () {
-                        return this.component.toString();
-                    }
-                }
-            ]);
-        })();
+                        return this.component.toString()
+                    },
+                },
+            ])
+        })()
     function Ht(t, e) {
-        return t[0] > e[0] ? 1 : e[0] > t[0] ? -1 : 0;
+        return t[0] > e[0] ? 1 : e[0] > t[0] ? -1 : 0
     }
-    u(Vt, "THISANDFUTURE", "THISANDFUTURE");
+    u(Vt, "THISANDFUTURE", "THISANDFUTURE")
     var Rt = (function () {
             return o(
                 function t(e) {
@@ -6321,12 +6308,12 @@
                         u(this, "onerror", function (t) {}),
                         u(this, "ontimezone", function (t) {}),
                         u(this, "onevent", function (t) {}),
-                        void 0 === e && (e = {});
+                        void 0 === e && (e = {})
                     for (var n = 0, r = Object.entries(e); n < r.length; n++) {
                         var i = d(r[n], 2),
                             s = i[0],
-                            o = i[1];
-                        this[s] = o;
+                            o = i[1]
+                        this[s] = o
                     }
                 },
                 [
@@ -6334,7 +6321,7 @@
                         key: "process",
                         value: function (t) {
                             "string" == typeof t && (t = E(t)),
-                                t instanceof Ut || (t = new Ut(t));
+                                t instanceof Ut || (t = new Ut(t))
                             for (
                                 var e,
                                     n = t.getAllSubcomponents(),
@@ -6347,28 +6334,28 @@
                                     case "vtimezone":
                                         if (this.parseTimezone) {
                                             var a =
-                                                e.getFirstPropertyValue("tzid");
+                                                e.getFirstPropertyValue("tzid")
                                             a &&
                                                 this.ontimezone(
                                                     new N({
                                                         tzid: a,
-                                                        component: e
-                                                    })
-                                                );
+                                                        component: e,
+                                                    }),
+                                                )
                                         }
-                                        break;
+                                        break
                                     case "vevent":
                                         this.parseEvent &&
-                                            this.onevent(new Vt(e));
-                                        break;
+                                            this.onevent(new Vt(e))
+                                        break
                                     default:
-                                        continue;
+                                        continue
                                 }
-                            this.oncomplete();
-                        }
-                    }
-                ]
-            );
+                            this.oncomplete()
+                        },
+                    },
+                ],
+            )
         })(),
         Wt = {
             foldLength: 75,
@@ -6392,7 +6379,7 @@
             parse: E,
             stringify: Lt,
             design: It,
-            helpers: q
-        };
-    return Wt;
-});
+            helpers: q,
+        }
+    return Wt
+})
