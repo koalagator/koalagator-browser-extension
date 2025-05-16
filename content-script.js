@@ -120,6 +120,8 @@ function handleFacebook() {
   // Send a GET request using fetch
   fetch(icalUrl)
     .then((response) => {
+      // __AUTO_GENERATED_PRINT_VAR_START__
+      console.log("handleFacebook response: %s", JSON.stringify(response)); // __AUTO_GENERATED_PRINT_VAR_END__
       // Check if the request was successful
       if (response.ok) {
         return response.text(); // Convert the response body to text
@@ -132,12 +134,26 @@ function handleFacebook() {
       const event = new ICAL.Event(
         new ICAL.Component(parsedIcalData).getFirstSubcomponent("vevent"),
       );
-      const summary = event.summary;
+      const message = {
+        eventTitle: event.summary,
+        venueName: event.location,
+        dateStart: event.startDate.toJSDate(),
+        dateEnd: event.endDate.toJSDate(),
+        // TODO:
+        website: "temp",
+        description: event.description,
+        supported: true,
+      };
+      return message;
+    })
+    .then((message) => {
+      // __AUTO_GENERATED_PRINT_VAR_START__
+      console.log("handleFacebook#(anon) message: %s", JSON.stringify(message)); // __AUTO_GENERATED_PRINT_VAR_END__
+      chrome.runtime.sendMessage(message);
     })
     .catch((error) => {
       console.error("Error:", error);
     });
-  return;
 }
 
 const check = () => {
@@ -150,6 +166,7 @@ const check = () => {
 
   if (site.domain_name === facebook.domain_name) {
     handleFacebook();
+    return;
   }
   chrome.runtime.sendMessage(generateMessageFromSite(site));
 };

@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "ical": "^0.8.0"
+    "ical.js": "^2.1.0"
   },
   "devDependencies": {
-    "web-ext": "^8.6.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "web-ext": "^8.6.0"
   }
 }

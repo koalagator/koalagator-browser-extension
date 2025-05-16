@@ -12,6 +12,8 @@ let description = null;
 let activeTabId = null;
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // __AUTO_GENERATED_PRINT_VAR_START__
+  console.log(" request: %s", request); // __AUTO_GENERATED_PRINT_VAR_END__
   if (sender.tab.id !== activeTabId) return;
 
   eventTitle = request.eventTitle;
