@@ -74,6 +74,26 @@ const facebook = {
 
 const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma, facebook]
 
+const check = () => {
+    const actualHostname = location.hostname.toLowerCase()
+    const site = sites.find((s) => s.domain_name === actualHostname)
+    if (!site) {
+        chrome.runtime.sendMessage({ supported: false })
+        return
+    }
+
+    if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
+    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
+}
+
+check()
+document.addEventListener("DOMContentLoaded", check)
+chrome.runtime.onMessage.addListener((request) => {
+    if (request.message === "runCheck") {
+        check()
+    }
+})
+
 function extractKoalagatorEventInfoFrom(site) {
     const eventTitle = document.querySelector(site.event_title)?.innerText
     const venueName = document.querySelector(site.venue_name)?.innerText
@@ -133,26 +153,6 @@ function handleFacebookIcal() {
             console.error("Error:", error)
         })
 }
-
-const check = () => {
-    const actualHostname = location.hostname.toLowerCase()
-    const site = sites.find((s) => s.domain_name === actualHostname)
-    if (!site) {
-        chrome.runtime.sendMessage({ supported: false })
-        return
-    }
-
-    if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
-    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
-}
-
-check()
-document.addEventListener("DOMContentLoaded", check)
-chrome.runtime.onMessage.addListener((request) => {
-    if (request.message === "runCheck") {
-        check()
-    }
-})
 
 function extractEventInfoFrom(icalText) {
     // Code declared in `scripts/ical.es5.min.cjs`, retrieved from:
