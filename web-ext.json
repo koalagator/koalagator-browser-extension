@@ -1,11 +1,11 @@
 {
-	"version": { "license": "LGPL-3.0-or-later" },
-	"categories": { "firefox": ["feeds-news-blogging"] },
-	"requires_payment": false,
-	"homepage": {
-		"en-US": "https://github.com/koalagator/koalagator"
-	},
-	"support_email": {
-		"en-US": "support@koalagator.org"
-	}
+    "version": { "license": "LGPL-3.0-or-later" },
+    "categories": { "firefox": ["feeds-news-blogging"] },
+    "requires_payment": false,
+    "homepage": {
+        "en-US": "https://github.com/koalagator/koalagator"
+    },
+    "support_email": {
+        "en-US": "support@koalagator.org"
+    }
 }

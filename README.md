@@ -40,7 +40,7 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 
 1. Click the .xpi file in your fav browser and follow the prompts
 
-   https://github.com/koalagator/koalagator-browser-extension/releases
+    https://github.com/koalagator/koalagator-browser-extension/releases
 
 ## Using the extension
 
