@@ -96,13 +96,12 @@ Three states:
 | Loading    | Support site detected (loading data) | Green dots animation | Domain is on the whitelist, script initializing |
 | Ready      | Supported site, fully loaded         | Solid green icon     | Script has finished loading and is ready        |
 
-### Behavior Flow
+### Behavior Flow When Visiting A Page
 
-1. **On Page Visit**
-   - Check current domain.
-   - If **not on whitelist** → set state to **Inactive**.
-   - If **on whitelist** → set state to **Loading**.
-   - Once all required data is loaded → set state to **Ready**.
+- Check current domain.
+- If **not on whitelist** → set state to **Inactive**.
+- If **on whitelist** → set state to **Loading**.
+- Once all required data is loaded → set state to **Ready**.
 
 ### How to test locally
 
