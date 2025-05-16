@@ -1,3 +1,7 @@
+### 0.1.2
+
+- Add support for Facebook events
+
 ### 0.1.1
 
 - Switching tabs, we collect and use the Tab ID to check state of current tab.
