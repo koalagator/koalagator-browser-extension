@@ -77,7 +77,7 @@ const facebook = {
 
 const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma, facebook];
 
-function generateMessageFromSite(site) {
+function extractKoalagatorEventInfoFrom(site) {
   const eventTitle = document.querySelector(site.event_title)?.innerText;
   const venueName = document.querySelector(site.venue_name)?.innerText;
   const description = document.querySelector(site.description)?.innerText;
@@ -101,7 +101,8 @@ function generateMessageFromSite(site) {
     if (data.startDate) dateStart = data.startDate;
     if (data.endDate) dateEnd = data.endDate;
   }
-  const message = {
+
+  return {
     eventTitle,
     venueName,
     dateStart,
@@ -110,47 +111,27 @@ function generateMessageFromSite(site) {
     description,
     supported: true,
   };
-  return message;
 }
 
-function handleFacebook() {
-  const icalUrl =
-    "https://www.facebook.com/events/ical/export/?eid=1187811629343703";
-
-  // Send a GET request using fetch
-  fetch(icalUrl)
+function handleFacebookIcal() {
+  const currentUrl = location.href;
+  const eventId = currentUrl.split("events/")[1].split("?")[0];
+  fetch(`https://www.facebook.com/events/ical/export/?eid=${eventId}`)
     .then((response) => {
-      // __AUTO_GENERATED_PRINT_VAR_START__
-      console.log("handleFacebook response: %s", JSON.stringify(response)); // __AUTO_GENERATED_PRINT_VAR_END__
-      // Check if the request was successful
-      if (response.ok) {
-        return response.text(); // Convert the response body to text
-      } else {
-        throw new Error("Failed to fetch iCalendar data");
-      }
+      if (!response.ok) throw new Error("Failed to fetch iCalendar data");
+      return response.text();
     })
-    .then((icalText) => {
-      const parsedIcalData = ICAL.parse(icalText);
-      const event = new ICAL.Event(
-        new ICAL.Component(parsedIcalData).getFirstSubcomponent("vevent"),
-      );
-      const message = {
-        eventTitle: event.summary,
-        venueName: event.location,
-        dateStart: event.startDate.toJSDate(),
-        dateEnd: event.endDate.toJSDate(),
-        // TODO:
-        website: "temp",
-        description: event.description,
-        supported: true,
-      };
-      return message;
-    })
-    .then((message) => {
-      // __AUTO_GENERATED_PRINT_VAR_START__
-      console.log("handleFacebook#(anon) message: %s", JSON.stringify(message)); // __AUTO_GENERATED_PRINT_VAR_END__
-      chrome.runtime.sendMessage(message);
-    })
+    .then((icalText) => extractEventInfoFrom(icalText))
+    .then((eventInfo) => ({
+      website: currentUrl,
+      supported: true,
+      eventTitle: eventInfo.summary,
+      venueName: eventInfo.location,
+      dateStart: eventInfo.startDate?.toJSDate(),
+      dateEnd: eventInfo.endDate?.toJSDate(),
+      description: eventInfo.description,
+    }))
+    .then((koalagatorEvent) => chrome.runtime.sendMessage(koalagatorEvent))
     .catch((error) => {
       console.error("Error:", error);
     });
@@ -164,11 +145,8 @@ const check = () => {
     return;
   }
 
-  if (site.domain_name === facebook.domain_name) {
-    handleFacebook();
-    return;
-  }
-  chrome.runtime.sendMessage(generateMessageFromSite(site));
+  if (site.domain_name === facebook.domain_name) return handleFacebookIcal();
+  chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site));
 };
 
 check();
@@ -178,3 +156,11 @@ chrome.runtime.onMessage.addListener((request) => {
     check();
   }
 });
+
+function extractEventInfoFrom(icalText) {
+  // Code declared in `scripts/ical.es5.min.cjs`, retrieved from:
+  // https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs.
+  return new ICAL.Event(
+    new ICAL.Component(ICAL.parse(icalText)).getFirstSubcomponent("vevent"),
+  );
+}
