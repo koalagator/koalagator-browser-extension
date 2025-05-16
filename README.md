@@ -55,9 +55,11 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 We recommend you install [web-ext](https://github.com/mozilla/web-ext) locally.
 It supports live reloading of your plugin as you change the code.
 
-  brew install web-ext
+```
+brew install web-ext
 
-  web-ext run # spins up a firefox instance with your extension live loaded
+web-ext run # spins up a firefox instance with your extension live loaded
+```
 
 ## Deploying a build
 
@@ -86,20 +88,21 @@ This project is licensed as LGPL3.0, see LICENSE.md
 
 Three states:
 
-Unavailable/Inactive (domain not supported)
-Support site (loading)
-Supported site (Ready)
+### Extension States
 
-Inactive - Greyed out
-Loading - Green dots
-Ready - Green
+| State      | Description                          | Visual Indicator     | Trigger Condition                               |
+|------------|--------------------------------------|----------------------|-------------------------------------------------|
+| Inactive   | Domain not supported                 | Greyed out icon      | Domain is not on the whitelist                  |
+| Loading    | Support site detected (loading data) | Green dots animation | Domain is on the whitelist, script initializing |
+| Ready      | Supported site, fully loaded         | Solid green icon     | Script has finished loading and is ready        |
 
+### Behavior Flow
 
-When first visit a page
-Checks the domain
-Not on white list - Inactive
-On whitelist - Loading
-Once loaded.. Ready
+1. **On Page Visit**
+   - Check current domain.
+   - If **not on whitelist** → set state to **Inactive**.
+   - If **on whitelist** → set state to **Loading**.
+   - Once all required data is loaded → set state to **Ready**.
 
 ### How to test locally
 
@@ -119,7 +122,9 @@ Menu 'Window' > Extensions
 Uses the [kewisch/ical.js/](https://github.com/kewisch/ical.js/) library to parse ical files. Specifically,
 [this build](https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs).
 
-*Note*: This library is fairly fiddly to work with, and managing it as a dependency is quite awkward in Vanilla JS.
+**Note:**
+
+This library is fairly fiddly to work with, and managing it as a dependency is quite awkward in Vanilla JS.
 It was chosen mainly because it provides a transpiled ES5-compatible version of the library,
 which is needed for our current project setup. To use a different more modern ES6 library, we will need to
 bundle/transpile our code + dependencies into a deployable bundle.
