@@ -90,11 +90,11 @@ Three states:
 
 ### Extension States
 
-| State      | Description                          | Visual Indicator     |
+| State      | Description                          | Browser Icon         |
 |------------|--------------------------------------|----------------------|
-| Inactive   | Domain not supported                 | Greyed out icon      |
-| Loading    | Support site detected (loading data) | Green dots           |
-| Ready      | Supported site, fully loaded         | Green icon           |
+| Inactive   | Domain not supported                 | Greyed out           |
+| Loading    | Support site detected (loading data) | Green with dots      |
+| Ready      | Supported site, fully loaded         | Green                |
 
 ### Behavior Flow When Visiting A Page
 
