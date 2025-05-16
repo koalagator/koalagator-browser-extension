@@ -90,11 +90,11 @@ Three states:
 
 ### Extension States
 
-| State      | Description                          | Visual Indicator     | Trigger Condition                               |
-|------------|--------------------------------------|----------------------|-------------------------------------------------|
-| Inactive   | Domain not supported                 | Greyed out icon      | Domain is not on the whitelist                  |
-| Loading    | Support site detected (loading data) | Green dots animation | Domain is on the whitelist, script initializing |
-| Ready      | Supported site, fully loaded         | Solid green icon     | Script has finished loading and is ready        |
+| State      | Description                          | Visual Indicator     |
+|------------|--------------------------------------|----------------------|
+| Inactive   | Domain not supported                 | Greyed out icon      |
+| Loading    | Support site detected (loading data) | Green dots           |
+| Ready      | Supported site, fully loaded         | Green icon           |
 
 ### Behavior Flow When Visiting A Page
 
