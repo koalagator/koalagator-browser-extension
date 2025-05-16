@@ -7,7 +7,7 @@ Suppported events sites have mapping files in /mappings.
 
 ![SCR-20250505-unqz](https://github.com/user-attachments/assets/23706983-0989-43cd-9115-00f0e71bc57a)
 
-One click and a create event page is opened in a new tab, filled out with all the event details. 
+One click and a create event page is opened in a new tab, filled out with all the event details.
 
 ![SCR-20250505-uqle](https://github.com/user-attachments/assets/318ecf45-0728-4f1c-918b-505dd831cdf0)
 
@@ -66,7 +66,7 @@ web-ext run # spins up a firefox instance with your extension live loaded
 1. Update 'version' in manifest.json
 2. Sign the extension (see below)
 3. In github create a new release and attach the .xpi file from signing.
-https://github.com/koalagator/koalagator-browser-extension/releases/new
+   https://github.com/koalagator/koalagator-browser-extension/releases/new
 
 ## Signing For Firefox
 
@@ -76,7 +76,7 @@ web-ext sign --channel=unlisted --amo-metadata=./web-ext.json --api-key=user:186
 
 ## Contribute
 
-We welcome Pull requests, if the data reading stops working correctly, feel free to review the css selectors used here and to make a PR to fix it for everyone. 
+We welcome Pull requests, if the data reading stops working correctly, feel free to review the css selectors used here and to make a PR to fix it for everyone.
 
 Confused or new to development, reach out, we're friendly :)
 
@@ -90,11 +90,11 @@ Three states:
 
 ### Extension States
 
-| State      | Description                          | Browser Icon         |
-|------------|--------------------------------------|----------------------|
-| Inactive   | Domain not supported                 | Greyed out           |
-| Loading    | Support site detected (loading data) | Green with dots      |
-| Ready      | Supported site, fully loaded         | Green                |
+| State    | Description                          | Browser Icon    |
+| -------- | ------------------------------------ | --------------- |
+| Inactive | Domain not supported                 | Greyed out      |
+| Loading  | Support site detected (loading data) | Green with dots |
+| Ready    | Supported site, fully loaded         | Green           |
 
 ### Behavior Flow When Visiting A Page
 
