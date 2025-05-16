@@ -135,7 +135,10 @@ function handleFacebookIcal() {
     const eventId = currentUrl.split("events/")[1].split("/")[0]
     fetch(`https://www.facebook.com/events/ical/export/?eid=${eventId}`)
         .then((response) => {
-            if (!response.ok) throw new Error("Failed to fetch iCalendar data")
+            if (!response.ok)
+                throw new Error(
+                    "Failed to fetch iCalendar data. Note: you need to be logged in to Facebook.",
+                )
             return response.text()
         })
         .then((icalText) => extractEventInfoFrom(icalText))
@@ -150,6 +153,11 @@ function handleFacebookIcal() {
         }))
         .then((koalagatorEvent) => chrome.runtime.sendMessage(koalagatorEvent))
         .catch((error) => {
+            if (error.message.includes("e.designSet is undefined")) {
+                throw new Error(
+                    "Facebook has blocked you from extracting any more events to Koalagator. Please try again later.",
+                )
+            }
             console.error("Error:", error)
         })
 }
