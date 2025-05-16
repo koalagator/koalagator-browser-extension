@@ -132,7 +132,7 @@ function extractKoalagatorEventInfoFrom(site) {
 
 function handleFacebookIcal() {
     const currentUrl = location.href
-    const eventId = currentUrl.split("events/")[1].split("?")[0]
+    const eventId = currentUrl.split("events/")[1].split("/")[0]
     fetch(`https://www.facebook.com/events/ical/export/?eid=${eventId}`)
         .then((response) => {
             if (!response.ok) throw new Error("Failed to fetch iCalendar data")
