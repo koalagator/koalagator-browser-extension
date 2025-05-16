@@ -68,11 +68,8 @@ const tito = {
 
 const facebook = {
   domain_name: "www.facebook.com",
-  event_title: ".event-title",
-  venue_name: ".content-card .fw-medium",
-  description: ".tito-description",
-  date_start: "#tito-basic-info a",
-  date_start_attr: "",
+  // data is empty here, since facebook event info is extracted from the event ical,
+  // rather than from the page itself.
 };
 
 const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma, facebook];

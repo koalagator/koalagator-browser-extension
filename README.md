@@ -116,4 +116,11 @@ Menu 'Window' > Extensions
 
 ## Dependencies
 
-Uses the [kewisch/ical.js/](https://github.com/kewisch/ical.js/) library to parse ical files. Specifically, [this build](https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs).
+Uses the [kewisch/ical.js/](https://github.com/kewisch/ical.js/) library to parse ical files. Specifically,
+[this build](https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs).
+
+*Note*: This library is fairly fiddly to work with, and managing it as a dependency is quite awkward in Vanilla JS.
+It was chosen mainly because it provides a transpiled ES5-compatible version of the library,
+which is needed for our current project setup. To use a different more modern ES6 library, we will need to
+bundle/transpile our code + dependencies into a deployable bundle.
+One option is use [roll up with React + Vite](https://github.com/5tigerjelly/chrome-extension-react-template).
