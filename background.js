@@ -12,8 +12,6 @@ let description = null
 let activeTabId = null
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    // __AUTO_GENERATED_PRINT_VAR_START__
-    console.log(" request: %s", request) // __AUTO_GENERATED_PRINT_VAR_END__
     if (sender.tab.id !== activeTabId) return
 
     eventTitle = request.eventTitle
@@ -61,13 +59,4 @@ browserAPI.browserAction.onClicked.addListener(async () => {
 
     const generatedUrl = `${instanceUrl}?${urlSearchParms}`
     chrome.tabs.create({ url: generatedUrl })
-
-    // console.log("onClicked");
-    // const url = new URL(tab.url);
-    // if (allowedDomains.includes(url.hostname)) {
-    //   console.log("This domain is allowed.");
-    //   browserAPI.windows.create({ url: targetUrl, type: "popup" });
-    // } else {
-    //   alert("This domain is not allowed.");
-    // }
 })
