@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Koalagator",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Magically enters event data from popular event sites",
     "browser_specific_settings": {
         "gecko": { "id": "{6e0f13ab-dfbb-4e3d-a651-a1d8abdba923}" }
