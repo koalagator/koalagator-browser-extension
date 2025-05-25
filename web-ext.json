@@ -3,9 +3,9 @@
     "categories": { "firefox": ["feeds-news-blogging"] },
     "requires_payment": false,
     "homepage": {
-      "en-US": "https://github.com/koalagator/koalagator"
+        "en-US": "https://github.com/koalagator/koalagator"
     },
     "support_email": {
-      "en-US": "support@koalagator.org"
+        "en-US": "support@koalagator.org"
     }
 }

@@ -7,7 +7,7 @@ Suppported events sites have mapping files in /mappings.
 
 ![SCR-20250505-unqz](https://github.com/user-attachments/assets/23706983-0989-43cd-9115-00f0e71bc57a)
 
-One click and a create event page is opened in a new tab, filled out with all the event details. 
+One click and a create event page is opened in a new tab, filled out with all the event details.
 
 ![SCR-20250505-uqle](https://github.com/user-attachments/assets/318ecf45-0728-4f1c-918b-505dd831cdf0)
 
@@ -40,7 +40,7 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 
 1. Click the .xpi file in your fav browser and follow the prompts
 
-   https://github.com/koalagator/koalagator-browser-extension/releases
+    https://github.com/koalagator/koalagator-browser-extension/releases
 
 ## Using the extension
 
@@ -55,16 +55,18 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 We recommend you install [web-ext](https://github.com/mozilla/web-ext) locally.
 It supports live reloading of your plugin as you change the code.
 
-  brew install web-ext
+```
+brew install web-ext
 
-  web-ext run # spins up a firefox instance with your extension live loaded
+web-ext run # spins up a firefox instance with your extension live loaded
+```
 
 ## Deploying a build
 
 1. Update 'version' in manifest.json
 2. Sign the extension (see below)
 3. In github create a new release and attach the .xpi file from signing.
-https://github.com/koalagator/koalagator-browser-extension/releases/new
+   https://github.com/koalagator/koalagator-browser-extension/releases/new
 
 ## Signing For Firefox
 
@@ -74,7 +76,7 @@ web-ext sign --channel=unlisted --amo-metadata=./web-ext.json --api-key=user:186
 
 ## Contribute
 
-We welcome Pull requests, if the data reading stops working correctly, feel free to review the css selectors used here and to make a PR to fix it for everyone. 
+We welcome Pull requests, if the data reading stops working correctly, feel free to review the css selectors used here and to make a PR to fix it for everyone.
 
 Confused or new to development, reach out, we're friendly :)
 
@@ -86,20 +88,20 @@ This project is licensed as LGPL3.0, see LICENSE.md
 
 Three states:
 
-Unavailable/Inactive (domain not supported)
-Support site (loading)
-Supported site (Ready)
+### Extension States
 
-Inactive - Greyed out
-Loading - Green dots
-Ready - Green
+| State    | Description                          | Browser Icon    |
+| -------- | ------------------------------------ | --------------- |
+| Inactive | Domain not supported                 | Greyed out      |
+| Loading  | Support site detected (loading data) | Green with dots |
+| Ready    | Supported site, fully loaded         | Green           |
 
+### Behavior Flow When Visiting A Page
 
-When first visit a page
-Checks the domain
-Not on white list - Inactive
-On whitelist - Loading
-Once loaded.. Ready
+- Check current domain.
+- If **not on whitelist** → set state to **Inactive**.
+- If **on whitelist** → set state to **Loading**.
+- Once all required data is loaded → set state to **Ready**.
 
 ### How to test locally
 
@@ -113,3 +115,16 @@ Menu 'Window' > Extensions
 'Load Unpacked' and select project folder.
 
 (This needs to be repeated every time the code changes, to reload)
+
+## Dependencies
+
+Uses the [kewisch/ical.js/](https://github.com/kewisch/ical.js/) library to parse ical files. Specifically,
+[this build](https://unpkg.com/ical.js@2.1.0/dist/ical.es5.min.cjs).
+
+**Note:**
+
+This library is fairly fiddly to work with, and managing it as a dependency is quite awkward in Vanilla JS.
+It was chosen mainly because it provides a transpiled ES5-compatible version of the library,
+which is needed for our current project setup. To use a different more modern ES6 library, we will need to
+bundle/transpile our code + dependencies into a deployable bundle.
+One option is use [roll up with React + Vite](https://github.com/5tigerjelly/chrome-extension-react-template).

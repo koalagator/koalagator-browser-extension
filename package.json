@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "ical.js": "^2.1.0"
+    },
+    "scripts": {
+        "format": "prettier --write .",
+        "dev": "web-ext run"
+    },
+    "devDependencies": {
+        "prettier": "^3.5.3",
+        "web-ext": "^8.6.0"
+    }
+}
