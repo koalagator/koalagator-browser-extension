@@ -4,7 +4,7 @@
     },
     "scripts": {
         "format": "prettier --write .",
-        "dev": "web-ext run"
+        "dev": "web-ext run # spins up a firefox instance with your extension live loaded"
     },
     "devDependencies": {
         "prettier": "^3.5.3",

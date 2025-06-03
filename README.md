@@ -52,13 +52,18 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 
 ## Development on the extension
 
-We recommend you install [web-ext](https://github.com/mozilla/web-ext) locally.
+We recommend you use [web-ext](https://github.com/mozilla/web-ext) to test / develop locally.
 It supports live reloading of your plugin as you change the code.
 
 ```
-brew install web-ext
+# Install dependencies:
+npm install
+```
 
-web-ext run # spins up a firefox instance with your extension live loaded
+Then start web-ext using:
+
+```
+npm run dev
 ```
 
 ## Deploying a build
