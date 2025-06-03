@@ -83,11 +83,8 @@ const check = () => {
     }
 
     if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
-    const result = extractKoalagatorEventInfoFrom(site)
-    const website = result.website
-    // __AUTO_GENERATED_PRINT_VAR_START__
-    console.log("check website: %s", website) // __AUTO_GENERATED_PRINT_VAR_END__
-    chrome.runtime.sendMessage(result)
+    
+    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
 }
 
 check()
