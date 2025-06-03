@@ -1,3 +1,7 @@
+### 0.1.3
+
+- Fix Humanitix Event URL is incorrectly duplicating the url
+
 ### 0.1.2
 
 - Add support for Facebook events
