@@ -99,10 +99,6 @@ chrome.runtime.onMessage.addListener((request) => {
 })
 
 function extractKoalagatorEventInfoFrom(site) {
-    const eventTitle = document.querySelector(site.event_title)?.innerText
-    const venueName = document.querySelector(site.venue_name)?.innerText
-    const description = document.querySelector(site.description)?.innerText
-    const website = `${location.href}`
     let dateStart = document.querySelector(site.date_start)
     if (site.date_start_attr) {
         dateStart = dateStart?.getAttribute(site.date_start_attr)
@@ -123,14 +119,18 @@ function extractKoalagatorEventInfoFrom(site) {
         if (data.endDate) dateEnd = data.endDate
     }
 
+    const eventTitle = document.querySelector(site.event_title)?.innerText
+    const venueName = document.querySelector(site.venue_name)?.innerText
+    const description = document.querySelector(site.description)?.innerText
+
     return {
         eventTitle,
         venueName,
+        description,
         dateStart,
         dateEnd,
-        website,
-        description,
         supported: true,
+        website: location.href,
     }
 }
 
