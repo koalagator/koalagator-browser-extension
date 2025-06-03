@@ -83,7 +83,11 @@ const check = () => {
     }
 
     if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
-    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
+    const result = extractKoalagatorEventInfoFrom(site)
+    const website = result.website
+    // __AUTO_GENERATED_PRINT_VAR_START__
+    console.log("check website: %s", website) // __AUTO_GENERATED_PRINT_VAR_END__
+    chrome.runtime.sendMessage(result)
 }
 
 check()
@@ -98,7 +102,7 @@ function extractKoalagatorEventInfoFrom(site) {
     const eventTitle = document.querySelector(site.event_title)?.innerText
     const venueName = document.querySelector(site.venue_name)?.innerText
     const description = document.querySelector(site.description)?.innerText
-    const website = `${location.origin}${location.href}`
+    const website = `${location.href}`
     let dateStart = document.querySelector(site.date_start)
     if (site.date_start_attr) {
         dateStart = dateStart?.getAttribute(site.date_start_attr)
