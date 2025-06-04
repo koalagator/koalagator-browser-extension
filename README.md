@@ -108,7 +108,17 @@ Three states:
 - If **on whitelist** → set state to **Loading**.
 - Once all required data is loaded → set state to **Ready**.
 
-### How to test locally
+### Automated testing
+
+This project uses [text based Approval testing](http://approvaltests.com) for automated testing.
+Specifically, we use [Approvals.NodeJS](https://github.com/approvals/Approvals.NodeJS?tab=readme-ov-file#intro)
+with [vitest](https://vitest.dev/) as the test runner.
+
+Run `npm run test` to run the tests.
+
+See `test/extractEventData.test.js` for more detail
+
+### Manual local testing
 
 #### Test on Firefox
 
