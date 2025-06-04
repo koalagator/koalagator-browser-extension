@@ -106,7 +106,7 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
     const eventTitle = extractField(site.event_title, theDoc)
 
     const venueName = extractField(site.venue_name, theDoc)
-    const description = theDoc.querySelector(site.description)?.innerText
+    const description = extractField(site.description, theDoc)
 
     return {
         eventTitle,
@@ -118,8 +118,7 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
         website: website,
     }
 
-    function extractField(toEXtract) {
-        const eventTitle = theDoc.querySelector(toEXtract)?.textContent
-        return eventTitle
+    function extractField(toExtract) {
+        return theDoc.querySelector(toExtract)?.textContent
     }
 }
