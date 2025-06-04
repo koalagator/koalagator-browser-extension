@@ -18,8 +18,8 @@ test("extract event data from example Humanitix page", (done) => {
     const document = new JSDOM(
         readHTMLFile("approval/example_humanitix_input.html"),
     ).window.document
-    const website = "events.humanitix.com/example"
     const humanitix = sites[0]
+    const website = `${humanitix.domain_name}/example`
     const result = extractKoalagatorEventInfoFrom(humanitix, document, website)
 
     verifyAsJSON(__dirname, "humanatix-sample", result, done)
