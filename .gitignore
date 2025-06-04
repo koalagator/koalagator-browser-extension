@@ -1,4 +1,5 @@
 .DS_Store
 .amo-upload-uuid
+.approval_tests_temp/
 web-ext-artifacts
 node_modules
