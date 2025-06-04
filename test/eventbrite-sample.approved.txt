@@ -4,6 +4,6 @@
   "description": "Example description",
   "eventTitle": "Example event",
   "supported": true,
-  "venueName": "The Lights Community and Sports Centre",
+  "venueName": "Example venue",
   "website": "https://www.eventbrite.com/e/some-event-url"
 }
