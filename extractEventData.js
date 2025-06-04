@@ -82,20 +82,20 @@ export const sites = [
     facebook,
 ]
 
-export function extractKoalagatorEventInfoFrom(site) {
-    let dateStart = document.querySelector(site.date_start)
+export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
+    let dateStart = theDoc.querySelector(site.date_start)
     if (site.date_start_attr) {
         dateStart = dateStart?.getAttribute(site.date_start_attr)
     } else {
         dateStart = dateStart?.innerText
     }
-    let dateEnd = document.querySelector(site.date_end)
+    let dateEnd = theDoc.querySelector(site.date_end)
     if (site.date_end_attr) {
         dateEnd = dateEnd?.getAttribute(site.date_end_attr)
     } else {
         dateEnd = dateEnd?.innerText
     }
-    for (const node of document.querySelectorAll(
+    for (const node of theDoc.querySelectorAll(
         "script[type='application/ld+json']",
     )) {
         const data = JSON.parse(node.innerHTML)
@@ -103,9 +103,9 @@ export function extractKoalagatorEventInfoFrom(site) {
         if (data.endDate) dateEnd = data.endDate
     }
 
-    const eventTitle = document.querySelector(site.event_title)?.innerText
-    const venueName = document.querySelector(site.venue_name)?.innerText
-    const description = document.querySelector(site.description)?.innerText
+    const eventTitle = theDoc.querySelector(site.event_title)?.innerText
+    const venueName = theDoc.querySelector(site.venue_name)?.innerText
+    const description = theDoc.querySelector(site.description)?.innerText
 
     return {
         eventTitle,
@@ -114,6 +114,6 @@ export function extractKoalagatorEventInfoFrom(site) {
         dateStart,
         dateEnd,
         supported: true,
-        website: location.href,
+        website: website,
     }
 }
