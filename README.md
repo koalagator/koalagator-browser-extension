@@ -65,14 +65,8 @@ Then start web-ext using:
 npm run dev
 ```
 
-Our automated tests will keep you safe, so you can relax like a Koala. Run this in another window,
-so that changes in behavior are caught as soon as you save any file changes: 
-
-```
-npm run test
-```
-
-*TIP: save frequently and move in small steps*
+We recommend letting our tests hold your hand while you refactor.
+See our section on [Automated testing](#automated-testing) for more detail.
 
 ## Deploying a build
 
@@ -128,7 +122,7 @@ See `test/extractEventData.test.js` for more detail
 
 Areas to write approval tests for:
 
-- Icon states
+- Extension Icon states (see section [Extension States](#extension-states))
 - Conversion of EventData to New Koalagator event URL
 
 ### Manual local testing
