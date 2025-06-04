@@ -4,11 +4,13 @@
     },
     "scripts": {
         "format": "prettier --write .",
-        "dev": "web-ext run # spins up a firefox instance with your extension live loaded"
+        "dev": "web-ext run # spins up a firefox instance with your extension live loaded",
+        "test": "vitest"
     },
     "devDependencies": {
         "approvals": "^7.3.0",
         "prettier": "^3.5.3",
+        "vitest": "^3.2.1",
         "web-ext": "^8.6.0"
     }
 }

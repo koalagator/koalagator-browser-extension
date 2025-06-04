@@ -1,0 +1,10 @@
+{
+  "date_end": "[property='event:end_time']",
+  "date_end_attr": "content",
+  "date_start": "[property='event:start_time']",
+  "date_start_attr": "content",
+  "description": "#event-description",
+  "domain_name": "www.eventbrite.com",
+  "event_title": ".event-title",
+  "venue_name": ".location-info__address-text"
+}
