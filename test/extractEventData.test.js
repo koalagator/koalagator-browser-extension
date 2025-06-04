@@ -23,7 +23,7 @@ test("extract event data from saved Eventbrite page", (done) => {
     )
 
     const document = new JSDOM(html).window.document
-    const website = "https://www.eventbrite.com/e/some-event-url"
+    const website = "events.humanitix.com/example"
 
     const result = extractKoalagatorEventInfoFrom(siteToTest, document, website)
 

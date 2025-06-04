@@ -5,5 +5,5 @@
   "eventTitle": "Example event",
   "supported": true,
   "venueName": "Example venue",
-  "website": "https://www.eventbrite.com/e/some-event-url"
+  "website": "events.humanitix.com/example"
 }
