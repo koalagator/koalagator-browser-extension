@@ -81,3 +81,39 @@ export const sites = [
     luma,
     facebook,
 ]
+
+export function extractKoalagatorEventInfoFrom(site) {
+    let dateStart = document.querySelector(site.date_start)
+    if (site.date_start_attr) {
+        dateStart = dateStart?.getAttribute(site.date_start_attr)
+    } else {
+        dateStart = dateStart?.innerText
+    }
+    let dateEnd = document.querySelector(site.date_end)
+    if (site.date_end_attr) {
+        dateEnd = dateEnd?.getAttribute(site.date_end_attr)
+    } else {
+        dateEnd = dateEnd?.innerText
+    }
+    for (const node of document.querySelectorAll(
+        "script[type='application/ld+json']",
+    )) {
+        const data = JSON.parse(node.innerHTML)
+        if (data.startDate) dateStart = data.startDate
+        if (data.endDate) dateEnd = data.endDate
+    }
+
+    const eventTitle = document.querySelector(site.event_title)?.innerText
+    const venueName = document.querySelector(site.venue_name)?.innerText
+    const description = document.querySelector(site.description)?.innerText
+
+    return {
+        eventTitle,
+        venueName,
+        description,
+        dateStart,
+        dateEnd,
+        supported: true,
+        website: location.href,
+    }
+}
