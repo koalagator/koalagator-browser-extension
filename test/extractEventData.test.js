@@ -14,18 +14,16 @@ configure({
     ],
 })
 
-test("extract event data from saved Eventbrite page", (done) => {
-    const siteToTest = sites[0] // Make sure this is the correct one for eventbrite
-    // Load your saved Eventbrite HTML fixture
+test("extract event data from example Humanitix page", (done) => {
     const html = fs.readFileSync(
-        path.join(__dirname, "approval/example_input.html"),
+        path.join(__dirname, "approval/example_humanitix_input.html"),
         "utf-8",
     )
 
     const document = new JSDOM(html).window.document
     const website = "events.humanitix.com/example"
-
-    const result = extractKoalagatorEventInfoFrom(siteToTest, document, website)
+    const humanitix = sites[0]
+    const result = extractKoalagatorEventInfoFrom(humanitix, document, website)
 
     verifyAsJSON(__dirname, "eventbrite-sample", result, done)
 })
