@@ -20,9 +20,12 @@ test("extract event data from example Humanitix page", (done) => {
     ).window.document
     const humanitix = sites[0]
     const website = `${humanitix.domain_name}/example`
-    const result = extractKoalagatorEventInfoFrom(humanitix, document, website)
-
-    verifyAsJSON(__dirname, "humanatix-sample", result, done)
+    const toVerify = extractKoalagatorEventInfoFrom(
+        humanitix,
+        document,
+        website,
+    )
+    verifyAsJSON(__dirname, "humanatix-sample", toVerify, done)
 })
 
 function readHTMLFile(filePAth) {
