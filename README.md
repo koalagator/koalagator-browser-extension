@@ -18,8 +18,7 @@ You're then able to review and edit before saving the event.
 We aim to support all major event website used by community organisers.
 (Concert and major sporting events ticketing are not the focus of this extension)
 
-Supported: Humanitix, Eventbrite, Meetup, Trybooking, Tito, Luma
-Coming soon: Facebook
+Supported: Humanitix, Eventbrite, Meetup, Trybooking, Tito, Luma, Facebook
 
 To add additional sites or to fix a data collection field, make changes in content-script.js
 
@@ -110,7 +109,7 @@ Three states:
 
 ### Automated testing
 
-This project uses [text based Approval testing](http://approvaltests.com) for automated testing.
+This project uses [text based Approval testing](http://approvaltests.com) to automatically test our most important business logic.
 Specifically, we use [Approvals.NodeJS](https://github.com/approvals/Approvals.NodeJS?tab=readme-ov-file#intro)
 with [vitest](https://vitest.dev/) as the test runner.
 
@@ -118,7 +117,14 @@ Run `npm run test` to run the tests.
 
 See `test/extractEventData.test.js` for more detail
 
+Areas to write approval tests for:
+
+- Icon states
+- Conversion of EventData to New Koalagator event URL
+
 ### Manual local testing
+
+To test parts of the extension where automated tests are less valuable eg. styling / browser events, follow these steps:
 
 #### Test on Firefox
 
