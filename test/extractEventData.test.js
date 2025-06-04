@@ -15,8 +15,8 @@ configure({
 })
 
 test("extract event data from example Humanitix page", (done) => {
-    const filePAth = "approval/example_humanitix_input.html"
-    const htmlFile = fs.readFileSync(path.join(__dirname, filePAth), "utf-8")
+    const htmlFile = readHTMLFile("approval/example_humanitix_input.html")
+
     const document = new JSDOM(htmlFile).window.document
     const website = "events.humanitix.com/example"
     const humanitix = sites[0]
@@ -24,3 +24,7 @@ test("extract event data from example Humanitix page", (done) => {
 
     verifyAsJSON(__dirname, "eventbrite-sample", result, done)
 })
+
+function readHTMLFile(filePAth) {
+    return fs.readFileSync(path.join(__dirname, filePAth), "utf-8")
+}
