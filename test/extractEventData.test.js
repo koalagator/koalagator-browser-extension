@@ -16,15 +16,13 @@ configure({
 
 test("extract event data from saved Eventbrite page", (done) => {
     const siteToTest = sites[0] // Make sure this is the correct one for eventbrite
-
     // Load your saved Eventbrite HTML fixture
     const html = fs.readFileSync(
         path.join(__dirname, "approval/example_input.html"),
         "utf-8",
     )
-    const dom = new JSDOM(html)
-    const document = dom.window.document
 
+    const document = new JSDOM(html).window.document
     const website = "https://www.eventbrite.com/e/some-event-url"
 
     const result = extractKoalagatorEventInfoFrom(siteToTest, document, website)
