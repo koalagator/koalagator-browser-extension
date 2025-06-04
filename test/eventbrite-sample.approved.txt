@@ -1,8 +1,6 @@
 {
-  "date_start": ".detail.datetime time",
-  "date_start_attr": "datetime",
-  "description": ".EventDescription .RichContent",
-  "domain_name": "events.humanitix.com",
-  "event_title": "[data-testid='title']",
-  "venue_name": ".detail.location .f-label-3"
+  "dateEnd": "2025-07-19T20:00:00+0930",
+  "dateStart": "2025-07-19T14:30:00+0930",
+  "supported": true,
+  "website": "https://www.eventbrite.com/e/some-event-url"
 }

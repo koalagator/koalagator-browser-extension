@@ -19,7 +19,7 @@ test("extract event data from saved Eventbrite page", (done) => {
 
     // Load your saved Eventbrite HTML fixture
     const html = fs.readFileSync(
-        path.join(__dirname, "approval/eventbrite_sample.html"),
+        path.join(__dirname, "approval/example_input.html"),
         "utf-8",
     )
     const dom = new JSDOM(html)
