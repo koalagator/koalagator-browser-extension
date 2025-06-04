@@ -82,7 +82,7 @@ export const sites = [
     facebook,
 ]
 
-function temp(theDoc, toEXtract) {
+function temp(toEXtract, theDoc) {
     const eventTitle = theDoc.querySelector(toEXtract)?.textContent
     return eventTitle
 }
@@ -108,8 +108,7 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
         if (data.endDate) dateEnd = data.endDate
     }
 
-    const toEXtract = site.event_title
-    const eventTitle = temp(theDoc, toEXtract)
+    const eventTitle = temp(site.event_title, theDoc)
 
     const venueName = theDoc.querySelector(site.venue_name)?.innerText
     const description = theDoc.querySelector(site.description)?.innerText
