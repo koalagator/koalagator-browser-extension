@@ -103,10 +103,9 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
         if (data.endDate) dateEnd = data.endDate
     }
 
-    const eventTitle = extractField(site.event_title, theDoc)
-
-    const venueName = extractField(site.venue_name, theDoc)
-    const description = extractField(site.description, theDoc)
+    const eventTitle = extractField(site.event_title)
+    const venueName = extractField(site.venue_name)
+    const description = extractField(site.description)
 
     return {
         eventTitle,
