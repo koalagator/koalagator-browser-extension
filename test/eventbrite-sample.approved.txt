@@ -1,7 +1,7 @@
 {
   "dateEnd": "2025-07-19T20:00:00+0930",
   "dateStart": "2025-07-19T14:30:00+0930",
-  "description": "****Tickets also available at the door - card only (processing fee applicable).\nAdult = 18+ yearsChild = 5 -17 yearsUnder 5 years = free entry to all boutsCompanion Card tickets available.\nAdelaide Roller Derby is 100% DIY Member Run \n\n\nAdelaide Roller Derby acknowledges that the land we train and play on is the traditional lands for the Kaurna people of the Adelaide Plains, and pays respect to Elders past and present. We recognise and respect their cultural heritage, beliefs and relationship with the land. We acknowledge that they are of continuing importance to the Kaurna people living today.Website | Facebook | Instagram",
+  "description": "Some description",
   "eventTitle": "Adelaide Roller Derby 2025 - Mile Die Club v Road Train Rollers & Good Ship Salty v Wild Hearses",
   "supported": true,
   "venueName": "The Lights Community and Sports Centre",
