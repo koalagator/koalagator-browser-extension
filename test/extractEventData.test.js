@@ -15,12 +15,9 @@ configure({
 })
 
 test("extract event data from example Humanitix page", (done) => {
-    const html = fs.readFileSync(
-        path.join(__dirname, "approval/example_humanitix_input.html"),
-        "utf-8",
-    )
-
-    const document = new JSDOM(html).window.document
+    const filePAth = "approval/example_humanitix_input.html"
+    const htmlFile = fs.readFileSync(path.join(__dirname, filePAth), "utf-8")
+    const document = new JSDOM(htmlFile).window.document
     const website = "events.humanitix.com/example"
     const humanitix = sites[0]
     const result = extractKoalagatorEventInfoFrom(humanitix, document, website)
