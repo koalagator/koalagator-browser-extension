@@ -15,14 +15,14 @@ configure({
 })
 
 test("extract event data from example Humanitix page", (done) => {
-    const htmlFile = readHTMLFile("approval/example_humanitix_input.html")
-
-    const document = new JSDOM(htmlFile).window.document
+    const document = new JSDOM(
+        readHTMLFile("approval/example_humanitix_input.html"),
+    ).window.document
     const website = "events.humanitix.com/example"
     const humanitix = sites[0]
     const result = extractKoalagatorEventInfoFrom(humanitix, document, website)
 
-    verifyAsJSON(__dirname, "eventbrite-sample", result, done)
+    verifyAsJSON(__dirname, "humanatix-sample", result, done)
 })
 
 function readHTMLFile(filePAth) {
