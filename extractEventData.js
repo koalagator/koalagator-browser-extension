@@ -89,12 +89,14 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
     } else {
         dateStart = dateStart?.innerText
     }
+
     let dateEnd = theDoc.querySelector(site.date_end)
     if (site.date_end_attr) {
         dateEnd = dateEnd?.getAttribute(site.date_end_attr)
     } else {
         dateEnd = dateEnd?.innerText
     }
+
     for (const node of theDoc.querySelectorAll(
         "script[type='application/ld+json']",
     )) {
@@ -104,11 +106,11 @@ export function extractKoalagatorEventInfoFrom(site, theDoc, website) {
     }
 
     return {
+        dateStart,
+        dateEnd,
         eventTitle: extractField(site.event_title),
         venueName: extractField(site.venue_name),
         description: extractField(site.description),
-        dateStart,
-        dateEnd,
         supported: true,
         website: website,
     }
