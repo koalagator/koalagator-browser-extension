@@ -7,6 +7,7 @@
         "dev": "web-ext run # spins up a firefox instance with your extension live loaded"
     },
     "devDependencies": {
+        "approvals": "^7.3.0",
         "prettier": "^3.5.3",
         "web-ext": "^8.6.0"
     }
