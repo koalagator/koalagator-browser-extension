@@ -1,4 +1,4 @@
-import { sites } from "./extractEventData"
+import { extractKoalagatorEventInfoFrom, sites } from "./extractEventData"
 
 const check = () => {
     const actualHostname = location.hostname.toLowerCase()
