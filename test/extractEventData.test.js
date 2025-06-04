@@ -14,6 +14,10 @@ configure({
     ],
 })
 
+/* TODO:
+ * - fetch test input from real event page (might be flaky)
+ * - extract out hardcoded humanitix data and test all supported sites
+ */
 test("extract event data from example Humanitix page", (done) => {
     const document = new JSDOM(
         readHTMLFile("approval/example_humanitix_input.html"),
