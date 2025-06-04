@@ -65,6 +65,15 @@ Then start web-ext using:
 npm run dev
 ```
 
+Our automated tests will keep you safe, so you can relax like a Koala. Run this in another window,
+so that changes in behavior are caught as soon as you save any file changes: 
+
+```
+npm run test
+```
+
+*TIP: save frequently and move in small steps*
+
 ## Deploying a build
 
 1. Update 'version' in manifest.json

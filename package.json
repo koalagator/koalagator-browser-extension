@@ -5,7 +5,7 @@
     "scripts": {
         "format": "prettier --write .",
         "dev": "web-ext run # spins up a firefox instance with your extension live loaded",
-        "test": "vitest"
+        "test": "vitest -w"
     },
     "devDependencies": {
         "approvals": "^7.3.0",
