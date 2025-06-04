@@ -10,7 +10,9 @@ const check = () => {
 
     if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
 
-    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
+    chrome.runtime.sendMessage(
+        extractKoalagatorEventInfoFrom(site, document, location.href),
+    )
 }
 
 check()
