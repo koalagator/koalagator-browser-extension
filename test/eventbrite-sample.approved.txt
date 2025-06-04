@@ -1,8 +1,8 @@
 {
   "dateEnd": "2025-07-19T20:00:00+0930",
   "dateStart": "2025-07-19T14:30:00+0930",
-  "description": "Some description",
-  "eventTitle": "Adelaide Roller Derby 2025 - Mile Die Club v Road Train Rollers & Good Ship Salty v Wild Hearses",
+  "description": "Example description",
+  "eventTitle": "Example event",
   "supported": true,
   "venueName": "The Lights Community and Sports Centre",
   "website": "https://www.eventbrite.com/e/some-event-url"
