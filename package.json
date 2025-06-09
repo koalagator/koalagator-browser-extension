@@ -1,6 +1,7 @@
 {
     "dependencies": {
-        "ical.js": "^2.1.0"
+        "ical.js": "^2.1.0",
+        "wxt": "^0.20.7"
     },
     "scripts": {
         "format": "prettier --write .",
