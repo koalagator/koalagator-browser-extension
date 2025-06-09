@@ -103,7 +103,7 @@ async function check() {
     const site = sites.find((s) => s.domain_name === actualHostname)
 
     if (!site) {
-        await browser.runtime.sendMessage({ supported: false })
+        await browser.runtime.sendMessage({ supported: true })
         return
     }
 
@@ -116,17 +116,15 @@ async function check() {
 }
 
 function extractKoalagatorEventInfoFrom(site: any) {
-    // __AUTO_GENERATED_PRINT_VAR_START__
-    console.log("extractKoalagatorEventInfoFrom site:", site.date_start) // __AUTO_GENERATED_PRINT_VAR_END__
-    let dateStart: string | null = null
-    let dateEnd: string | null = null
+    let dateStart: string
+    let dateEnd: string
 
-    const dateStartNode = document.querySelector(site.date_start ?? "")
+    const dateStartNode = document.querySelector(site.date_start)
     dateStart = site.date_start_attr
         ? (dateStartNode?.getAttribute(site.date_start_attr) ?? null)
         : (dateStartNode?.textContent ?? null)
 
-    const dateEndNode = document.querySelector(site.date_end ?? "")
+    const dateEndNode = document.querySelector(site.date_end)
     dateEnd = site.date_end_attr
         ? (dateEndNode?.getAttribute(site.date_end_attr) ?? null)
         : (dateEndNode?.textContent ?? null)

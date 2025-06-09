@@ -1,9 +1,7 @@
-import browser from "webextension-polyfill"
-
 export default defineBackground(() => {
-    console.log("Hello background!", { id: browser.runtime.id })
-
     const instanceDomain = "seedbomb.au"
+    // __AUTO_GENERATED_PRINT_VAR_START__
+    console.log("(anon) instanceDomain:", instanceDomain) // __AUTO_GENERATED_PRINT_VAR_END__
     const instanceUrl = `https://${instanceDomain}/events/new`
 
     let eventTitle: string | null = null
@@ -62,6 +60,7 @@ export default defineBackground(() => {
         }).toString()
 
         const generatedUrl = `${instanceUrl}?${urlSearchParams}`
-        browser.tabs.create({ url: generatedUrl })
+        browser.tabs.create({ url: generatedUrl, type: "popup" })
+        // browser.windows.create({ url: targetUrl, type: "popup" })
     })
 })
