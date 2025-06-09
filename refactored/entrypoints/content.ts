@@ -31,6 +31,8 @@ const humanitix: any = {
     date_start: ".detail.datetime time",
     date_start_attr: "datetime",
 }
+// __AUTO_GENERATED_PRINT_VAR_START__
+console.log(" humanitix:", humanitix) // __AUTO_GENERATED_PRINT_VAR_END__
 
 const eventbrite: any = {
     domain_name: "www.eventbrite.com",
