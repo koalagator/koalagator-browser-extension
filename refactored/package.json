@@ -15,7 +15,11 @@
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
+    "@types/firefox-webext-browser": "^120.0.4",
     "typescript": "^5.8.3",
     "wxt": "^0.20.6"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
   }
 }
