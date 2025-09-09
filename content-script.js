@@ -1,6 +1,6 @@
 // Can't find end time
 const humanitix = {
-    domain_name: "events.humanitix.com",
+    domain_name: /events\.humanitix\.com$/,
     event_title: "[data-testid='title']",
     venue_name: ".detail.location .f-label-3",
     description: ".EventDescription .RichContent",
@@ -10,7 +10,7 @@ const humanitix = {
 
 // End time working
 const eventbrite = {
-    domain_name: "www.eventbrite.com",
+    domain_name: /www\.eventbrite\.(com|com\.au|sg)$/,
     event_title: ".event-title",
     venue_name: ".location-info__address-text",
     description: "#event-description",
@@ -22,7 +22,7 @@ const eventbrite = {
 
 // End time available in schema.org application/ld+json in head
 const meetup = {
-    domain_name: "www.meetup.com",
+    domain_name: /www.meetup.com$/,
     schema_org: true,
     event_title: "main h1",
     venue_name: "[data-event-label='event-location']",
@@ -33,7 +33,7 @@ const meetup = {
 
 // End time available in schema.org application/ld+json in head
 const trybooking = {
-    domain_name: "www.trybooking.com",
+    domain_name: /www\.trybooking\.com$/,
     schema_org: true,
     event_title: ".event-name",
     venue_name: "[data-event-label='event-location']",
@@ -44,7 +44,7 @@ const trybooking = {
 
 // End time available in schema.org application/ld+json in head
 const luma = {
-    domain_name: "lu.ma",
+    domain_name: /lu\.ma$/,
     schema_org: true,
     event_title: ".title",
     venue_name: ".tito-venues span",
@@ -58,7 +58,7 @@ const luma = {
 // State date and end datetime missing.
 // has link to .ical, that has all the data
 const tito = {
-    domain_name: "ti.to",
+    domain_name: /ti\.to$/,
     event_title: ".event-title",
     venue_name: ".content-card .fw-medium",
     description: ".tito-description",
@@ -67,7 +67,7 @@ const tito = {
 }
 
 const facebook = {
-    domain_name: "www.facebook.com",
+    domain_name: /www\.facebook\.com$/,
     // data is empty here, since facebook event info is extracted from the event ical,
     // rather than from the page itself.
 }
@@ -76,15 +76,20 @@ const sites = [humanitix, eventbrite, meetup, trybooking, tito, luma, facebook]
 
 const check = () => {
     const actualHostname = location.hostname.toLowerCase()
-    const site = sites.find((s) => s.domain_name === actualHostname)
+
+    const site = sites.find((s) => {
+        return s.domain_name.test(actualHostname)
+    })
+
     if (!site) {
         chrome.runtime.sendMessage({ supported: false })
         return
     }
 
-    if (site.domain_name === facebook.domain_name) return handleFacebookIcal()
+    if (site.domain_name === facebook.domain_name) return handleFacebookIcal();
     
-    chrome.runtime.sendMessage(extractKoalagatorEventInfoFrom(site))
+    const siteInfo = extractKoalagatorEventInfoFrom(site);
+    chrome.runtime.sendMessage(siteInfo);
 }
 
 check()
