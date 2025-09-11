@@ -1,7 +1,11 @@
 class BaseSite {
-  check(url) { return false; }
+    check(url) {
+        return false;
+    }
 
-  parse() { return new Promise(); }
+    parse() {
+        return new Promise();
+    }
 }
 
 export default BaseSite;

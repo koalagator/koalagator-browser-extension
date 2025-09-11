@@ -14,8 +14,11 @@ const check = () => {
 
     chrome.runtime.sendMessage({ supported: true, data: null });
 
-    site.parse().then(siteData => {
-        chrome.runtime.sendMessage({ supported: true, data: siteData.serialize() });
+    site.parse().then((siteData) => {
+        chrome.runtime.sendMessage({
+            supported: true,
+            data: siteData.serialize(),
+        });
     });
 };
 
@@ -28,4 +31,3 @@ chrome.runtime.onMessage.addListener((request) => {
         check();
     }
 });
-
