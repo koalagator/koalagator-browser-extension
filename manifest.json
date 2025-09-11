@@ -7,19 +7,19 @@
         "gecko": { "id": "{6e0f13ab-dfbb-4e3d-a651-a1d8abdba923}" }
     },
     "icons": {
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
+        "48": "assets/icons/icon48.png",
+        "128": "assets/icons/icon128.png"
     },
     "browser_action": {
-        "default_icon": "icons/icon48.png"
+        "default_icon": "assets/icons/icon48.png"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["src/background/main.js"]
     },
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["scripts/ical.es5.min.cjs", "content-script.js"],
+            "js": ["scripts/ical.es5.min.cjs", "src/content/main.js"],
             "run_at": "document_start"
         }
     ],

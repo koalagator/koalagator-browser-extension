@@ -1,6 +1,6 @@
-import imgReady48 from "/icons/ready48.png";
-import imgLoading48 from "/icons/loading48.png";
-import imgInactive48 from "/icons/inactive48.png";
+import imgReady48 from "/assets/icons/ready48.png";
+import imgLoading48 from "/assets/icons/loading48.png";
+import imgInactive48 from "/assets/icons/inactive48.png";
 
 
 const instanceDomain = "seedbomb.au"
@@ -35,14 +35,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             imagePath = imgLoading48
         }
     } else {
-        imagePath = imageInactive48
+        imagePath = imgInactive48
     }
     chrome.browserAction.setIcon({ path: imagePath })
 })
 
 chrome.tabs.onActivated.addListener((activeInfo) => {
     // set icon to inactive on first arrive in a tab (pre-checking)
-    const inactiveImagePath = imageInactive48
+    const inactiveImagePath = imgInactive48
     chrome.browserAction.setIcon({ path: inactiveImagePath })
     //detect the current Tab Id
     const tabId = activeInfo.tabId
