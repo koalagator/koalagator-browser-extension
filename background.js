@@ -1,3 +1,8 @@
+import imgReady48 from "/icons/ready48.png";
+import imgLoading48 from "/icons/loading48.png";
+import imgInactive48 from "/icons/inactive48.png";
+
+
 const instanceDomain = "seedbomb.au"
 const instanceUrl = `https://${instanceDomain}/events/new`
 
@@ -25,19 +30,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let imagePath
     if (supported) {
         if (eventTitle) {
-            imagePath = "icons/ready48.png"
+            imagePath = imgReady48
         } else {
-            imagePath = "icons/loading48.png"
+            imagePath = imgLoading48
         }
     } else {
-        imagePath = "icons/inactive48.png"
+        imagePath = imageInactive48
     }
     chrome.browserAction.setIcon({ path: imagePath })
 })
 
 chrome.tabs.onActivated.addListener((activeInfo) => {
     // set icon to inactive on first arrive in a tab (pre-checking)
-    const inactiveImagePath = "icons/inactive48.png"
+    const inactiveImagePath = imageInactive48
     chrome.browserAction.setIcon({ path: inactiveImagePath })
     //detect the current Tab Id
     const tabId = activeInfo.tabId
