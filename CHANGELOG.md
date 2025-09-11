@@ -1,10 +1,20 @@
+### 2.0.1
+
+- Updated build instructions in README
+- xpi file build actually works! 
+
+### 2.0.0
+
+- Move to use extension.js, refactor codebase for ES6.
+- Facebook events support working following the above change.
+
 ### 0.1.3
 
 - Fix Humanitix Event URL is incorrectly duplicating the url
 
 ### 0.1.2
 
-- Add support for Facebook events
+- Add initial support for Facebook events by reading ical files.
 
 ### 0.1.1
 
