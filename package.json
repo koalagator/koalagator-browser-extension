@@ -1,12 +1,12 @@
 {
     "dependencies": {
-        "ical.js": "^2.1.0"
+        "ical.js": "^2.2.1"
     },
     "scripts": {
         "format": "prettier --write .",
-        "build": "extension build",
+        "build": "extension build --browser=firefox --zip",
         "dev": "extension dev --browser=firefox",
-        "preview": "extension preview"
+        "preview": "extension preview --browser=firefox"
     },
     "devDependencies": {
         "extension": "^2.1.3",
