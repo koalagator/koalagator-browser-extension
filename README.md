@@ -18,23 +18,8 @@ You're then able to review and edit before saving the event.
 We aim to support all major event website used by community organisers.
 (Concert and major sporting events ticketing are not the focus of this extension)
 
-Supported: Humanitix, Eventbrite, Meetup, Trybooking, Tito, Luma
-Coming soon: Facebook
+Supported: Humanitix, Eventbrite, Meetup, Trybooking, Tito, Luma and Facebook events.
 
-To add additional sites or to fix a data collection field, make changes in content-script.js
-
-Here's an example of how humanitix is processed. Note: We also process the date based on schema.org if this json is present
-
-    // example from content-script.js
-    const humanitix = {
-        domain_name: "events.humanitix.com",
-        event_title: "[data-testid='title']",
-        venue_name: ".detail.location .f-label-3",
-        description: ".EventDescription .RichContent",![Uploading SCR-20250505-unqz.png…]()
-
-        date_start: ".detail.datetime time",
-        date_start_attr: 'datetime'
-    }
 
 ## Install in your browser
 
@@ -65,6 +50,23 @@ Then start web-ext using:
 ```
 npm run dev
 ```
+
+## To add additonal event sites
+
+To add additional sites or to fix a data collection field, make changes in content-script.js
+
+Here's an example of how humanitix is processed. Note: We also process the date based on schema.org if this json is present.
+
+    // example from content-script.js
+    const humanitix = {
+        domain_name: "events.humanitix.com",
+        event_title: "[data-testid='title']",
+        venue_name: ".detail.location .f-label-3",
+        description: ".EventDescription .RichContent",![Uploading SCR-20250505-unqz.png…]()
+
+        date_start: ".detail.datetime time",
+        date_start_attr: 'datetime'
+    }
 
 ## Deploying a build
 
