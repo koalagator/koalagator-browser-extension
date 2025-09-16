@@ -1,4 +1,6 @@
 .DS_Store
 .amo-upload-uuid
+.amp-jwt-secret
 web-ext-artifacts
 node_modules
+dist

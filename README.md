@@ -77,9 +77,14 @@ Here's an example of how humanitix is processed. Note: We also process the date 
 
 ## Signing For Firefox
 
-```
-web-ext sign --channel=unlisted --amo-metadata=./web-ext.json --api-key=user:18647829:320 --api-secret=$AMO_JWT_SECRET
-```
+    $ npm run build 
+
+    ```
+    web-ext sign --channel=unlisted --amo-metadata=./web-ext.json --api-key=user:18647829:320 --api-secret=$AMO_JWT_SECRET
+    ```
+
+You can access our developer account via the Mozilla Ad-on developer hub (https://addons.mozilla.org/en-US/developers/)
+Firefox Account: dev@koalagator.org (login details with evolve2k).
 
 ## Contribute
 
