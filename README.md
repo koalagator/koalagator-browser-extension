@@ -34,15 +34,17 @@ Do these instructions in [Firefox](https://www.firefox.com) (currently the only 
 
 4. Click the .xpi file in Firefox and follow the prompts to install.
 
-When it comes up tick to 'Pin to toolbar'. (If you are not asked to pin to toolbar during installation: you can click the puzzle piece in the top left of the firefox header bar and then find the extension and press the cog icon and _then_ click 'Pin to Toolbar')
+When it comes up tick to 'Pin to toolbar'. 
 
-5. You should now see a square icon in your task bar (with a crappy pic of a koala on it).
+### What to do if you cant see the gray/green koalagator square icon in your firefox toolbar.
+
+You can click the puzzle piece in the top left of the firefox header bar and then find the extension and press the cog icon and _then_ click 'Pin to Toolbar'.
+
+You should now see a square icon in your task bar (with a crappy hard to see picture of a koala on it). It will be gray or green or have yellow lines through it if there's an error (in which case try hard refresh the page and then notify us if still stuck).
    
 ## How to use the extension
 
-1. Toolbar icon setup: In Firefox, click the 'puzzle' icon and find the extension > click cog and then click 'Pin to Toolbar', a square icon should then be in your toolbar (which has a pixely image of a koala on it). It'll be gray wit the picture hard to see unless you are on an page for an event.
-
-2. Visit an event on a supported site (eg humanitix, facebook) event and wait until the koalagator icon turns green (signifiying its ready).
+1. Visit an humanitix/facebook/eventbrite (etc) event and wait until the koalagator icon turns green (signifiying its ready).
 
 3. Click (Green) Koalagator icon, it'll open to a new event page on a koalagator instance, review data and click create to save the event.
 
