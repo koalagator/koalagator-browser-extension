@@ -20,20 +20,31 @@ We aim to support all major event website used by community organisers.
 
 Supported: Humanitix, Eventbrite, Meetup, Trybooking, Tito, Luma and Facebook events.
 
-
 ## Install in your browser
 
-1. Click the .xpi file in your fav browser and follow the prompts
+Do these instructions in [Firefox](https://www.firefox.com) (currently the only supported browser).
+
+1. Visit our releases page. The latest release will show first at the top of the page.
 
     https://github.com/koalagator/koalagator-browser-extension/releases
 
-## Using the extension
+2. Scroll down until you get to the Asset section of the latest release.
 
-1. Firefox: Click the 'puzzle' icon and find the extension and the pin it, so it shows in your toolbar.
+<img width="485" height="236" alt="SCR-20250916-mklz" src="https://github.com/user-attachments/assets/4514c31b-92d7-467f-838d-c447ed6ca625" />
 
-2. Visit an event on a supported site (eg humanitix) and wait until the koalagator icon turns green (signifiying its ready).
+4. Click the .xpi file in Firefox and follow the prompts to install.
 
-3. Click Koalagator icon, it'll open to a new event page on a koalagator instance, review data and click create to save the event.
+When it comes up tick to 'Pin to toolbar'. (If you are not asked to pin to toolbar during installation: you can click the puzzle piece in the top left of the firefox header bar and then find the extension and press the cog icon and _then_ click 'Pin to Toolbar')
+
+5. You should now see a square icon in your task bar (with a crappy pic of a koala on it).
+   
+## How to use the extension
+
+1. Toolbar icon setup: In Firefox, click the 'puzzle' icon and find the extension > click cog and then click 'Pin to Toolbar', a square icon should then be in your toolbar (which has a pixely image of a koala on it). It'll be gray wit the picture hard to see unless you are on an page for an event.
+
+2. Visit an event on a supported site (eg humanitix, facebook) event and wait until the koalagator icon turns green (signifiying its ready).
+
+3. Click (Green) Koalagator icon, it'll open to a new event page on a koalagator instance, review data and click create to save the event.
 
 ## Development on the extension
 
