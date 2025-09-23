@@ -50,7 +50,7 @@ class SiteData {
             "time_end": dateFormat(dateEnd, "hh:MM TT"),
         }
 
-        Object.entries(mapping).forEach((id, value) => {
+        Object.entries(mapping).forEach(([id, value]) => {
             const input = document.getElementById(id);
             if (!input) { return; }
 
