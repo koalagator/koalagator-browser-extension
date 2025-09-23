@@ -1,7 +1,7 @@
 ### 2.0.1
 
 - Updated build instructions in README
-- xpi file build actually works! 
+- xpi file build actually works!
 
 ### 2.0.0
 

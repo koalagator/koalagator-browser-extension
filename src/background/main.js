@@ -1,52 +1,64 @@
 import imgReady48 from "/assets/icons/ready48.png";
 import imgLoading48 from "/assets/icons/loading48.png";
 import imgInactive48 from "/assets/icons/inactive48.png";
-import SiteData from "../content/site_data";
 
-const instanceDomain = "seedbomb.au";
-const instanceUrl = `https://${instanceDomain}/events/new`;
+import { INSTANCE_URL } from "../constants";
 
-// Use the browser namespace if available, otherwise fall back to chrome
-const browserAPI = typeof browser !== "undefined" ? browser : chrome;
+const ICONS = {
+    inactive: imgInactive48,
+    loading: imgLoading48,
+    ready: imgReady48,
+};
 
-let activeTabId = null;
-let siteData = null;
+const tabSiteData = {};
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (sender.tab.id !== activeTabId) return;
+function getTabId(data, sender) {
+    if (data.message !== "getTabId") return;
 
-    let imagePath;
+    return Promise.resolve(sender.tab.id);
+}
 
-    if (request.data) {
-        siteData = SiteData.deserialize(request.data);
-    }
+function setIcon(data) {
+    if (data.message !== "setIcon") return;
 
-    if (request.supported) {
-        if (siteData) {
-            imagePath = imgReady48;
-        } else {
-            imagePath = imgLoading48;
-        }
-    } else {
-        imagePath = imgInactive48;
-        siteData = null;
-    }
+    browser.browserAction.setIcon({ path: ICONS[data.icon] });
+}
 
-    chrome.browserAction.setIcon({ path: imagePath });
-});
+function registerSiteData(data, sender) {
+    if (data.message !== "registerSiteData") return;
 
-chrome.tabs.onActivated.addListener((activeInfo) => {
+    tabSiteData[sender.tab.id] = data.siteData;
+}
+
+browser.runtime.onMessage.addListener(getTabId);
+browser.runtime.onMessage.addListener(setIcon);
+browser.runtime.onMessage.addListener(registerSiteData);
+
+browser.tabs.onActivated.addListener((activeInfo) => {
     // set icon to inactive on first arrive in a tab (pre-checking)
-    const inactiveImagePath = imgInactive48;
-    chrome.browserAction.setIcon({ path: inactiveImagePath });
+    browser.browserAction.setIcon({ path: imgInactive48 });
     //detect the current Tab Id
     const tabId = activeInfo.tabId;
-    activeTabId = tabId;
-    chrome.tabs.sendMessage(tabId, { message: "runCheck" });
+
+    browser.tabs.sendMessage(tabId, { message: "runCheck" });
 });
 
-browserAPI.browserAction.onClicked.addListener(async () => {
-    if (!siteData) return;
+browser.tabs.onUpdated.addListener(
+    (tabId, _changeInfo, tab) => {
+        const siteData = tabSiteData[tab.openerTabId];
 
-    chrome.tabs.create({ url: siteData.toURLString(instanceUrl) });
+        if (!siteData) return;
+
+        browser.tabs.sendMessage(tabId, {
+            message: "runAutofill",
+            siteData: siteData,
+        });
+    },
+    { urls: [INSTANCE_URL] },
+);
+
+browser.browserAction.onClicked.addListener((tab) => {
+    if (!tabSiteData[tab.id]) return;
+
+    browser.tabs.create({ url: INSTANCE_URL, openerTabId: tab.id });
 });
