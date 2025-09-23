@@ -75,7 +75,7 @@ npm run dev
 
 ## Signing For Firefox
 
-    $ npm run build 
+    $ npm run build
 
     ```
     web-ext sign --channel=unlisted --amo-metadata=./web-ext.json --api-key=user:18647829:320 --api-secret=$AMO_JWT_SECRET

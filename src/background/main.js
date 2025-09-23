@@ -4,6 +4,12 @@ import imgInactive48 from "/assets/icons/inactive48.png";
 
 import { INSTANCE_URL } from "../constants";
 
+const ICONS = {
+    inactive: imgInactive48,
+    loading: imgLoading48,
+    ready: imgReady48,
+};
+
 const tabSiteData = {};
 
 function getTabId(data, sender) {
@@ -15,18 +21,12 @@ function getTabId(data, sender) {
 function setIcon(data) {
     if (data.message !== "setIcon") return;
 
-    const icons = {
-        inactive: imgInactive48,
-        loading: imgLoading48,
-        ready: imgReady48,
-    }
-
-    browser.browserAction.setIcon({path: icons[data.icon]});
+    browser.browserAction.setIcon({ path: ICONS[data.icon] });
 }
 
 function registerSiteData(data, sender) {
     if (data.message !== "registerSiteData") return;
-    
+
     tabSiteData[sender.tab.id] = data.siteData;
 }
 
@@ -36,8 +36,7 @@ browser.runtime.onMessage.addListener(registerSiteData);
 
 browser.tabs.onActivated.addListener((activeInfo) => {
     // set icon to inactive on first arrive in a tab (pre-checking)
-    const inactiveImagePath = imgInactive48;
-    browser.browserAction.setIcon({ path: inactiveImagePath });
+    browser.browserAction.setIcon({ path: imgInactive48 });
     //detect the current Tab Id
     const tabId = activeInfo.tabId;
 
@@ -50,11 +49,16 @@ browser.tabs.onUpdated.addListener(
 
         if (!siteData) return;
 
-        browser.tabs.sendMessage(tabId, { message: "runAutofill", siteData: siteData });
+        browser.tabs.sendMessage(tabId, {
+            message: "runAutofill",
+            siteData: siteData,
+        });
     },
-    {urls: [INSTANCE_URL]}
-)
+    { urls: [INSTANCE_URL] },
+);
 
-browser.browserAction.onClicked.addListener(tab => {
+browser.browserAction.onClicked.addListener((tab) => {
+    if (!tabSiteData[tab.id]) return;
+
     browser.tabs.create({ url: INSTANCE_URL, openerTabId: tab.id });
 });

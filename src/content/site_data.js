@@ -40,19 +40,19 @@ class SiteData {
         const dateEnd = Date.parse(this.dateEnd);
 
         const mapping = {
-            "event_title": this.eventTitle,
-            "venue_name": this.venueName,
-            "event_url": stripURL(this.website),
-            "event_description": this.description,
-            "date_start": dateFormat(dateStart, "yyyy-mm-dd"),
-            "time_start": dateFormat(dateStart, "hh:MM TT"),
-            "date_end": dateFormat(dateEnd, "yyyy-mm-dd"),
-            "time_end": dateFormat(dateEnd, "hh:MM TT"),
-        }
+            event_title: this.eventTitle,
+            venue_name: this.venueName,
+            event_url: stripURL(this.website),
+            event_description: this.description,
+            date_start: dateFormat(dateStart, "yyyy-mm-dd"),
+            time_start: dateFormat(dateStart, "hh:MM TT"),
+            date_end: dateFormat(dateEnd, "yyyy-mm-dd"),
+            time_end: dateFormat(dateEnd, "hh:MM TT"),
+        };
 
         Object.entries(mapping).forEach(([id, value]) => {
             const input = document.getElementById(id);
-            if (!input) { return; }
+            if (!input) return;
 
             input.value = value;
         });

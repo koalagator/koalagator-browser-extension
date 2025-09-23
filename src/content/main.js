@@ -15,9 +15,12 @@ function check() {
 
     browser.runtime.sendMessage({ message: "setIcon", icon: "loading" });
 
-    site.parse().then(siteData => {
+    site.parse().then((siteData) => {
         browser.runtime.sendMessage({ message: "setIcon", icon: "ready" });
-        browser.runtime.sendMessage({ message: "registerSiteData", siteData: siteData.serialize() })
+        browser.runtime.sendMessage({
+            message: "registerSiteData",
+            siteData: siteData.serialize(),
+        });
     });
 }
 
