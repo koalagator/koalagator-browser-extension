@@ -9,15 +9,15 @@ function check() {
     });
 
     if (!site) {
-        chrome.runtime.sendMessage({ message: "setIcon", icon: "inactive" });
+        browser.runtime.sendMessage({ message: "setIcon", icon: "inactive" });
         return;
     }
 
-    chrome.runtime.sendMessage({ message: "setIcon", icon: "loading" });
+    browser.runtime.sendMessage({ message: "setIcon", icon: "loading" });
 
     site.parse().then(siteData => {
-        chrome.runtime.sendMessage({ message: "setIcon", icon: "ready" });
-        chrome.runtime.sendMessage({ message: "registerSiteData", siteData: siteData.serialize() })
+        browser.runtime.sendMessage({ message: "setIcon", icon: "ready" });
+        browser.runtime.sendMessage({ message: "registerSiteData", siteData: siteData.serialize() })
     });
 }
 
@@ -30,7 +30,7 @@ check();
 
 document.addEventListener("DOMContentLoaded", check);
 
-chrome.runtime.onMessage.addListener((data) => {
+browser.runtime.onMessage.addListener((data) => {
     if (data.message === "runCheck") return check();
     if (data.message === "runAutofill") return autoFill(data);
 });

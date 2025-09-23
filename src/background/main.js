@@ -21,7 +21,7 @@ function setIcon(data) {
         ready: imgReady48,
     }
 
-    chrome.browserAction.setIcon({path: icons[data.icon]});
+    browser.browserAction.setIcon({path: icons[data.icon]});
 }
 
 function registerSiteData(data, sender) {
@@ -30,31 +30,31 @@ function registerSiteData(data, sender) {
     tabSiteData[sender.tab.id] = data.siteData;
 }
 
-chrome.runtime.onMessage.addListener(getTabId);
-chrome.runtime.onMessage.addListener(setIcon);
-chrome.runtime.onMessage.addListener(registerSiteData);
+browser.runtime.onMessage.addListener(getTabId);
+browser.runtime.onMessage.addListener(setIcon);
+browser.runtime.onMessage.addListener(registerSiteData);
 
-chrome.tabs.onActivated.addListener((activeInfo) => {
+browser.tabs.onActivated.addListener((activeInfo) => {
     // set icon to inactive on first arrive in a tab (pre-checking)
     const inactiveImagePath = imgInactive48;
-    chrome.browserAction.setIcon({ path: inactiveImagePath });
+    browser.browserAction.setIcon({ path: inactiveImagePath });
     //detect the current Tab Id
     const tabId = activeInfo.tabId;
 
-    chrome.tabs.sendMessage(tabId, { message: "runCheck" });
+    browser.tabs.sendMessage(tabId, { message: "runCheck" });
 });
 
-chrome.tabs.onUpdated.addListener(
+browser.tabs.onUpdated.addListener(
     (tabId, _changeInfo, tab) => {
         const siteData = tabSiteData[tab.openerTabId];
 
         if (!siteData) return;
 
-        chrome.tabs.sendMessage(tabId, { message: "runAutofill", siteData: siteData });
+        browser.tabs.sendMessage(tabId, { message: "runAutofill", siteData: siteData });
     },
     {urls: [INSTANCE_URL]}
 )
 
-chrome.browserAction.onClicked.addListener(tab => {
-    chrome.tabs.create({ url: INSTANCE_URL, openerTabId: tab.id });
+browser.browserAction.onClicked.addListener(tab => {
+    browser.tabs.create({ url: INSTANCE_URL, openerTabId: tab.id });
 });
