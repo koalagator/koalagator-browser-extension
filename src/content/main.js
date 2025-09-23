@@ -1,6 +1,6 @@
 import { SITES } from "./sites";
 
-const check = () => {
+function check() {
     const actualHostname = location.hostname.toLowerCase();
 
     const site = SITES.find((s) => {
@@ -20,7 +20,7 @@ const check = () => {
             data: siteData.serialize(),
         });
     });
-};
+}
 
 check();
 

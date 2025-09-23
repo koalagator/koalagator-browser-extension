@@ -2,9 +2,7 @@ import imgReady48 from "/assets/icons/ready48.png";
 import imgLoading48 from "/assets/icons/loading48.png";
 import imgInactive48 from "/assets/icons/inactive48.png";
 import SiteData from "../content/site_data";
-
-const instanceDomain = "seedbomb.au";
-const instanceUrl = `https://${instanceDomain}/events/new`;
+import { INSTANCE_URL } from "../constants";
 
 // Use the browser namespace if available, otherwise fall back to chrome
 const browserAPI = typeof browser !== "undefined" ? browser : chrome;
@@ -42,11 +40,19 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
     //detect the current Tab Id
     const tabId = activeInfo.tabId;
     activeTabId = tabId;
+
     chrome.tabs.sendMessage(tabId, { message: "runCheck" });
 });
+
+chrome.tabs.onUpdated.addListener(
+    (tabId) => {
+        chrome.tabs.sendMessage(tabId, { message: "runAutofill" });
+    },
+    {urls: [INSTANCE_URL]}
+)
 
 browserAPI.browserAction.onClicked.addListener(async () => {
     if (!siteData) return;
 
-    chrome.tabs.create({ url: siteData.toURLString(instanceUrl) });
+    chrome.tabs.create({ url: INSTANCE_URL });
 });
